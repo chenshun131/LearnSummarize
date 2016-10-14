@@ -19,7 +19,7 @@ import java.util.Locale;
  * highly depends on zh_CN ICU collation data and must be always synchronized with
  * ICU.(Singleton Design Pattern) <p />
  */
-public class HanziToPinyin
+public final class HanziToPinyin
 {
     private static final boolean DEBUG = true;
     private static final String TAG = "HanziToPinyin";

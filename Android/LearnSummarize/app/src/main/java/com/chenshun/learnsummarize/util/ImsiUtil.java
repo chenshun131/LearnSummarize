@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
  * Version: V1.0  <p />
  * Description:  <p />
  */
-public class ImsiUtil
+public final class ImsiUtil
 {
 
     private Integer simId_1 = 0;

@@ -1,9 +1,6 @@
 package com.chenshun.learnsummarize.util;
 
 import android.text.TextUtils;
-import android.util.Log;
-
-import com.chenshun.learnsummarize.constant.Constants;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -25,39 +22,40 @@ import java.io.InputStream;
  * Version: V1.0  <p />
  * Description: 根据经纬度查询地址信息和根据地址信息查询经纬度 <p />
  */
-public final class LocationUtils {
+public final class LocationUtils
+{
 
-    private final static boolean DEBUG = Constants.IS_DEBUG;
     private final static String TAG = "LocationUtils";
 
     /**
      * Don't let anyone instantiate this class.
      */
-    private LocationUtils() {
+    private LocationUtils()
+    {
         throw new Error("Do not need instantiate!");
     }
 
     /**
      * 根据地址获取对应的经纬度
      *
-     * @param address 地址信息
+     * @param address
+     *         地址信息
      * @return 经纬度数组
      */
-    public static double[] getLocationInfo(String address) {
-        if (TextUtils.isEmpty(address)) {
+    public static double[] getLocationInfo(String address)
+    {
+        if (TextUtils.isEmpty(address))
+        {
             return null;
         }
-        if (DEBUG) {
-            Logs.d(TAG, "address : " + address);
-        }
+        Logs.d(TAG, "address : " + address);
         // 定义一个HttpClient，用于向指定地址发送请求
         HttpClient client = new DefaultHttpClient();
         // 向指定地址发送GET请求
-        HttpGet httpGet = new HttpGet("http://maps.google."
-                + "com/maps/api/geocode/json?address=" + address
-                + "ka&sensor=false");
+        HttpGet httpGet = new HttpGet("http://maps.google." + "com/maps/api/geocode/json?address=" + address + "ka&sensor=false");
         StringBuilder sb = new StringBuilder();
-        try {
+        try
+        {
             // 获取服务器的响应
             HttpResponse response = client.execute(httpGet);
             HttpEntity entity = response.getEntity();
@@ -65,25 +63,24 @@ public final class LocationUtils {
             InputStream stream = entity.getContent();
             int b;
             // 循环读取服务器响应
-            while ((b = stream.read()) != -1) {
+            while ((b = stream.read()) != -1)
+            {
                 sb.append((char) b);
             }
             // 将服务器返回的字符串转换为JSONObject对象
             JSONObject jsonObject = new JSONObject(sb.toString());
             // 从JSONObject对象中取出代表位置的location属性
-            JSONObject location = jsonObject.getJSONArray("results")
-                    .getJSONObject(0).getJSONObject("geometry")
-                    .getJSONObject("location");
+            JSONObject location = jsonObject.getJSONArray("results").getJSONObject(0).getJSONObject("geometry").getJSONObject("location");
             // 获取经度信息
             double longitude = location.getDouble("lng");
             // 获取纬度信息
             double latitude = location.getDouble("lat");
-            if (DEBUG) {
-                LogUtils.d(TAG, "location : (" + longitude + "," + latitude + ")");
-            }
+            Logs.d(TAG, "location : (" + longitude + "," + latitude + ")");
             // 将经度、纬度信息组成double[]数组
             return new double[]{longitude, latitude};
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
         return null;
@@ -92,17 +89,20 @@ public final class LocationUtils {
     /**
      * 根据经纬度获取对应的地址
      *
-     * @param longitude 经度
-     * @param latitude  纬度
-     * @param lang      语言 如果位空则默认en
+     * @param longitude
+     *         经度
+     * @param latitude
+     *         纬度
+     * @param lang
+     *         语言 如果位空则默认en
      * @return 地址信息
      * @throws Exception
      */
-    public static String getAddress(double longitude, double latitude, String lang) throws Exception {
-        if (DEBUG) {
-            Logs.d(TAG, "location : (" + longitude + "," + latitude + ")");
-        }
-        if (lang == null) {
+    public static String getAddress(double longitude, double latitude, String lang) throws Exception
+    {
+        Logs.d(TAG, "location : (" + longitude + "," + latitude + ")");
+        if (lang == null)
+        {
             lang = "en";
         }
         // 设定请求的超时时间
@@ -112,13 +112,8 @@ public final class LocationUtils {
         // 定义一个HttpClient，用于向指定地址发送请求
         HttpClient client = new DefaultHttpClient(params);
         // 向指定地址发送GET请求
-        HttpGet httpGet = new HttpGet("https://maps.googleapis.com/maps/api/"
-                + "geocode/json?latlng=" + latitude + "," + longitude
-                + "&sensor=false&language=" + lang);
-        if (DEBUG) {
-            LogUtils.d(TAG,
-                    "URL : " + httpGet.getURI());
-        }
+        HttpGet httpGet = new HttpGet("https://maps.googleapis.com/maps/api/" + "geocode/json?latlng=" + latitude + "," + longitude + "&sensor=false&language=" + lang);
+        Logs.d(TAG, "URL : " + httpGet.getURI());
         StringBuilder sb = new StringBuilder();
         // 执行请求
         HttpResponse response = client.execute(httpGet);
@@ -126,19 +121,17 @@ public final class LocationUtils {
         // 获取服务器响应的字符串
         InputStream stream = entity.getContent();
         int b;
-        while ((b = stream.read()) != -1) {
+        while ((b = stream.read()) != -1)
+        {
             sb.append((char) b);
         }
         // 把服务器相应的字符串转换为JSONObject
         JSONObject jsonObj = new JSONObject(sb.toString());
-        Log.d("ConvertUtil", "getAddress:" + sb.toString());
+        Logs.d("ConvertUtil", "getAddress:" + sb.toString());
         // 解析出响应结果中的地址数据
-        JSONObject addressObject = jsonObj.getJSONArray("results")
-                .getJSONObject(0);
+        JSONObject addressObject = jsonObj.getJSONArray("results").getJSONObject(0);
         String address = decodeLocationName(addressObject);
-        if (DEBUG) {
-            LogUtils.d(TAG, "address : " + address);
-        }
+        Logs.d(TAG, "address : " + address);
         return address;
     }
 
@@ -146,52 +139,67 @@ public final class LocationUtils {
      * 根据Google API 解析出国家和城市名称
      * https://developers.google.com/maps/documentation/geocoding
      *
-     * @param jsonObject 地址Json对象
+     * @param jsonObject
+     *         地址Json对象
      * @return 返回国家和城市
      */
-    public static String decodeLocationName(JSONObject jsonObject) {
+    public static String decodeLocationName(JSONObject jsonObject)
+    {
         JSONArray jsonArray;
         String country = "", city = "";
         String TYPE_COUNTRY = "country";
         String TYPE_LOCALITY = "locality";
         String TYPE_POLITICAL = "political";
         boolean hasCountry = false;
-        try {
+        try
+        {
             jsonArray = jsonObject.getJSONArray("address_components");
-            for (int i = 0; i < jsonArray.length(); i++) {
+            for (int i = 0; i < jsonArray.length(); i++)
+            {
                 JSONObject jo = jsonArray.getJSONObject(i);
                 JSONArray types = jo.getJSONArray("types");
                 boolean hasLocality = false, hasPolicical = false;
-
-                for (int j = 0; j < types.length(); j++) {
+                for (int j = 0; j < types.length(); j++)
+                {
                     String type = types.getString(j);
-                    if (type.equals(TYPE_COUNTRY) && !hasCountry) {
+                    if (type.equals(TYPE_COUNTRY) && !hasCountry)
+                    {
                         country = jo.getString("long_name");
-                    } else {
-                        if (type.equals(TYPE_POLITICAL)) {
+                    }
+                    else
+                    {
+                        if (type.equals(TYPE_POLITICAL))
+                        {
                             hasPolicical = true;
                         }
-                        if (type.equals(TYPE_LOCALITY)) {
+                        if (type.equals(TYPE_LOCALITY))
+                        {
                             hasLocality = true;
                         }
-                        if (hasPolicical && hasLocality) {
+                        if (hasPolicical && hasLocality)
+                        {
                             city = jo.getString("long_name");
                         }
                     }
                 }
             }
             return city + "," + country;
-        } catch (JSONException e) {
+        }
+        catch (JSONException e)
+        {
             e.printStackTrace();
         }
-        if (jsonObject.has("formatted_address")) {
-            try {
+        if (jsonObject.has("formatted_address"))
+        {
+            try
+            {
                 return jsonObject.getString("formatted_address");
-            } catch (JSONException e) {
+            }
+            catch (JSONException e)
+            {
                 e.printStackTrace();
             }
         }
         return null;
     }
-
 }
