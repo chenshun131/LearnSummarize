@@ -33,6 +33,15 @@ this for my study summarize,it incloud Android、iOS、ReactNative and JavaEE
 ### 7> 流媒体播放 (FFmpeg服务器 和 VLC移动端)
 
 
-### 8> 
+### 8> 多线程
+
+
+### 9> 常用第三方SDK
+1. 地图：百度地图 高德地图
+2. 推送：容云 百度云推送
+
+
+### 10> 基本的设计模式
+1. 单例模式
 
 
