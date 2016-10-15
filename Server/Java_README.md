@@ -7,7 +7,7 @@
 
 
 - 环境：
-    - JDK 8（理论上支持 JDK 6、JDK 7、JDK 8）
+    - JDK 8（理论上支持 JDK 7、JDK 8）
     - MySQL 5.6
     - Tomcat 7
     - IDE：IntelliJ IDEA 2016.2.1
