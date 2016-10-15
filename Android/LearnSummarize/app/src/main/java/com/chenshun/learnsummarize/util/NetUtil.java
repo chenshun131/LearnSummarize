@@ -26,6 +26,29 @@ public final class NetUtil
 {
 
     /**
+     * if not connected Wifi and Mobile network,return true,otherwise return false
+     *
+     * @param context
+     * @return
+     */
+    public static boolean hasNoNetwork(Context context)
+    {
+        ConnectivityManager connManager = (ConnectivityManager) context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo wifiNetInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mobNetInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+        boolean connected = false;
+        if (wifiNetInfo != null && wifiNetInfo.isConnected())
+        {
+            connected = true;
+        }
+        else if (mobNetInfo != null && mobNetInfo.isConnected())
+        {
+            connected = true;
+        }
+        return !connected;
+    }
+
+    /**
      * 判断网络连接是否打开,包括移动数据连接
      *
      * @param context

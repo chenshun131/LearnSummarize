@@ -16,11 +16,13 @@ import com.lzy.okgo.cookie.store.MemoryCookieStore;
  */
 public class App extends Application
 {
+    private static App instance;
+
     @Override
     public void onCreate()
     {
         super.onCreate();
-
+        instance = this;
         initNetwork();
     }
 
@@ -43,6 +45,16 @@ public class App extends Application
         // .setCertificates()                                                                     //方法一：信任所有证书
         // .setCertificates(getAssets().open("srca.cer"))                                         //方法二：也可以自己设置https证书
         // .setCertificates(getAssets().open("aaaa.bks"), "123456", getAssets().open("srca.cer")) //方法三：传入bks证书,密码,和cer证书,支持双向加密
+    }
+
+    /**
+     * get the instance of GiftApplication
+     *
+     * @return
+     */
+    public static App getInstance()
+    {
+        return instance;
     }
 
 }
