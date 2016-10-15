@@ -10,8 +10,12 @@
     - JDK 8（理论上还支持 JDK 7、JDK 8）
     - IDE：Android Studio V2.2.1
 
+
 ## 技术参考
 * [Android工具类库](https://github.com/jingle1267/android-utils)：常用的 Android 工具库
 * [okhttp-OkGo](https://github.com/jeasonlzy/okhttp-OkGo)：一款优秀的基于 OkHttp 访问网络框架
 
+
+## 内置功能
+1. 登录
 
