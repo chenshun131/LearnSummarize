@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="off">
+    <properties>
+        <Property name="logdir">${sys:catalina.base}/logs/springblade</Property>
+        <!-- 日志切割的最小单位 -->
+        <property name="EVERY_FILE_SIZE">10M</property>
+    </properties>
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY" />
+            <PatternLayout pattern="%n%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%file] %n%level : %msg%n" />
+        </Console>
+        <RollingFile name="RollingFile"
+            fileName="${logdir}/blade.log"
+            filePattern="${logdir}/blade.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%C{36}.%M] %n%level : %msg%n" />
+            <Filters>
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL" />
+                <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <SizeBasedTriggeringPolicy size="${EVERY_FILE_SIZE}" />
+        </RollingFile>
+        <!-- 只显示error级别的信息 -->
+        <RollingFile name="RollingFileError"
+            fileName="${logdir}/error.log"
+            filePattern="${logdir}/error-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] [%C{36}.%M:%L] %n%level : %msg%xEx%n" />
+            <Filters>
+                <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <SizeBasedTriggeringPolicy size="${EVERY_FILE_SIZE}" />
+        </RollingFile>
+    </appenders>
+
+    <loggers>
+        <Logger name="com.smallchill" level="info" />
+        <Root level="WARN" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="RollingFile" />
+            <AppenderRef ref="RollingFileError" />
+        </Root>
+    </loggers>
+</configuration>
