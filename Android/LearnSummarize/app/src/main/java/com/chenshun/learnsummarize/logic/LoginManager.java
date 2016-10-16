@@ -1,4 +1,4 @@
-package com.chenshun.learnsummarize.manager;
+package com.chenshun.learnsummarize.logic;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -47,7 +47,7 @@ public class LoginManager
         values.put(Constants.ACCOUNT, account);
         values.put(Constants.PASSWORD, password);
         values.put(Constants.IMGCODE, imgCode);
-        values.put(Constants.PLATFORM, "1");// 0:浏览器 1:安卓 2:ios
+        values.put(Constants.PLATFORM, "1");// 0:浏览器 1:安卓 2:iOS
         transaction.values = values;
         transaction.callback = callback;
         CoreService.requestTransaction(context, transaction);

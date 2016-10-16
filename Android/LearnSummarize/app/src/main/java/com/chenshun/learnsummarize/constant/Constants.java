@@ -10,8 +10,8 @@ public class Constants
 {
     /** whether in debug model */
     public static final boolean IS_DEBUG = true;
-    public static final String BASE_IP = "192.168.0.231";
-    public static final String BASE_PATH = "http://" + BASE_IP + ":8080/SpringBlade";
+    public static final String BASE_IP = "192.168.0.11";
+    public static final String BASE_PATH = "http://" + BASE_IP + ":8080/LearnSummarize";
 
     /******************************** 【Network Access Path】 *******************************************/
     public static final String CAPTCHA = BASE_PATH + "/captcha";// 验证码
@@ -26,5 +26,4 @@ public class Constants
     public static final String PASSWORD = "password";
     public static final String IMGCODE = "imgCode";
     public static final String PLATFORM = "platform";
-
 }

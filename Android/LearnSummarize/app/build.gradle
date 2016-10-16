@@ -35,4 +35,10 @@ dependencies {
     compile 'com.lzy.net:okgo:2.0.0'
     compile 'com.lzy.net:okrx:0.1.0'
     compile 'com.lzy.net:okserver:1.1.0'
+
+    // 图片加载
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.2'
+
+    // 友盟
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }

@@ -4,9 +4,9 @@ import com.smallchill.core.toolbox.kit.JsonKit;
 
 public class AjaxResult
 {
-    private int code = 0;// 返回状态码 (默认0:成功,1:失败)
-    private String message;// 返回的中文消息,主要是错误描述信息
-    private Object data;// 成功时携带的数据
+    private int code = 0; // 返回状态码 (默认0:成功,1:失败)
+    private String message; // 返回的中文消息,主要是错误描述信息
+    private Object data; // 成功时携带的数据
 
     public int getCode()
     {

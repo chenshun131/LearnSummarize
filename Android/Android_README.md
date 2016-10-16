@@ -14,8 +14,23 @@
 ## 技术参考
 * [Android工具类库](https://github.com/jingle1267/android-utils)：常用的 Android 工具库
 * [okhttp-OkGo](https://github.com/jeasonlzy/okhttp-OkGo)：一款优秀的基于 OkHttp 访问网络框架
+* [Universal Image Loader](https://github.com/nostra13/Android-Universal-Image-Loader)：一款强大的图片加载框架，它对拥有对网络图片加载的详细配置，并且可以实现图片下载过程的监听以及支持图片下载完成后，显示圆形或者圆角矩形的图片
+* [Fresco](https://github.com/facebook/fresco)：Facebook推出的一款用于Android 应用中展示图片的强大图片库Fresco，它能够从网络、本地存储和本地资源中加载图片。而且，为了节省数据和CPU，它拥有三级缓存（推荐使用该图片加载框架）
+
+
+## 第三方SDK
+> ### 统计
+> > 1.友盟
+>
+> ### 地图
+> > 1.百度地图
+> > 
+> > 2.高德地图
+> 
+> ### 推送
+
 
 
 ## 内置功能
 1. 登录
-
+2. 数据统计
