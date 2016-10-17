@@ -39,7 +39,6 @@ import com.smallchill.core.toolbox.kit.StrKit;
 @RequestMapping("/cache")
 public class CacheController extends BladeController
 {
-
     public void index()
     {
     }
@@ -56,9 +55,7 @@ public class CacheController extends BladeController
         ShiroUser user = ShiroKit.getUser();
         final String userId = user.getId().toString();
         final String roleId = user.getRoles().toString();
-
         Map<String, Object> userRole = Db.selectOneByCache(MENU_CACHE, "roleExt_" + userId, "select * from TFW_ROLE_EXT where userId= #{id}", Paras.create().set("id", userId));
-
         String roleIn = "0";
         String roleOut = "0";
         if (!Func.isEmpty(userRole))
@@ -76,14 +73,8 @@ public class CacheController extends BladeController
         sql.append("	 and id not in(#{join(roleOut)})");
         sql.append("	)");
         sql.append(" order by num");
-
-
         List<Map> btnList = Db.selectListByCache(MENU_CACHE, "btnList_" + code + "_" + userId, sql.toString(),
-                Paras.create()
-                        .set("code", code)
-                        .set("roleId", roleId.toString().split(","))
-                        .set("roleIn", roleIn.split(","))
-                        .set("roleOut", roleOut.split(",")));
+                Paras.create().set("code", code).set("roleId", roleId.toString().split(",")).set("roleIn", roleIn.split(",")).set("roleOut", roleOut.split(",")));
         return json(btnList);
     }
 
@@ -99,9 +90,7 @@ public class CacheController extends BladeController
         ShiroUser user = ShiroKit.getUser();
         final String userId = user.getId().toString();
         final String roleId = user.getRoles().toString();
-
         Map<String, Object> userRole = Db.selectOneByCache(MENU_CACHE, "roleExt_" + userId, "select * from TFW_ROLE_EXT where userId= #{id}", Paras.create().set("id", userId));
-
         String roleIn = "0";
         String roleOut = "0";
         if (!Func.isEmpty(userRole))
@@ -119,14 +108,8 @@ public class CacheController extends BladeController
         sql.append("	 and id not in(#{join(roleOut)})");
         sql.append("	)");
         sql.append(" order by num");
-
         List<Map> btnList = Db.selectListByCache(MENU_CACHE, "childBtnList_" + code + "_" + userId, sql.toString(),
-                Paras.create()
-                        .set("code", code)
-                        .set("roleId", roleId.toString().split(","))
-                        .set("roleIn", roleIn.split(","))
-                        .set("roleOut", roleOut.split(",")));
-
+                Paras.create().set("code", code).set("roleId", roleId.toString().split(",")).set("roleIn", roleIn.split(",")).set("roleOut", roleOut.split(",")));
         return json(btnList);
     }
 
@@ -154,8 +137,7 @@ public class CacheController extends BladeController
                     }
                 });
         StringBuilder sb = new StringBuilder();
-        sb.append("<select class=\"form-control\" style=\"margin-left:-3px;cursor:pointer;\" id=\"inputs"
-                + num + "\">");
+        sb.append("<select class=\"form-control\" style=\"margin-left:-3px;cursor:pointer;\" id=\"inputs" + num + "\">");
         sb.append("<option value></option>");
         for (Map<String, Object> dic : dict)
         {
@@ -178,7 +160,6 @@ public class CacheController extends BladeController
                         return Db.selectList("select num as \"id\",name as \"text\" from  TFW_DICT where code=#{code} and num>0", Paras.create().set("code", code), new AopContext("ztree"));
                     }
                 });
-
         return json(dict);
     }
 
@@ -196,8 +177,7 @@ public class CacheController extends BladeController
                     }
                 });
         StringBuilder sb = new StringBuilder();
-        sb.append("<select class=\"form-control\" style=\"margin-left:-3px;cursor:pointer;\" id=\"inputs"
-                + num + "\">");
+        sb.append("<select class=\"form-control\" style=\"margin-left:-3px;cursor:pointer;\" id=\"inputs" + num + "\">");
         sb.append("<option value></option>");
         for (Map<String, Object> _dept : dept)
         {
@@ -221,8 +201,7 @@ public class CacheController extends BladeController
                     }
                 });
         StringBuilder sb = new StringBuilder();
-        sb.append("<select class=\"form-control\" style=\"margin-left:-3px;cursor:pointer;\" id=\"inputs"
-                + num + "\">");
+        sb.append("<select class=\"form-control\" style=\"margin-left:-3px;cursor:pointer;\" id=\"inputs" + num + "\">");
         sb.append("<option value></option>");
         for (Map<String, Object> _dept : dept)
         {
@@ -246,8 +225,7 @@ public class CacheController extends BladeController
                     }
                 });
         StringBuilder sb = new StringBuilder();
-        sb.append("<select class=\"form-control\" style=\"margin-left:-3px;cursor:pointer;\" id=\"inputs"
-                + num + "\">");
+        sb.append("<select class=\"form-control\" style=\"margin-left:-3px;cursor:pointer;\" id=\"inputs" + num + "\">");
         sb.append("<option value></option>");
         for (Map<String, Object> _dept : dept)
         {
@@ -269,7 +247,6 @@ public class CacheController extends BladeController
                         return Db.selectList("select code \"code\",id \"id\",pId \"pId\",name \"name\",num \"num\",'false' \"open\" from TFW_DICT order by code asc,num asc", Paras.create());
                     }
                 });
-
         return json(dic);
     }
 
@@ -285,7 +262,6 @@ public class CacheController extends BladeController
                         return Db.selectList("select id \"id\",pId \"pId\",simpleName as \"name\",(case when (pId=0 or pId is null) then 'true' else 'false' end) \"open\" from  TFW_DEPT ", Paras.create(), new AopContext("ztree"), Cst.me().getDefaultSelectFactory().deptIntercept());
                     }
                 });
-
         return json(dept);
     }
 
@@ -301,7 +277,6 @@ public class CacheController extends BladeController
                         return Db.selectList("select id \"id\",pId \"pId\",name as \"name\",(case when (pId=0 or pId is null) then 'true' else 'false' end) \"open\" from  TFW_ROLE ", Paras.create(), new AopContext("ztree"), Cst.me().getDefaultSelectFactory().roleIntercept());
                     }
                 });
-
         return json(dept);
     }
 
@@ -333,7 +308,6 @@ public class CacheController extends BladeController
                         return Db.selectList("select code \"id\",pCode \"pId\",name \"name\",(case when levels=1 then 'true' else 'false' end) \"open\" from TFW_MENU where status=1 order by levels asc,num asc");
                     }
                 });
-
         return json(menu);
     }
 
@@ -361,20 +335,16 @@ public class CacheController extends BladeController
                         if (!Func.isEmpty(pid))
                         {
                             pid = StrKit.removeSuffix(pid, ",");
-                            table = "(select * from TFW_MENU where id in( select MENUID from TFW_RELATION where roleId in ("
-                                    + pid + ") ))";
+                            table = "(select * from TFW_MENU where id in( select MENUID from TFW_RELATION where roleId in (" + pid + ") ))";
                         }
                         StringBuilder sb = new StringBuilder();
                         sb.append("select m.id \"id\",(select id from TFW_MENU  where code=m.pCode) \"pId\",name \"name\",(case when m.levels=1 then 'true' else 'false' end) \"open\",(case when r.menuId is not null then 'true' else 'false' end) \"checked\"");
                         sb.append(" from ");
                         sb.append(table);
-                        sb.append(" m left join (select MENUID from TFW_RELATION where roleId in ("
-                                + roleId
-                                + ") GROUP BY MENUID) r on m.id=r.menuId where m.status=1 order by m.levels,m.num asc");
+                        sb.append(" m left join (select MENUID from TFW_RELATION where roleId in (" + roleId + ") GROUP BY MENUID) r on m.id=r.menuId where m.status=1 order by m.levels,m.num asc");
                         return Db.selectList(sb.toString());
                     }
                 });
-
         return json(menu);
     }
 

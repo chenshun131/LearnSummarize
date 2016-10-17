@@ -162,6 +162,4 @@ public class DeptController extends BaseController
             return 1;
         }
     }
-
-
 }

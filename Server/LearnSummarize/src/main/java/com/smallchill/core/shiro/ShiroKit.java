@@ -33,10 +33,8 @@ import java.util.Random;
 public class ShiroKit
 {
     private static final String NAMES_DELIMETER = ",";
-
     /** 加盐参数 */
     final static String hashAlgorithmName = "MD5";
-
     /** 循环次数 */
     final static int hashIterations = 1024;
 
@@ -223,9 +221,7 @@ public class ShiroKit
      */
     public static boolean hasPermission(String permission)
     {
-        return getSubject() != null && permission != null
-                && permission.length() > 0
-                && getSubject().isPermitted(permission);
+        return getSubject() != null && permission != null && permission.length() > 0 && getSubject().isPermitted(permission);
     }
 
     /**

@@ -80,7 +80,6 @@ public class Func
         {
             return ((Map<?, ?>) obj).size();
         }
-
         int count;
         if (obj instanceof Iterator)
         {
@@ -142,7 +141,6 @@ public class Func
         {
             return ((Map<?, ?>) obj).values().contains(element);
         }
-
         if (obj instanceof Iterator)
         {
             Iterator<?> iter = (Iterator<?>) obj;
