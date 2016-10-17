@@ -4,6 +4,8 @@ import android.app.Service;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -18,15 +20,13 @@ import com.chenshun.learnsummarize.util.Logs;
 import com.chenshun.learnsummarize.util.PreferensesUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.request.BaseBodyRequest;
+import com.lzy.okgo.request.BaseRequest;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Response;
-
-import static com.chenshun.learnsummarize.service.CoreService.Transaction.EVENT_REQUEST_CAPTCHA;
 
 /**
  * User: chenshun <p />
@@ -205,23 +205,38 @@ public class CoreService extends Service
     private void doTransaction(final Transaction transaction)
     {
         ContentValues values = transaction.values;
-        BaseBodyRequest baseBodyRequest = null;
+        BaseRequest baseRequest = null;
         switch (transaction.what)
         {
             case Transaction.EVENT_REQUEST_CAPTCHA:// 获取验证码
+                baseRequest = OkGo.get(Constants.CAPTCHA);
                 break;
             case Transaction.EVENT_REQUEST_LOGIN:// 登录
-                baseBodyRequest = OkGo.post(Constants.LOGIN).params(Constants.ACCOUNT, values.getAsString(Constants.ACCOUNT)).params(Constants.PASSWORD, values.getAsString(Constants.PASSWORD)).params(Constants.IMGCODE, values.getAsString(Constants.IMGCODE));
+                baseRequest = OkGo.post(Constants.LOGIN).params(Constants.ACCOUNT, values.getAsString(Constants.ACCOUNT)).params(Constants.PASSWORD, values.getAsString(Constants.PASSWORD)).params(Constants.IMGCODE, values.getAsString(Constants.IMGCODE));
                 break;
             default:
         }
-        if (baseBodyRequest != null)
+        if (baseRequest != null)
         {
-            baseBodyRequest.execute(new StringCallback()
+            baseRequest.execute(new StringCallback()
             {
                 @Override
                 public void onSuccess(String s, Call call, Response response)
                 {
+
+
+
+                    switch (transaction.what)
+                    {
+                        case Transaction.EVENT_REQUEST_CAPTCHA:// 获取验证码
+                            byte[] bitmapByte = s.getBytes();
+                            Bitmap bm = BitmapFactory.decodeByteArray(bitmapByte, 0, bitmapByte.length);
+                            break;
+                        case Transaction.EVENT_REQUEST_LOGIN:// 登录
+                            baseRequest = OkGo.post(Constants.LOGIN).params(Constants.ACCOUNT, values.getAsString(Constants.ACCOUNT)).params(Constants.PASSWORD, values.getAsString(Constants.PASSWORD)).params(Constants.IMGCODE, values.getAsString(Constants.IMGCODE));
+                            break;
+                        default:
+                    }
                 }
             });
         }

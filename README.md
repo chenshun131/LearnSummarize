@@ -37,8 +37,10 @@ this for my study summarize,it incloud Android、iOS、ReactNative and JavaEE
 
 
 ### 9> 常用第三方SDK
-1. 地图：百度地图 高德地图
-2. 推送：容云 百度云推送
+1. 地图：<font color=DarkGray>百度地图 高德地图</font>
+2. 推送：<font color=DarkGray>容云 百度云推送</font>
+3. 数据统计：友盟
+4. 推送：<font color=DarkGray>百度云推送 极光推送 融云 信鸽</font>
 
 
 ### 10> 基本的设计模式
