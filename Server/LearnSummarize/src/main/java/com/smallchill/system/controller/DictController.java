@@ -46,7 +46,6 @@ public class DictController extends BaseController
         return BASE_PATH + "dict.html";
     }
 
-
     @ResponseBody
     @RequestMapping(KEY_LIST)
     public Object list()

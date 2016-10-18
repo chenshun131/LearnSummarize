@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2015-2016, Chill Zhuang 庄骞 (smallchill@163.com).
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,25 +18,27 @@ package com.smallchill.core.shiro;
 import com.smallchill.core.constant.Cst;
 import com.smallchill.core.interfaces.IShiro;
 
-public class ShiroManager {
-	private static ShiroManager me = new ShiroManager();
-	private IShiro defaultShiroFactory = Cst.me().getDefaultShiroFactory();
-	
-	public static ShiroManager me() {
-		return me;
-	}
-	
-	private ShiroManager(){
-		
-	}
+public class ShiroManager
+{
+    private static ShiroManager me = new ShiroManager();
+    private IShiro defaultShiroFactory = Cst.me().getDefaultShiroFactory();
 
-	public IShiro getDefaultShiroFactory() {
-		return defaultShiroFactory;
-	}
+    public static ShiroManager me()
+    {
+        return me;
+    }
 
-	public void setDefaultShiroFactory(IShiro defaultShiroFactory) {
-		this.defaultShiroFactory = defaultShiroFactory;
-	}
+    private ShiroManager()
+    {
+    }
 
+    public IShiro getDefaultShiroFactory()
+    {
+        return defaultShiroFactory;
+    }
 
+    public void setDefaultShiroFactory(IShiro defaultShiroFactory)
+    {
+        this.defaultShiroFactory = defaultShiroFactory;
+    }
 }

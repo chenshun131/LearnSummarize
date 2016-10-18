@@ -43,7 +43,9 @@ public class Captcha
     // 默认的验证码大小
     private static final int WIDTH = 108, HEIGHT = 40;
     // 验证码随机字符数组
-    private static final String[] strArr = {"3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y"};
+    private static final String[] strArr = {"3", "4", "5", "6", "7", "8", "9",
+            "a", "b", "c", "d", "e", "f", "g", "h", "j", "k", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y",
+            "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y"};
     // 验证码字体
     private static final Font[] RANDOM_FONT = new Font[]{
             new Font("nyala", Font.BOLD, 38),

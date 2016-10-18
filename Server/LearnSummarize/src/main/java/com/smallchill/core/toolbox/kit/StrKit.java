@@ -81,7 +81,7 @@ public class StrKit
     public static boolean isBlank(String str)
     {
         int length;
-        if ((str == null) || ((length = str.length()) == 0))
+        if ((str == null) || ((length = str.length()) == 0) || "null".equals(str))
         {
             return true;
         }

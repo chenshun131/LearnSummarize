@@ -15,5 +15,4 @@
         <!-- 早九点到晚五点每三十分钟执行一次 -->
         <!-- <task:scheduled ref="globalTask" method="run" cron="0 0/30 9-17 * * ?" /> -->
     </task:scheduled-tasks>
-
 </beans>

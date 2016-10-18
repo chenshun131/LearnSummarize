@@ -80,7 +80,7 @@
         <!-- 默认编码 -->
         <property name="defaultEncoding" value="utf-8"/>
         <!-- 设置上传文件总大小限制 10G -->
-        <property name="maxUploadSize" value="10485760000"></property>
+        <property name="maxUploadSize" value="10485760000" />
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="40960"/>
     </bean>
@@ -95,6 +95,6 @@
     <import resource="applicationContext-datasource.xml"/>
 
     <!-- 引入applicationContext-task配置文件 -->
-    <!-- <import resource="applicationContext-task.xml" /> -->
+    <!--<import resource="applicationContext-task.xml" />-->
 
 </beans>
