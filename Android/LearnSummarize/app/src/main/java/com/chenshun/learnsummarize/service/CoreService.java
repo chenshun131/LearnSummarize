@@ -5,7 +5,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -19,6 +18,7 @@ import com.chenshun.learnsummarize.ui.util.Cache;
 import com.chenshun.learnsummarize.util.Logs;
 import com.chenshun.learnsummarize.util.PreferensesUtil;
 import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.BitmapCallback;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.request.BaseRequest;
 
@@ -215,30 +215,35 @@ public class CoreService extends Service
                 baseRequest = OkGo.post(Constants.LOGIN).params(Constants.ACCOUNT, values.getAsString(Constants.ACCOUNT)).params(Constants.PASSWORD, values.getAsString(Constants.PASSWORD)).params(Constants.IMGCODE, values.getAsString(Constants.IMGCODE));
                 break;
             default:
+                break;
         }
         if (baseRequest != null)
         {
-            baseRequest.execute(new StringCallback()
+            switch (transaction.what)
             {
-                @Override
-                public void onSuccess(String s, Call call, Response response)
+                case Transaction.EVENT_REQUEST_CAPTCHA:// 获取验证码
                 {
-
-
-
-                    switch (transaction.what)
+                    baseRequest.execute(new BitmapCallback()
                     {
-                        case Transaction.EVENT_REQUEST_CAPTCHA:// 获取验证码
-                            byte[] bitmapByte = s.getBytes();
-                            Bitmap bm = BitmapFactory.decodeByteArray(bitmapByte, 0, bitmapByte.length);
-                            break;
-                        case Transaction.EVENT_REQUEST_LOGIN:// 登录
-                            baseRequest = OkGo.post(Constants.LOGIN).params(Constants.ACCOUNT, values.getAsString(Constants.ACCOUNT)).params(Constants.PASSWORD, values.getAsString(Constants.PASSWORD)).params(Constants.IMGCODE, values.getAsString(Constants.IMGCODE));
-                            break;
-                        default:
-                    }
+                        @Override
+                        public void onSuccess(Bitmap bitmap, Call call, Response response)
+                        {
+                        }
+                    });
                 }
-            });
+                break;
+                default:
+                {
+                    baseRequest.execute(new StringCallback()
+                    {
+                        @Override
+                        public void onSuccess(String s, Call call, Response response)
+                        {
+                        }
+                    });
+                }
+                break;
+            }
         }
     }
 

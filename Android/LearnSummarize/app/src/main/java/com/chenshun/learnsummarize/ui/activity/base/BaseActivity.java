@@ -6,14 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.chenshun.learnsummarize.R;
 import com.chenshun.learnsummarize.ui.util.HandlerCache;
@@ -35,7 +34,7 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
     protected final String TAG = this.getClass().getSimpleName();
     protected static final String PID_FLAG = "pid";
     /** the identifier of current process, which can be used with killProcess and sendSignal */
-    protected static final int MY_PID = android.os.Process.myPid();
+    protected final int MY_PID = android.os.Process.myPid();
     protected int mCode;
     /** common intent */
     protected Intent mLastIntent;
@@ -64,8 +63,6 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
         initHandlerCache();
         initData();
         initView();
-        initBack();
-        // initActionBar(); TODO 需要重写先关头信息
     }
 
     @Override
@@ -141,37 +138,7 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
 
     protected abstract void initView();
 
-    protected void initBack()
-    {
-        ImageView backIv = (ImageView) findViewById(R.id.actionbar_back_iv);
-        if (backIv != null)
-        {
-            backIv.setOnClickListener(new OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    finish();
-                }
-            });
-        }
-    }
-
     /******************************** 【 Top Operator】 *******************************************/
-    @Override
-    public void setTitle(CharSequence title)
-    {
-        TextView titleTv = (TextView) findViewById(R.id.actionbar_title_tv);
-        if (titleTv == null)
-        {
-            super.setTitle(title);
-        }
-        else
-        {
-            titleTv.setText(title);
-        }
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -423,8 +390,7 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
     {
         if (null != mHandler)
         {
-            // Remove any pending posts of callbacks and sent messages whose obj is token. If token is null, all callbacks and messages will be
-            // removed
+            // Remove any pending posts of callbacks and sent messages whose obj is token. If token is null, all callbacks and messages will be removed
             mHandler.removeCallbacksAndMessages(null);
         }
         if (mHandlerCache != null)
