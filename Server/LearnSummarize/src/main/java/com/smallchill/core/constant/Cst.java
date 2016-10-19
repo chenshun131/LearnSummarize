@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2015-2016, Chill Zhuang 庄骞 (smallchill@163.com).
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -33,277 +33,276 @@ import com.smallchill.core.toolbox.file.IFileProxy;
 import com.smallchill.core.toolbox.grid.JqGridFactory;
 import com.smallchill.core.toolbox.log.BladeLogFactory;
 
-public class Cst {
+public class Cst
+{
+    /** 开发模式 */
+    private boolean devMode = false;
 
-	/**
-	 * 开发模式
-	 */
-	private boolean devMode = false;
+    /** 远程上传模式 */
+    private boolean remoteMode = false;
 
-	/**
-	 * 远程上传模式
-	 */
-	private boolean remoteMode = false;
+    /** 全文索引开启 */
+    private boolean luceneIndex = false;
 
-	/**
-	 * 全文索引开启
-	 */
-	private boolean luceneIndex = false;
+    /** 上传下载路径(物理路径) */
+    private String remotePath = "D://blade";
 
-	/**
-	 * 上传下载路径(物理路径)
-	 */
-	private String remotePath = "D://blade";
+    /** 上传路径(相对路径) */
+    private String uploadPath = "/upload";
 
-	/**
-	 * 上传路径(相对路径)
-	 */
-	private String uploadPath = "/upload";
+    /** 下载路径 */
+    private String downloadPath = "/download";
 
-	/**
-	 * 下载路径
-	 */
-	private String downloadPath = "/download";
+    /** 项目物理路径 */
+    private String realPath = ConfigListener.map.get("realPath");
 
-	/**
-	 * 项目物理路径
-	 */
-	private String realPath = ConfigListener.map.get("realPath");
+    /** 项目相对路径 */
+    private String contextPath = ConfigListener.map.get("contextPath");
 
-	/**
-	 * 项目相对路径
-	 */
-	private String contextPath = ConfigListener.map.get("contextPath");
+    /** 密码允许错误次数 */
+    private int passErrorCount = 6;
 
-	/**
-	 * 密码允许错误次数
-	 */
-	private int passErrorCount = 6;
+    /** 密码锁定小时数 */
+    private int passErrorHour = 6;
 
-	/**
-	 * 密码锁定小时数
-	 */
-	private int passErrorHour = 6;
-	
-	/**
-	 * 是否启用乐观锁
-	 */
-	private boolean optimisticLock = true;
+    /** 是否启用乐观锁 */
+    private boolean optimisticLock = true;
 
-	/**
-	 * 默认grid分页工厂类
-	 */
-	private IGrid defaultGridFactory = new JqGridFactory();
+    /** 默认 grid 分页工厂类 */
+    private IGrid defaultGridFactory = new JqGridFactory();
 
-	/**
-	 * 默认日志处理工厂类
-	 */
-	private ILog defaultLogFactory = new BladeLogFactory();
+    /** 默认日志处理工厂类 */
+    private ILog defaultLogFactory = new BladeLogFactory();
 
-	/**
-	 * 默认自定义权限检查工厂类
-	 */
-	private ICheck defaultCheckFactory = new PermissionCheckFactory();
+    /** 默认自定义权限检查工厂类 */
+    private ICheck defaultCheckFactory = new PermissionCheckFactory();
 
-	/**
-	 * 默认shirorealm工厂类
-	 */
-	private IShiro defaultShiroFactory = new DefaultShiroFactroy();
-	
-	/**
-	 * 默认文件上传转换工厂类
-	 */
-	private IFileProxy defaultFileProxyFactory = new DefaultFileProxyFactory();
-	
-	/**
-	 * 默认CURD工厂类
-	 */
-	private ICURD defaultCURDFactory = new CURDInterceptor();
-	
-	/**
-	 * 默认分页工厂类
-	 */
-	private IQuery defaultPageFactory = new QueryInterceptor();
-	
-	/**
-	 * 默认查询工厂类
-	 */
-	private IQuery defaultQueryFactory = new QueryInterceptor();
-	
-	/**
-	 * 默认select查询工厂类
-	 */
-	private ISelect defaultSelectFactory = new SelectInterceptor();
+    /** 默认 shirorealm 工厂类 */
+    private IShiro defaultShiroFactory = new DefaultShiroFactroy();
 
-	private static final Cst me = new Cst();
+    /** 默认文件上传转换工厂类 */
+    private IFileProxy defaultFileProxyFactory = new DefaultFileProxyFactory();
 
-	private Cst() {
+    /** 默认 CURD 工厂类 */
+    private ICURD defaultCURDFactory = new CURDInterceptor();
 
-	}
+    /** 默认分页工厂类 */
+    private IQuery defaultPageFactory = new QueryInterceptor();
 
-	public static Cst me() {
-		return me;
-	}
+    /** 默认查询工厂类 */
+    private IQuery defaultQueryFactory = new QueryInterceptor();
 
-	public boolean isDevMode() {
-		return devMode;
-	}
+    /** 默认 select 查询工厂类 */
+    private ISelect defaultSelectFactory = new SelectInterceptor();
 
-	public void setDevMode(boolean devMode) {
-		this.devMode = devMode;
-	}
+    private static final Cst me = new Cst();
 
-	public boolean isRemoteMode() {
-		return remoteMode;
-	}
+    private Cst()
+    {
+    }
 
-	public void setRemoteMode(boolean remoteMode) {
-		this.remoteMode = remoteMode;
-	}
+    public static Cst me()
+    {
+        return me;
+    }
 
-	public boolean isLuceneIndex() {
-		return luceneIndex;
-	}
+    public boolean isDevMode()
+    {
+        return devMode;
+    }
 
-	public void setLuceneIndex(boolean luceneIndex) {
-		this.luceneIndex = luceneIndex;
-	}
+    public void setDevMode(boolean devMode)
+    {
+        this.devMode = devMode;
+    }
 
-	public String getRemotePath() {
-		return remotePath;
-	}
+    public boolean isRemoteMode()
+    {
+        return remoteMode;
+    }
 
-	public void setRemotePath(String remotePath) {
-		this.remotePath = remotePath;
-	}
+    public void setRemoteMode(boolean remoteMode)
+    {
+        this.remoteMode = remoteMode;
+    }
 
-	public String getUploadPath() {
-		return uploadPath;
-	}
+    public boolean isLuceneIndex()
+    {
+        return luceneIndex;
+    }
 
-	public void setUploadPath(String uploadPath) {
-		this.uploadPath = uploadPath;
-	}
+    public void setLuceneIndex(boolean luceneIndex)
+    {
+        this.luceneIndex = luceneIndex;
+    }
 
-	public String getDownloadPath() {
-		return downloadPath;
-	}
+    public String getRemotePath()
+    {
+        return remotePath;
+    }
 
-	public void setDownloadPath(String downloadPath) {
-		this.downloadPath = downloadPath;
-	}
+    public void setRemotePath(String remotePath)
+    {
+        this.remotePath = remotePath;
+    }
 
-	public int getPassErrorCount() {
-		return passErrorCount;
-	}
+    public String getUploadPath()
+    {
+        return uploadPath;
+    }
 
-	public void setPassErrorCount(int passErrorCount) {
-		this.passErrorCount = passErrorCount;
-	}
+    public void setUploadPath(String uploadPath)
+    {
+        this.uploadPath = uploadPath;
+    }
 
-	public int getPassErrorHour() {
-		return passErrorHour;
-	}
+    public String getDownloadPath()
+    {
+        return downloadPath;
+    }
 
-	public void setPassErrorHour(int passErrorHour) {
-		this.passErrorHour = passErrorHour;
-	}
+    public void setDownloadPath(String downloadPath)
+    {
+        this.downloadPath = downloadPath;
+    }
 
-	public String getUploadRealPath() {
-		return (remoteMode ? remotePath : realPath) + uploadPath;
-	}
+    public int getPassErrorCount()
+    {
+        return passErrorCount;
+    }
 
-	public String getUploadCtxPath() {
-		return contextPath + uploadPath;
-	}
+    public void setPassErrorCount(int passErrorCount)
+    {
+        this.passErrorCount = passErrorCount;
+    }
 
-	public String getRealPath() {
-		return realPath;
-	}
+    public int getPassErrorHour()
+    {
+        return passErrorHour;
+    }
 
-	public String getContextPath() {
-		return contextPath;
-	}
+    public void setPassErrorHour(int passErrorHour)
+    {
+        this.passErrorHour = passErrorHour;
+    }
 
-	public boolean isOptimisticLock() {
-		return optimisticLock;
-	}
+    public String getUploadRealPath()
+    {
+        return (remoteMode ? remotePath : realPath) + uploadPath;
+    }
 
-	public void setOptimisticLock(boolean optimisticLock) {
-		this.optimisticLock = optimisticLock;
-	}
+    public String getUploadCtxPath()
+    {
+        return contextPath + uploadPath;
+    }
 
-	public IGrid getDefaultGridFactory() {
-		return defaultGridFactory;
-	}
+    public String getRealPath()
+    {
+        return realPath;
+    }
 
-	public void setDefaultGridFactory(IGrid defaultGridFactory) {
-		this.defaultGridFactory = defaultGridFactory;
-	}
-	
-	public ILog getDefaultLogFactory() {
-		return defaultLogFactory;
-	}
+    public String getContextPath()
+    {
+        return contextPath;
+    }
 
-	public void setDefaultLogFactory(ILog defaultLogFactory) {
-		this.defaultLogFactory = defaultLogFactory;
-	}
+    public boolean isOptimisticLock()
+    {
+        return optimisticLock;
+    }
 
-	public ICheck getDefaultCheckFactory() {
-		return defaultCheckFactory;
-	}
+    public void setOptimisticLock(boolean optimisticLock)
+    {
+        this.optimisticLock = optimisticLock;
+    }
 
-	public void setDefaultCheckFactory(ICheck defaultCheckFactory) {
-		this.defaultCheckFactory = defaultCheckFactory;
-	}
+    public IGrid getDefaultGridFactory()
+    {
+        return defaultGridFactory;
+    }
 
-	public IShiro getDefaultShiroFactory() {
-		return defaultShiroFactory;
-	}
+    public void setDefaultGridFactory(IGrid defaultGridFactory)
+    {
+        this.defaultGridFactory = defaultGridFactory;
+    }
 
-	public void setDefaultShiroFactory(IShiro defaultShiroFactory) {
-		this.defaultShiroFactory = defaultShiroFactory;
-	}
+    public ILog getDefaultLogFactory()
+    {
+        return defaultLogFactory;
+    }
 
-	public IFileProxy getDefaultFileProxyFactory() {
-		return defaultFileProxyFactory;
-	}
+    public void setDefaultLogFactory(ILog defaultLogFactory)
+    {
+        this.defaultLogFactory = defaultLogFactory;
+    }
 
-	public void setDefaultFileProxyFactory(IFileProxy defaultFileProxyFactory) {
-		this.defaultFileProxyFactory = defaultFileProxyFactory;
-	}
+    public ICheck getDefaultCheckFactory()
+    {
+        return defaultCheckFactory;
+    }
 
-	public ICURD getDefaultCURDFactory() {
-		return defaultCURDFactory;
-	}
+    public void setDefaultCheckFactory(ICheck defaultCheckFactory)
+    {
+        this.defaultCheckFactory = defaultCheckFactory;
+    }
 
-	public void setDefaultCURDFactory(ICURD defaultCURDFactory) {
-		this.defaultCURDFactory = defaultCURDFactory;
-	}
+    public IShiro getDefaultShiroFactory()
+    {
+        return defaultShiroFactory;
+    }
 
-	public IQuery getDefaultPageFactory() {
-		return defaultPageFactory;
-	}
+    public void setDefaultShiroFactory(IShiro defaultShiroFactory)
+    {
+        this.defaultShiroFactory = defaultShiroFactory;
+    }
 
-	public void setDefaultPageFactory(IQuery defaultPageFactory) {
-		this.defaultPageFactory = defaultPageFactory;
-	}
+    public IFileProxy getDefaultFileProxyFactory()
+    {
+        return defaultFileProxyFactory;
+    }
 
-	public IQuery getDefaultQueryFactory() {
-		return defaultQueryFactory;
-	}
+    public void setDefaultFileProxyFactory(IFileProxy defaultFileProxyFactory)
+    {
+        this.defaultFileProxyFactory = defaultFileProxyFactory;
+    }
 
-	public void setDefaultQueryFactory(IQuery defaultQueryFactory) {
-		this.defaultQueryFactory = defaultQueryFactory;
-	}
+    public ICURD getDefaultCURDFactory()
+    {
+        return defaultCURDFactory;
+    }
 
-	public ISelect getDefaultSelectFactory() {
-		return defaultSelectFactory;
-	}
+    public void setDefaultCURDFactory(ICURD defaultCURDFactory)
+    {
+        this.defaultCURDFactory = defaultCURDFactory;
+    }
 
-	public void setDefaultSelectFactory(ISelect defaultSelectFactory) {
-		this.defaultSelectFactory = defaultSelectFactory;
-	}
-	
-	
+    public IQuery getDefaultPageFactory()
+    {
+        return defaultPageFactory;
+    }
+
+    public void setDefaultPageFactory(IQuery defaultPageFactory)
+    {
+        this.defaultPageFactory = defaultPageFactory;
+    }
+
+    public IQuery getDefaultQueryFactory()
+    {
+        return defaultQueryFactory;
+    }
+
+    public void setDefaultQueryFactory(IQuery defaultQueryFactory)
+    {
+        this.defaultQueryFactory = defaultQueryFactory;
+    }
+
+    public ISelect getDefaultSelectFactory()
+    {
+        return defaultSelectFactory;
+    }
+
+    public void setDefaultSelectFactory(ISelect defaultSelectFactory)
+    {
+        this.defaultSelectFactory = defaultSelectFactory;
+    }
 }

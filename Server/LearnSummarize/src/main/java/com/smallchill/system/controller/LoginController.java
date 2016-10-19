@@ -30,10 +30,7 @@ import com.smallchill.core.toolbox.log.BladeLogManager;
 import com.smallchill.system.meta.intercept.LoginValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.shiro.authc.DisabledAccountException;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.UnknownAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
@@ -85,12 +82,15 @@ public class LoginController extends BaseController implements Const
         {
             return error("验证码错误");
         }
+        // 得到 Subject 及创建用户名/密码身份验证 Token（即用户身份/凭证）
         Subject currentUser = ShiroKit.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(account, password.toCharArray());
         token.setRememberMe(true);
         try
         {
+            // 登录，即身份验证
             currentUser.login(token);
+
             Session session = ShiroKit.getSession();
             LogKit.println("\nsessionID	: {} ", session.getId());
             LogKit.println("sessionHost	: {}", session.getHost());
@@ -98,18 +98,32 @@ public class LoginController extends BaseController implements Const
         }
         catch (UnknownAccountException e)
         {
+            // 错误的帐号
             log.error("账号不存在!", e);
             return error("账号不存在");
         }
         catch (DisabledAccountException e)
         {
+            // 禁用的帐号
             log.error("账号未启用!", e);
             return error("账号未启用");
         }
+        catch (ExcessiveAttemptsException e)
+        {
+            log.error("登录失败次数过多!", e);
+            return error("登录失败次数过多");
+        }
         catch (IncorrectCredentialsException e)
         {
+            // 错误的凭证
             log.error("密码错误!", e);
             return error("密码错误");
+        }
+        catch (ExpiredCredentialsException e)
+        {
+            // 过期的凭证
+            log.error("登陆失效,请重新登陆!", e);
+            return error("登陆失效,请重新登陆!");
         }
         catch (RuntimeException e)
         {
@@ -125,6 +139,7 @@ public class LoginController extends BaseController implements Const
     {
         doLog(ShiroKit.getSession(), "登出");
         Subject currentUser = ShiroKit.getSubject();
+        // 退出
         currentUser.logout();
         return redirect + "/login";
     }
@@ -172,7 +187,6 @@ public class LoginController extends BaseController implements Const
     public void getVersionInfo(HttpServletRequest request, HttpServletResponse response)
     {
         String MENU_CACHE = ConstCache.MENU_CACHE;
-
 
 
         String platform = getParameter("platform");
