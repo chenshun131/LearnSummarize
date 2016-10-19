@@ -253,5 +253,4 @@ public class MenuController extends BaseController implements ConstShiro
         });
         return sideBar;
     }
-
 }

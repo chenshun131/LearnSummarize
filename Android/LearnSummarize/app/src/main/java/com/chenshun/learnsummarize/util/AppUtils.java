@@ -57,18 +57,20 @@ public final class AppUtils
     }
 
     /**
-     * 得到软件版本号
+     * 得到软件版本号 => android:versionCode
      *
      * @param context
      *         上下文
-     * @return 当前版本Code
+     * @return 当前版本 Code，返回 -1 表示获取版本号失败
      */
     public static int getVerCode(Context context)
     {
         int verCode = -1;
         try
         {
+            // getPackageName()是你当前类的包名，0代表是获取版本信息
             String packageName = context.getPackageName();
+            // The version number of this package, as specified by the <manifest> tag's versionCode attribute
             verCode = context.getPackageManager().getPackageInfo(packageName, 0).versionCode;
         }
         catch (PackageManager.NameNotFoundException e)
@@ -79,7 +81,7 @@ public final class AppUtils
     }
 
     /**
-     * 得到软件显示版本信息
+     * 得到软件显示版本信息 => android:versionName
      *
      * @param context
      *         上下文
@@ -87,10 +89,12 @@ public final class AppUtils
      */
     public static String getVerName(Context context)
     {
-        String verName = "";
+        String verName = "UNKNOW VERSION NAME";
         try
         {
+            // getPackageName()是你当前类的包名，0 代表是获取版本信息
             String packageName = context.getPackageName();
+            // The version name of this package, as specified by the <manifest> tag's versionName attribute
             verName = context.getPackageManager().getPackageInfo(packageName, 0).versionName;
         }
         catch (PackageManager.NameNotFoundException e)
@@ -113,8 +117,7 @@ public final class AppUtils
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setAction(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.fromFile(file),
-                "application/vnd.android.package-archive");
+        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
         context.startActivity(intent);
     }
 
@@ -432,8 +435,7 @@ public final class AppUtils
      */
     public static int getDeviceUsableMemory(Context context)
     {
-        ActivityManager am = (ActivityManager) context
-                .getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         MemoryInfo mi = new MemoryInfo();
         am.getMemoryInfo(mi);
         // 返回当前系统的可用内存
@@ -449,7 +451,6 @@ public final class AppUtils
      */
     public static List<PackageInfo> getAllApps(Context context)
     {
-
         List<PackageInfo> apps = new ArrayList<PackageInfo>();
         PackageManager pManager = context.getPackageManager();
         List<PackageInfo> paklist = pManager.getInstalledPackages(0);
@@ -509,17 +510,14 @@ public final class AppUtils
             Class<?> systemProperties = Class.forName("android.os.SystemProperties");
             try
             {
-                Method get = systemProperties.getMethod("get",
-                        String.class, String.class);
+                Method get = systemProperties.getMethod("get", String.class, String.class);
                 if (get == null)
                 {
                     return "WTF?!";
                 }
                 try
                 {
-                    final String value = (String) get.invoke(
-                            systemProperties, "persist.sys.dalvik.vm.lib",
-                        /* Assuming default is */"Dalvik");
+                    final String value = (String) get.invoke(systemProperties, "persist.sys.dalvik.vm.lib", /* Assuming default is */"Dalvik");
                     if ("libdvm.so".equals(value))
                     {
                         return "Dalvik";
@@ -532,7 +530,6 @@ public final class AppUtils
                     {
                         return "ART debug build";
                     }
-
                     return value;
                 }
                 catch (IllegalAccessException e)
@@ -586,7 +583,6 @@ public final class AppUtils
                     break;
                 }
             }
-
         }
         catch (PackageManager.NameNotFoundException e)
         {

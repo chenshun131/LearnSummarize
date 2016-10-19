@@ -19,6 +19,7 @@ import com.chenshun.learnsummarize.ui.util.HandlerCache;
 import com.chenshun.learnsummarize.ui.util.HandlerInterface;
 import com.chenshun.learnsummarize.ui.util.MyHandler;
 import com.chenshun.learnsummarize.util.Logs;
+import com.lzy.okgo.OkGo;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.umeng.analytics.MobclickAgent;
@@ -106,6 +107,7 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
     protected void onDestroy()
     {
         Logs.d(setTag(), this.getClass().getSimpleName() + " onDestroy() invoked!!");
+        OkGo.getInstance().cancelTag(this);// 根据 Tag 取消请求
         super.onDestroy();
     }
 

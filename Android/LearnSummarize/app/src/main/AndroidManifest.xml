@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.chenshun.learnsummarize"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.chenshun.learnsummarize">
 
     <!-- Normal Permissions -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -29,13 +29,27 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.chenshun.learnsummarize.ui.activity.MainActivity">
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.InitActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
 
         <receiver android:name="com.chenshun.learnsummarize.receiver.ConnectionChangeReceiver">
             <intent-filter>
@@ -52,5 +66,4 @@
             android:name="UMENG_CHANNEL"
             android:value="LearnSummarize"/>
     </application>
-
 </manifest>

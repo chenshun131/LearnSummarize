@@ -20,4 +20,7 @@ public interface ConstCache
     final static String DIY_CACHE = "diyCache";
 
     final static String SYS_CACHE = "sysCache";
+
+    /** 存放 App 名称 */
+    final static String SYS_APPINFO = "appInfo";
 }

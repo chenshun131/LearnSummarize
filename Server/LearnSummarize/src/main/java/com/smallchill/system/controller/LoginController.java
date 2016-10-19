@@ -19,6 +19,7 @@ import com.smallchill.common.base.BaseController;
 import com.smallchill.common.vo.LoginLog;
 import com.smallchill.core.annotation.Before;
 import com.smallchill.core.constant.Const;
+import com.smallchill.core.constant.ConstCache;
 import com.smallchill.core.plugins.dao.Blade;
 import com.smallchill.core.shiro.ShiroKit;
 import com.smallchill.core.toolbox.Func;
@@ -164,6 +165,28 @@ public class LoginController extends BaseController implements Const
         catch (Exception ex)
         {
             LogKit.logNothing(ex);
+        }
+    }
+
+    @RequestMapping(value = "/getVersionInfo")
+    public void getVersionInfo(HttpServletRequest request, HttpServletResponse response)
+    {
+        String MENU_CACHE = ConstCache.MENU_CACHE;
+
+
+
+        String platform = getParameter("platform");
+        if ("0".equals(platform))
+        {
+            // 0:浏览器
+        }
+        else if ("1".equals(platform))
+        {
+            // 1:安卓
+        }
+        else if ("2".equals(platform))
+        {
+            // 2:iOS
         }
     }
 }

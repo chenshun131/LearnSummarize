@@ -111,6 +111,7 @@ public class CoreService extends Service
                 return;
             }
         }
+        transaction.context = context;
         Message msg = Message.obtain();
         msg.obj = transaction;
         sCoreService.mTransactionHandler.sendMessage(msg);
@@ -179,6 +180,7 @@ public class CoreService extends Service
         public ContentValues values;
         public StringCallback callback;
         public String content;
+        public Context context;
 
         public Transaction()
         {
@@ -219,6 +221,7 @@ public class CoreService extends Service
         }
         if (baseRequest != null)
         {
+            baseRequest.tag(transaction.context);
             switch (transaction.what)
             {
                 case Transaction.EVENT_REQUEST_CAPTCHA:// 获取验证码

@@ -33,9 +33,7 @@ PRIMARY KEY (`F_IT_XL`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=2
-
-;
+AUTO_INCREMENT=2;
 
 -- ----------------------------
 -- Records of tb_tfw_tzgg
@@ -60,9 +58,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=295
-
-;
+AUTO_INCREMENT=295;
 
 -- ----------------------------
 -- Records of tfw_attach
@@ -87,9 +83,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=14
-
-;
+AUTO_INCREMENT=14;
 
 -- ----------------------------
 -- Records of tfw_dept
@@ -114,9 +108,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=46
-
-;
+AUTO_INCREMENT=46;
 
 -- ----------------------------
 -- Records of tfw_dict
@@ -142,9 +134,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=2
-
-;
+AUTO_INCREMENT=2;
 
 -- ----------------------------
 -- Records of tfw_generate
@@ -170,9 +160,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=70
-
-;
+AUTO_INCREMENT=70;
 
 -- ----------------------------
 -- Table structure for tfw_menu
@@ -199,9 +187,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=105
-
-;
+AUTO_INCREMENT=105;
 
 -- ----------------------------
 -- Records of tfw_menu
@@ -227,9 +213,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=420
-
-;
+AUTO_INCREMENT=420;
 
 -- ----------------------------
 -- Table structure for tfw_parameter
@@ -248,9 +232,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=2
-
-;
+AUTO_INCREMENT=2;
 
 -- ----------------------------
 -- Records of tfw_parameter
@@ -271,9 +253,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=1998
-
-;
+AUTO_INCREMENT=1998;
 
 -- ----------------------------
 -- Records of tfw_relation
@@ -300,9 +280,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=7
-
-;
+AUTO_INCREMENT=7;
 
 -- ----------------------------
 -- Records of tfw_role
@@ -324,9 +302,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=128
-
-;
+AUTO_INCREMENT=128;
 
 -- ----------------------------
 -- Records of tfw_role_ext
@@ -358,9 +334,7 @@ PRIMARY KEY (`ID`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=23
-
-;
+AUTO_INCREMENT=23;
 
 -- ----------------------------
 -- Records of tfw_user
@@ -483,3 +457,24 @@ ALTER TABLE `tfw_role_ext` AUTO_INCREMENT=128;
 -- Auto increment value for tfw_user
 -- ----------------------------
 ALTER TABLE `tfw_user` AUTO_INCREMENT=23;
+
+
+
+-- 增加的App 版本信息
+
+-- ----------------------------
+-- Table structure for AppInfo
+-- ----------------------------
+DROP TABLE IF EXISTS AppInfo;
+CREATE TABLE AppInfo
+(
+id INT(5) PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
+versionCode INT(5) DEFAULT 1 COMMENT '版本号,默认1',
+versionName CHAR(10) NOT NULL COMMENT '版本名称',
+downloadUrl CHAR(100) NOT NULL COMMENT '下载地址',
+updateTime DATETIME NOT NULL DEFAULT NOW() COMMENT '最后一次更新时间',
+description CHAR(100) DEFAULT '' COMMENT '描述信息',
+type INT(2) DEFAULT 0 COMMENT '0:浏览器 1:安卓 2:iOS',
+updateflag INT(2) DEFAULT 0 COMMENT '0:不强制升级 1:强制升级'
+)
+
