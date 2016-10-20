@@ -45,7 +45,7 @@ public class Cst
     private boolean luceneIndex = false;
 
     /** 上传下载路径(物理路径) */
-    private String remotePath = "D://blade";
+    private String remotePath = "/Users/chenshun131/Desktop/AllMyFile/Datas";
 
     /** 上传路径(相对路径) */
     private String uploadPath = "/upload";

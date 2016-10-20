@@ -475,6 +475,6 @@ downloadUrl CHAR(100) NOT NULL COMMENT '下载地址',
 updateTime DATETIME NOT NULL DEFAULT NOW() COMMENT '最后一次更新时间',
 description CHAR(100) DEFAULT '' COMMENT '描述信息',
 type INT(2) DEFAULT 0 COMMENT '0:浏览器 1:安卓 2:iOS',
-updateflag INT(2) DEFAULT 0 COMMENT '0:不强制升级 1:强制升级'
+updateflag INT(2) DEFAULT 0 COMMENT '0:不强制升级(默认) 1:强制升级'
 )
 

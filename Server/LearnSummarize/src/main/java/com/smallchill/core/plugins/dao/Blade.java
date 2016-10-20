@@ -109,6 +109,7 @@ public class Blade
                 blade = pool.get(modelClass);
                 if (null == blade)
                 {
+                    // 通过获取 @Table 指定的表名来查询对应的数据
                     DbName dbName = modelClass.getAnnotation(DbName.class);
                     if (null == dbName)
                     {
