@@ -22,10 +22,10 @@ import org.beetl.sql.core.annotatoin.Table;
 import com.smallchill.core.annotation.BindID;
 import com.smallchill.core.base.model.BaseModel;
 
+// 参数表
 @Table(name = "tfw_parameter")
 @BindID(name = "id")
 @SuppressWarnings("serial")
-//参数表
 public class Parameter extends BaseModel
 {
     private Integer id; //主键

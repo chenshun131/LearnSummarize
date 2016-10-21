@@ -98,38 +98,31 @@ public class GenerateController extends CurdController<Generate>
     {
         String ids = getParameter("ids");
         List<Generate> list = Blade.create(Generate.class).findBy("id in (#{join(ids)})", Paras.create().set("ids", ids.split(",")));
-
         for (Generate gen : list)
         {
             boolean flag = false;
-
             String realPath = gen.getRealpath() + File.separator + "src" + File.separator + "main";
             String packageName = gen.getPackagename();
             String modelName = gen.getModelname();
             String upperModelName = StrKit.firstCharToUpperCase(modelName);
             String lowerModelName = StrKit.firstCharToLowerCase(modelName);
-
             String tableName = gen.getTablename();
             String pkName = gen.getPkname();
             String path = realPath + File.separator + "java" + File.separator + packageName.replace(StrKit.DOT, File.separator);
             String resourcesPath = realPath + File.separator + "resources";
             String webappPath = realPath + File.separator + "webapp" + File.separator + "WEB-INF" + File.separator + "view";
-
-            //java
+            // java
             String controllerPath = path + File.separator + "controller" + File.separator + upperModelName + "Controller.java";
             String modelPath = path + File.separator + "model" + File.separator + upperModelName + ".java";
             String servicePath = path + File.separator + "service" + File.separator + upperModelName + "Service.java";
             String serviceimplPath = path + File.separator + "service" + File.separator + "impl" + File.separator + upperModelName + "ServiceImpl.java";
-
-            //resources
+            // resources
             String sqlPath = resourcesPath + File.separator + "beetlsql" + File.separator + upperModelName + ".md";
-
-            //webapp
+            // webapp
             String indexPath = webappPath + File.separator + "gen" + File.separator + lowerModelName + File.separator + lowerModelName + ".html";
             String addPath = webappPath + File.separator + "gen" + File.separator + lowerModelName + File.separator + lowerModelName + "_add.html";
             String editPath = webappPath + File.separator + "gen" + File.separator + lowerModelName + File.separator + lowerModelName + "_edit.html";
             String viewPath = webappPath + File.separator + "gen" + File.separator + lowerModelName + File.separator + lowerModelName + "_view.html";
-
             Map<String, String> pathMap = new HashMap<>();
             pathMap.put("controllerPath", controllerPath);
             pathMap.put("modelPath", modelPath);
@@ -140,7 +133,6 @@ public class GenerateController extends CurdController<Generate>
             pathMap.put("addPath", addPath);
             pathMap.put("editPath", editPath);
             pathMap.put("viewPath", viewPath);
-
             for (Map.Entry<String, String> entry : pathMap.entrySet())
             {
                 File file = new File(entry.getValue());
@@ -154,28 +146,23 @@ public class GenerateController extends CurdController<Generate>
                     file.getParentFile().mkdirs();
                 }
             }
-
             if (flag)
             {
                 continue;
             }
-
-            //java
+            // java
             String baseTemplatePath = Cst.me().getRealPath() + "WEB-INF" + File.separator + "view" + File.separator + "common" + File.separator + "_template" + File.separator;
             String controllerTemplatePath = baseTemplatePath + "_controller" + File.separator + "_controller.bld";
             String modelTemplatePath = baseTemplatePath + "_model" + File.separator + "_model.bld";
             String serviceTemplatePath = baseTemplatePath + "_service" + File.separator + "_service.bld";
             String serviceimplTemplatePath = baseTemplatePath + "_service" + File.separator + "_impl" + File.separator + "_serviceimpl.bld";
-
-            //resources
+            // resources
             String sqlTemplatePath = baseTemplatePath + "_sql" + File.separator + "_sql.bld";
-
-            //webapp
+            // webapp
             String indexTemplatePath = baseTemplatePath + "_view" + File.separator + "_index.bld";
             String addTemplatePath = baseTemplatePath + "_view" + File.separator + "_add.bld";
             String editTemplatePath = baseTemplatePath + "_view" + File.separator + "_edit.bld";
             String viewTemplatePath = baseTemplatePath + "_view" + File.separator + "_view.bld";
-
             Paras rd = Paras.create();
             rd.set("realPath", realPath);
             rd.set("packageName", packageName);
@@ -183,21 +170,17 @@ public class GenerateController extends CurdController<Generate>
             rd.set("lowerModelName", lowerModelName);
             rd.set("tableName", tableName);
             rd.set("pkName", pkName);
-
-            //java
+            // java
             BeetlMaker.makeHtml(controllerTemplatePath, rd, controllerPath);
             BeetlMaker.makeHtml(modelTemplatePath, rd, modelPath);
             BeetlMaker.makeHtml(serviceTemplatePath, rd, servicePath);
             BeetlMaker.makeHtml(serviceimplTemplatePath, rd, serviceimplPath);
-
-            //resources
+            // resources
             BeetlMaker.makeHtml(sqlTemplatePath, rd, sqlPath);
-
-            //webapp
+            // webapp
             final TableDesc tableDesc = Blade.dao().getMetaDataManager().getTable(tableName);
             Set<String> cols = tableDesc.getIdNames();
             rd.set("cols", cols);
-
             BeetlMaker.makeHtml(indexTemplatePath, rd, indexPath);
             BeetlMaker.makeHtml(addTemplatePath, rd, addPath);
             BeetlMaker.makeHtml(editTemplatePath, rd, editPath);

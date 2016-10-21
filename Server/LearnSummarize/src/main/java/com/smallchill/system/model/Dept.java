@@ -22,10 +22,10 @@ import org.beetl.sql.core.annotatoin.Table;
 import com.smallchill.core.annotation.BindID;
 import com.smallchill.core.base.model.BaseModel;
 
+// 部门表
 @Table(name = "tfw_dept")
 @BindID(name = "id")
 @SuppressWarnings("serial")
-//部门表
 public class Dept extends BaseModel
 {
     private Integer id; //主键

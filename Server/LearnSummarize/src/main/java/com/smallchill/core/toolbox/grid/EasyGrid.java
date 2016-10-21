@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2015-2016, Chill Zhuang 庄骞 (smallchill@163.com).
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,97 +18,111 @@ package com.smallchill.core.toolbox.grid;
 import java.util.List;
 
 /**
- * @title EasyGrid封装bean
  * @author zhuangqian
+ * @title EasyGrid封装bean
  * @email smallchill@163.com
  * @date 2016-1-18下午4:07:50
  * @copyright 2016
  */
-public class EasyGrid<E> {
-	/** 总记录  **/
-	private long total; 
-	
-	/** 显示的记录  **/
-	private List<E> rows; 
+public class EasyGrid<E>
+{
+    /** 总记录 */
+    private long total;
 
-	/** 开始记录  **/
-	private int from;
+    /** 显示的记录 */
+    private List<E> rows;
 
-	/** 结束记录  **/
-	private int size;
+    /** 开始记录 */
+    private int from;
 
-	/** 当前页  **/
-	private int nowpage; 
+    /** 结束记录 */
+    private int size;
 
-	/** 每页显示的记录数  **/
-	private int pagesize; 
+    /** 当前页 */
+    private int nowpage;
 
-	
-	public EasyGrid() {
+    /** 每页显示的记录数 */
+    private int pagesize;
 
-	}
-	
-	public EasyGrid(long total, List<E> rows, int nowpage, int pagesize) {
-		super();
-		this.total = total;
-		this.rows = rows;
-		this.nowpage = nowpage;
-		this.pagesize = pagesize;
-		onInit();
-	}
 
-	public void onInit(){
-        //计算开始的记录和结束的记录  
+    public EasyGrid()
+    {
+    }
+
+    public EasyGrid(long total, List<E> rows, int nowpage, int pagesize)
+    {
+        super();
+        this.total = total;
+        this.rows = rows;
+        this.nowpage = nowpage;
+        this.pagesize = pagesize;
+        onInit();
+    }
+
+    public void onInit()
+    {
+        // 计算开始的记录和结束的记录
         this.from = (this.nowpage - 1) * this.pagesize;
         this.size = this.pagesize;
-	}
-	
-	public long getTotal() {
-		return total;
-	}
+    }
 
-	public void setTotal(long total) {
-		this.total = total;
-	}
+    public long getTotal()
+    {
+        return total;
+    }
 
-	public List<E> getRows() {
-		return rows;
-	}
+    public void setTotal(long total)
+    {
+        this.total = total;
+    }
 
-	public void setRows(List<E> rows) {
-		this.rows = rows;
-	}
+    public List<E> getRows()
+    {
+        return rows;
+    }
 
-	public int getFrom() {
-		return from;
-	}
+    public void setRows(List<E> rows)
+    {
+        this.rows = rows;
+    }
 
-	public void setFrom(int from) {
-		this.from = from;
-	}
+    public int getFrom()
+    {
+        return from;
+    }
 
-	public int getSize() {
-		return size;
-	}
+    public void setFrom(int from)
+    {
+        this.from = from;
+    }
 
-	public void setSize(int size) {
-		this.size = size;
-	}
+    public int getSize()
+    {
+        return size;
+    }
 
-	public int getNowpage() {
-		return nowpage;
-	}
+    public void setSize(int size)
+    {
+        this.size = size;
+    }
 
-	public void setNowpage(int nowpage) {
-		this.nowpage = nowpage;
-	}
+    public int getNowpage()
+    {
+        return nowpage;
+    }
 
-	public int getPagesize() {
-		return pagesize;
-	}
+    public void setNowpage(int nowpage)
+    {
+        this.nowpage = nowpage;
+    }
 
-	public void setPagesize(int pagesize) {
-		this.pagesize = pagesize;
-	}
+    public int getPagesize()
+    {
+        return pagesize;
+    }
 
+    public void setPagesize(int pagesize)
+    {
+        this.pagesize = pagesize;
+    }
 }

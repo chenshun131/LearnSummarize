@@ -25,7 +25,6 @@ import java.util.Map;
 
 public class AttachFactory extends MetaManager
 {
-
     public Class<? extends MetaIntercept> intercept()
     {
         return AttachIntercept.class;

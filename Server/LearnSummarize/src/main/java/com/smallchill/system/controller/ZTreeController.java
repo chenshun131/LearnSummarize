@@ -89,17 +89,13 @@ public class ZTreeController extends BladeController
     public AjaxResult getTreeListName(@RequestParam String type, @RequestParam String source, @RequestParam String where, @RequestParam String val)
     {
         type = getTypeName(type, source);
-
         final String sqlSource = getSql(type, source);
-
         Map<String, Object> params = Paras.createHashMap();
         if (StrKit.notBlank(where))
         {
             params = JsonKit.parse(where, Map.class);
         }
-
         final Map<String, Object> modelOrMap = params;
-
         List<Map<String, Object>> list = CacheKit.get(DICT_CACHE, "ztree_list_" + type,
                 new ILoader()
                 {
@@ -108,7 +104,6 @@ public class ZTreeController extends BladeController
                         return Db.selectList(sqlSource, modelOrMap);
                     }
                 });
-
         String name = "";
         String key = "id";
         if (type.indexOf("dict") >= 0)

@@ -43,7 +43,6 @@
                     </div>
                     <br>
                     <div class="space-6"></div>
-
                     <div class="position-relative">
                         <div id="login-box" class="login-box visible widget-box no-border">
                             <div class="widget-body">
@@ -52,38 +51,31 @@
                                         <i class="ace-icon fa fa-coffee blue"></i>
                                         请登录
                                     </h4>
-
                                     <div class="space-6"></div>
-
                                     <form method="post" data-imgcode="imgcode" action="${ctxPath}/login" id="loginform">
                                         <div class="input-group input-group-sx">
-														<span class="input-group-addon">
-															<i class="fa fa-user" style="width:15px;"></i>
-														</span>
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user" style="width:15px;"></i>
+                                            </span>
                                             <input type="text" name="account" class="form-control" placeholder="账号">
                                         </div>
                                         <br>
                                         <div class="input-group input-group-sx">
-														<span class="input-group-addon">
-															<i class="fa fa-unlock-alt" style="width:15px;"></i>
-														</span>
-                                            <input type="password" name="password" class="form-control"
-                                                   placeholder="密码">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-unlock-alt" style="width:15px;"></i>
+                                            </span>
+                                            <input type="password" name="password" class="form-control" placeholder="密码">
                                         </div>
                                         <br>
                                         <div class="input-group input-group-sx">
-														<span class="input-group-addon">
-															<i class="fa fa-picture-o" style="width:15px;"></i>
-														</span>
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-picture-o" style="width:15px;"></i>
+                                            </span>
                                             <input type="text" name="imgCode" class="form-control" placeholder="验证码">
 
                                             <span class="input-group-btn">
-															<img id="imgcode" src="${ctxPath}/captcha"
-                                                                 onclick="this.src = '${ctxPath}/captcha?v=' + Math.random()"
-                                                                 height="34"
-                                                                 style="border: 1px solid #ccc;border-left: 0;cursor: pointer;"/>
-														</span>
-
+                                                <img id="imgcode" src="${ctxPath}/captcha" onclick="this.src = '${ctxPath}/captcha?v=' + Math.random()" height="34" style="border: 1px solid #ccc;border-left: 0;cursor: pointer;"/>
+                                            </span>
                                         </div>
                                         <br>
                                         <div class="clearfix">
@@ -99,7 +91,6 @@
                                             </button>
                                         </div>
                                     </form>
-
                                 </div><!-- /.widget-main -->
 
                                 <div class="toolbar clearfix">
@@ -141,17 +132,18 @@
 </script>
 <![endif]-->
 <script type="text/javascript">
-    if ('ontouchstart' in document.documentElement) document.write("<script src='${ctxPath}/static/assets/js/jquery.mobile.custom.js'>" + "<" + "/script>");
+    if ('ontouchstart' in document.documentElement)
+    {
+        document.write("<script src='${ctxPath}/static/assets/js/jquery.mobile.custom.js'>" + "<" + "/script>");
+    }
 </script>
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
-
     $(function () {
         $("form").submit(function () {
             var $form = $(this);
             var $imgcode = $("#" + $form.attr("data-imgcode"));
-
             var ajax = new $ax($form.attr("action"), function (data) {
                 if (data.code === 0) {
                     layer.msg(data.message, {shift: 1});

@@ -22,10 +22,10 @@ import org.beetl.sql.core.annotatoin.Table;
 import com.smallchill.core.annotation.BindID;
 import com.smallchill.core.base.model.BaseModel;
 
+// 菜单表
 @Table(name = "tfw_menu")
 @BindID(name = "id")
 @SuppressWarnings("serial")
-//菜单表
 public class Menu extends BaseModel
 {
     private Integer id; //主键

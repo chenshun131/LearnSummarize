@@ -47,7 +47,6 @@ public class DeptController extends BaseController
         return BASE_PATH + "dept.html";
     }
 
-
     @ResponseBody
     @RequestMapping(KEY_LIST)
     public Object list()

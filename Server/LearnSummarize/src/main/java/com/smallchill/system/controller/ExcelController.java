@@ -44,17 +44,13 @@ public class ExcelController extends BladeController
         Map<String, Object> _postdata = JsonKit.parse(postdata, HashMap.class);
         String[] _colname = colnames.replace("[", "").replace("]", "").split(",");
         List<Map<String, String>> _colmodel = JsonKit.parse(colmodel, ArrayList.class);
-
         String xml_source = Md.getSql(source);
         String menu_source = getInfoByCode(code, "SOURCE");
-
         String _source = (StrKit.notBlank(menu_source)) ? menu_source : xml_source;
-
         if (StrKit.isBlank(_source))
         {
             return error("未找到与该模块匹配的数据源！");
         }
-
         Object where = _postdata.get("where");
         Object sidx = _postdata.get("sidx");
         Object sord = _postdata.get("sord");
@@ -66,14 +62,12 @@ public class ExcelController extends BladeController
         }
         String orderby = (Func.isOneEmpty(sort, order)) ? (" order by " + sort + " " + order) : "";
         String sql = "select {} from (" + _source + ") a " + SqlKeyword.getWhere((String) where) + orderby;
-
         CacheKit.remove(cacheName, "excel_sql_" + code);
         CacheKit.remove(cacheName, "excel_colname_" + code);
         CacheKit.remove(cacheName, "excel_colmodel_" + code);
         CacheKit.put(cacheName, "excel_sql_" + code, sql);
         CacheKit.put(cacheName, "excel_colname_" + code, _colname);
         CacheKit.put(cacheName, "excel_colmodel_" + code, _colmodel);
-
         return json(code);
     }
 
@@ -86,7 +80,6 @@ public class ExcelController extends BladeController
         String sql = CacheKit.get(cacheName, "excel_sql_" + code);
         String[] _colname = CacheKit.get(cacheName, "excel_colname_" + code);
         List<Map<String, String>> _colmodel = CacheKit.get(cacheName, "excel_colmodel_" + code);
-
         List<ExcelExportEntity> entityList = new ArrayList<ExcelExportEntity>();
         StringBuilder sb = new StringBuilder();
         int cnt = 0;
@@ -105,7 +98,6 @@ public class ExcelController extends BladeController
             }
             cnt++;
         }
-
         String menu_name = getInfoByCode(code, "NAME");
         @SuppressWarnings("rawtypes")
         List<Map> dataResult = Db.selectList(Func.format(sql, StrKit.removeSuffix(sb.toString(), ",")));
@@ -113,7 +105,6 @@ public class ExcelController extends BladeController
         exportParams.setColor(HSSFColor.GREY_50_PERCENT.index);
         exportParams.setAddIndex(true);
         exportParams.setIndexName("序号");
-
         modelMap.put(MapExcelConstants.ENTITY_LIST, entityList);
         modelMap.put(MapExcelConstants.MAP_LIST, dataResult);
         modelMap.put(MapExcelConstants.FILE_NAME, menu_name + DateKit.getAllTime());

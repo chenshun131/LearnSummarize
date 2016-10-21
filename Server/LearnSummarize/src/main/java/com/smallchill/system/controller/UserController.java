@@ -152,7 +152,6 @@ public class UserController extends BaseController implements ConstShiro
         return BASE_PATH + "user_view.html";
     }
 
-
     @ResponseBody
     @Before(UserValidator.class)
     @RequestMapping(KEY_SAVE)
@@ -384,7 +383,6 @@ public class UserController extends BaseController implements ConstShiro
                 " on m.id=r.id",
                 " where m.status=1 order by m.levels,m.num asc"
         );
-
         List<Map> menu = Db.selectList(sb.toString());
         return json(menu);
     }
@@ -396,13 +394,11 @@ public class UserController extends BaseController implements ConstShiro
     {
         String userId = getParameter("userId");
         Map roleOut = Db.selectOne("select ROLEOUT from tfw_role_ext where userId = #{userId}", Paras.create().set("userId", userId));
-
         String out = "0";
         if (!Func.isEmpty(roleOut))
         {
             out = Func.toStr(roleOut.get("ROLEOUT"));
         }
-
         StringBuilder sb = Func.builder(
                 "select m.id \"id\",(select id from tfw_menu  where code=m.pCode) \"pId\",name \"name\",(case when m.levels=1 then 'true' else 'false' end) \"open\",(case when r.id is not null then 'true' else 'false' end) \"checked\"",
                 " from tfw_menu m",
@@ -410,7 +406,6 @@ public class UserController extends BaseController implements ConstShiro
                 " on m.id=r.id",
                 " where m.status=1 order by m.levels,m.num asc"
         );
-
         List<Map> menu = Db.selectList(sb.toString());
         return json(menu);
     }

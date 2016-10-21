@@ -36,7 +36,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DbManager
 {
     private static Map<String, DbManager> pool = new ConcurrentHashMap<String, DbManager>();
-
     private volatile SQLManager sql = null;
 
     public static DbManager init()

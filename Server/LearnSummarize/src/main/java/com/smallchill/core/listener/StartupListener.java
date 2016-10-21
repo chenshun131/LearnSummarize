@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2015-2016, Chill Zhuang 庄骞 (smallchill@163.com).
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -28,50 +28,54 @@ import com.smallchill.core.plugins.connection.ConnectionPlugin;
 
 /**
  * 启动监听器
- * 
  */
 @Component
-public class StartupListener implements ApplicationListener<ContextRefreshedEvent> {
+public class StartupListener implements ApplicationListener<ContextRefreshedEvent>
+{
+    @Override
+    public void onApplicationEvent(ContextRefreshedEvent event)
+    {
+        if (event.getApplicationContext().getParent() == null)
+        {
+            globalConstants(Cst.me());
+            registerPlugins();
+            globalSettings();
+            afterBladeStart();
+        }
+    }
 
-	@Override
-	public void onApplicationEvent(ContextRefreshedEvent event) {
-		if (event.getApplicationContext().getParent() == null) {
-			globalConstants(Cst.me());
-			registerPlugins();
-			globalSettings();
-			afterBladeStart();
-		}
-	}
-	
-	/**   
-	 * 全局配置
-	*/
-	private void globalConstants(Cst me){
-		BladeConfig.getConf().globalConstants(me);
-	}
+    /**
+     * 全局配置
+     */
+    private void globalConstants(Cst me)
+    {
+        BladeConfig.getConf().globalConstants(me);
+    }
 
-	/**
-	 * 插件的启用
-	 */
-	private void registerPlugins() {
-		IPluginFactroy plugins = PluginFactory.init();
-		plugins.register(ConnectionPlugin.init());
-		BladeConfig.getConf().registerPlugins(plugins);//自定义配置插件	
-		PluginManager.init().start();
-	}
-	
-	/**   
-	 * 全局配置
-	*/
-	private void globalSettings(){
-		BladeConfig.getConf().globalSettings();
-	}
-	
-	/**   
-	 * 系统启动后执行
-	*/
-	private void afterBladeStart(){
-		BladeConfig.getConf().afterBladeStart();
-	}
-	
+    /**
+     * 插件的启用
+     */
+    private void registerPlugins()
+    {
+        IPluginFactroy plugins = PluginFactory.init();
+        plugins.register(ConnectionPlugin.init());
+        BladeConfig.getConf().registerPlugins(plugins);//自定义配置插件
+        PluginManager.init().start();
+    }
+
+    /**
+     * 全局配置
+     */
+    private void globalSettings()
+    {
+        BladeConfig.getConf().globalSettings();
+    }
+
+    /**
+     * 系统启动后执行
+     */
+    private void afterBladeStart()
+    {
+        BladeConfig.getConf().afterBladeStart();
+    }
 }

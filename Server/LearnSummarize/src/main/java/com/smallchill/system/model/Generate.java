@@ -7,10 +7,10 @@ import org.beetl.sql.core.annotatoin.Table;
 import com.smallchill.core.annotation.BindID;
 import com.smallchill.core.base.model.BaseModel;
 
+// 在线开发
 @Table(name = "tfw_generate")
 @BindID(name = "id")
 @SuppressWarnings("serial")
-//在线开发
 public class Generate extends BaseModel
 {
     private Integer id; //主键

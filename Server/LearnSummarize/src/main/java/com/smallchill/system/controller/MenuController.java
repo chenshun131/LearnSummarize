@@ -216,7 +216,6 @@ public class MenuController extends BaseController implements ConstShiro
         String MENU_CACHE = ConstCache.MENU_CACHE;
         final Object userId = getParameter("userId");
         final Object roleId = getParameter("roleId");
-
         Map<String, Object> userRole = CacheKit.get(MENU_CACHE, "role_ext_" + userId, new ILoader()
         {
             @Override
@@ -225,7 +224,6 @@ public class MenuController extends BaseController implements ConstShiro
                 return Db.selectOne("select * from TFW_ROLE_EXT where USERID=#{userId}", Paras.create().set("userId", userId));
             }
         });
-
         String roleIn = "0";
         String roleOut = "0";
         if (!Func.isEmpty(userRole))
