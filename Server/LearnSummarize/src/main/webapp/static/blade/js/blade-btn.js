@@ -130,7 +130,6 @@ var exwhere;
                 layer_alert('只能选择一条数据!', "warn");
                 return;
             }
-            
             var url = this.url;
             this.open(url + split + ids, ids);
             return;
@@ -247,14 +246,10 @@ var exwhere;
             });
             return;
         }
-
-
         if (this.alias == "import") {
         	$('#importExcel').click();
             return;
         }
-
-
         //带子按钮区域
         if (this.alias == "audit" || this.alias == "recycle") {
         	var code=this.id;
@@ -279,7 +274,6 @@ var exwhere;
             exwhere=this.url.replace(ctx,"");//修复未发布在tomcat根目录下带有项目路径导致不能搜索的问题 
             searchGrid();
             return;
-
         }
     };
 
@@ -409,16 +403,12 @@ var exwhere;
             return;
         }
     };
-
-    
     var stage = {
         all: {},
         register: function (id,_btn_child_stage) {
             this.all[id] = _btn_child_stage;
         }
     };
-    
-    
     var btn_stage = {
         all: {},
         count: 0,

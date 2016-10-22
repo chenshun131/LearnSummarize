@@ -4,7 +4,6 @@ import android.app.Service;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -18,15 +17,11 @@ import com.chenshun.learnsummarize.ui.util.Cache;
 import com.chenshun.learnsummarize.util.Logs;
 import com.chenshun.learnsummarize.util.PreferensesUtil;
 import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.BitmapCallback;
-import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.callback.AbsCallback;
 import com.lzy.okgo.request.BaseRequest;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import okhttp3.Call;
-import okhttp3.Response;
 
 /**
  * User: chenshun <p />
@@ -172,13 +167,14 @@ public class CoreService extends Service
 
     public static class Transaction
     {
-        public static final int EVENT_REQUEST_CAPTCHA = 1;// 验证码
-        public static final int EVENT_REQUEST_LOGIN = 2;// 登录
+        public static final int EVENT_REQUEST_VERSIONINFO = 1;// 获取App信息
+        public static final int EVENT_REQUEST_CAPTCHA = 2;// 验证码
+        public static final int EVENT_REQUEST_LOGIN = 3;// 登录
 
         public int what;
         public Object object;
         public ContentValues values;
-        public StringCallback callback;
+        public AbsCallback callback;
         public String content;
         public Context context;
 
@@ -191,7 +187,7 @@ public class CoreService extends Service
             this.what = what;
         }
 
-        public Transaction(int what, Object obj, StringCallback callback)
+        public Transaction(int what, Object obj, AbsCallback callback)
         {
             this.what = what;
             this.object = obj;
@@ -210,43 +206,21 @@ public class CoreService extends Service
         BaseRequest baseRequest = null;
         switch (transaction.what)
         {
+            case Transaction.EVENT_REQUEST_VERSIONINFO:// 获取 App 信息
+                baseRequest = OkGo.post(Constants.GET_VERSIONINFO).params(Constants.PLATFORM, values.getAsString(Constants.PLATFORM));
+                break;
             case Transaction.EVENT_REQUEST_CAPTCHA:// 获取验证码
                 baseRequest = OkGo.get(Constants.CAPTCHA);
                 break;
             case Transaction.EVENT_REQUEST_LOGIN:// 登录
-                baseRequest = OkGo.post(Constants.LOGIN).params(Constants.ACCOUNT, values.getAsString(Constants.ACCOUNT)).params(Constants.PASSWORD, values.getAsString(Constants.PASSWORD)).params(Constants.IMGCODE, values.getAsString(Constants.IMGCODE));
+                baseRequest = OkGo.post(Constants.LOGIN).params(Constants.ACCOUNT, values.getAsString(Constants.ACCOUNT)).params(Constants.PASSWORD, values.getAsString(Constants.PASSWORD)).params(Constants.IMGCODE, values.getAsString(Constants.IMGCODE)).params(Constants.PLATFORM, values.getAsString(Constants.PLATFORM));
                 break;
             default:
                 break;
         }
         if (baseRequest != null)
         {
-            baseRequest.tag(transaction.context);
-            switch (transaction.what)
-            {
-                case Transaction.EVENT_REQUEST_CAPTCHA:// 获取验证码
-                {
-                    baseRequest.execute(new BitmapCallback()
-                    {
-                        @Override
-                        public void onSuccess(Bitmap bitmap, Call call, Response response)
-                        {
-                        }
-                    });
-                }
-                break;
-                default:
-                {
-                    baseRequest.execute(new StringCallback()
-                    {
-                        @Override
-                        public void onSuccess(String s, Call call, Response response)
-                        {
-                        }
-                    });
-                }
-                break;
-            }
+            baseRequest.tag(transaction.context).execute(transaction.callback);
         }
     }
 

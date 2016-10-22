@@ -39,4 +39,6 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.2'
     // 友盟
     compile 'com.umeng.analytics:analytics:latest.integration'
+    // fastjson
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.17'
 }

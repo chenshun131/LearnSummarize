@@ -118,6 +118,9 @@ public class BladeController implements ConstCurd, ConstCache
         return getRequest().getContextPath();
     }
 
+    /** ============================     requset    ================================================= */
+
+
     /** ============================     mapping    =================================================  */
 
     /**

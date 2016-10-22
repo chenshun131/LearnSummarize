@@ -14,6 +14,7 @@ public class Constants
     public static final String BASE_PATH = "http://" + BASE_IP + ":8080/LearnSummarize";
 
     /******************************** 【Network Access Path】 *******************************************/
+    public static final String GET_VERSIONINFO =  BASE_PATH + "/getVersionInfo";// 获取 App 信息
     public static final String CAPTCHA = BASE_PATH + "/captcha";// 验证码
     public static final String LOGIN = BASE_PATH + "/login";// 登录
 

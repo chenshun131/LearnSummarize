@@ -1,6 +1,4 @@
 @layout("/common/_curd/_container.html"){
-
-
 <script type="text/javascript">
 	var ctx="${ctxPath}";
 	var grid_selector = "#grid-table";
@@ -9,7 +7,6 @@
 	$(function(){
 		initGrid();
 		initMenuBtn("btns","${code}");
-		
 	});
 	
 	function initGrid(){
@@ -33,13 +30,8 @@
 			pager : pager_selector,
 			postData: {sort: "id", order: "desc"}
 		});
-		
-
 	}
-	
 </script>
-
-
 	<!-- 配置grid -->
 	<div class="row">
 		<div class="col-xs-12 tb-grid">
@@ -61,7 +53,6 @@
 			<div id="grid-pager"></div>
 		</div>
 	</div>
-	
 	<!-- 引入列表页所需js -->
 	@include("/common/_listscript.html"){}
-@}	
+@}

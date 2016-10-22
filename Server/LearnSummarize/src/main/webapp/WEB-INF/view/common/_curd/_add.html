@@ -13,15 +13,14 @@
 							</small>
 						@}
 						</h2>
-					
-					</div>	
+					</div>
 			 @ }else{
 				@	var display = (func.like(x.type,"hidden")) ? "none" : "block";
 				@   var placeholder = (!isEmpty(x.placeholder)) ? x.placeholder : ("暂无"+x.name);
 				@	if(x.newline!false){
 					<div class="form-group" style="display:${display!}">
 				@	}
-							<label class="col-sm-2 control-label no-padding-right" > ${x.name!} </label>			
+							<label class="col-sm-2 control-label no-padding-right" > ${x.name!} </label>
 							<div class="col-sm-${x.length!3}">
 				@			if(x.type=="text"||x.type=="number"||x.type=="tel"||x.type=="email"||x.type=="url"||x.type=="qq"||x.type=="unionpay"||x.type=="credit"||x.type=="idcard"){
 								<input type="${x.type!'text'}" id="_${x.index!}" name="${table!x.table}.${x.index!}" ${x.required!} ${x.disabled!} value="${x.value!}" placeholder="${placeholder!}" class="form-control" />
@@ -111,5 +110,4 @@
 				@	}
 				@}
 			@}
-
 	<div class="space-4"></div>

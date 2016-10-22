@@ -6,6 +6,7 @@ import android.content.Context;
 import com.chenshun.learnsummarize.constant.Constants;
 import com.chenshun.learnsummarize.service.CoreService;
 import com.chenshun.learnsummarize.service.CoreService.Transaction;
+import com.lzy.okgo.callback.BitmapCallback;
 import com.lzy.okgo.callback.StringCallback;
 
 /**
@@ -17,11 +18,27 @@ import com.lzy.okgo.callback.StringCallback;
 public class LoginManager
 {
     /**
+     * 获取 App 信息
      *
      * @param context
      * @param callback
      */
-    public static void captcha(Context context, StringCallback callback)
+    public static void getVersionInfo(Context context, StringCallback callback)
+    {
+        Transaction transaction = new Transaction();
+        transaction.what = Transaction.EVENT_REQUEST_VERSIONINFO;
+        ContentValues values = new ContentValues(3);
+        values.put(Constants.PLATFORM, "1");// 0:浏览器 1:安卓 2:iOS
+        transaction.values = values;
+        transaction.callback = callback;
+        CoreService.requestTransaction(context, transaction);
+    }
+
+    /**
+     * @param context
+     * @param callback
+     */
+    public static void captcha(Context context, BitmapCallback callback)
     {
         Transaction transaction = new Transaction();
         transaction.what = Transaction.EVENT_REQUEST_CAPTCHA;

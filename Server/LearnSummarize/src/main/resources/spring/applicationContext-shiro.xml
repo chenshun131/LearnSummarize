@@ -54,6 +54,7 @@
                 /static/** = anon
                 /login = anon
                 /captcha = anon
+                /getVersionInfo = anon
                 /** = user
             </value>
         </property>

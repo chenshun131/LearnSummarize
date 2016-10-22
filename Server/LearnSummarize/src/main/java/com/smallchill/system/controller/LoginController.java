@@ -19,10 +19,11 @@ import com.smallchill.common.base.BaseController;
 import com.smallchill.common.vo.LoginLog;
 import com.smallchill.core.annotation.Before;
 import com.smallchill.core.constant.Const;
-import com.smallchill.core.constant.ConstCache;
 import com.smallchill.core.plugins.dao.Blade;
+import com.smallchill.core.plugins.dao.Db;
 import com.smallchill.core.shiro.ShiroKit;
 import com.smallchill.core.toolbox.Func;
+import com.smallchill.core.toolbox.Paras;
 import com.smallchill.core.toolbox.ajax.AjaxResult;
 import com.smallchill.core.toolbox.captcha.Captcha;
 import com.smallchill.core.toolbox.kit.LogKit;
@@ -41,7 +42,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
 import java.util.Date;
+import java.util.Map;
 
 @Controller
 public class LoginController extends BaseController implements Const
@@ -184,23 +187,17 @@ public class LoginController extends BaseController implements Const
     }
 
     @RequestMapping(value = "/getVersionInfo")
-    public void getVersionInfo(HttpServletRequest request, HttpServletResponse response)
+    public void getVersionInfo(PrintWriter out)
     {
-        String MENU_CACHE = ConstCache.MENU_CACHE;
-
-
         String platform = getParameter("platform");
-        if ("0".equals(platform))
+        Map<String, Object> userRole = Db.selectOneByCache(SYS_APPINFO, "appInfoExt_" + platform, "SELECT * FROM AppInfo WHERE type= #{type}", Paras.create().set("type", platform));
+        if (Func.isEmpty(userRole))
         {
-            // 0:浏览器
+            out.write(error("获取 App 信息失败").toString());
         }
-        else if ("1".equals(platform))
+        else
         {
-            // 1:安卓
-        }
-        else if ("2".equals(platform))
-        {
-            // 2:iOS
+            out.write(json(userRole).toString());
         }
     }
 }
