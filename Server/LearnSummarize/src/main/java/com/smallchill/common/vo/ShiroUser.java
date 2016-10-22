@@ -67,6 +67,7 @@ public class ShiroUser implements Serializable
             StringBuilder sb = new StringBuilder();
             for (String deptid : arr)
             {
+                // 使用存储过程方法调用是一个方便查询数据库的方式也同时避免查询过程被服务端编写人查看到,缺点是增加数据库负担,但是这段存储过程代码似乎弄复杂操作,作为学习MySQL高级语法还行
                 deptSql = "select queryChildren(#{deptid},'tfw_dept') as subdepts";
                 String str = Db.queryStr(deptSql, Paras.create().set("deptid", deptid));
                 sb.append(str).append(",");
