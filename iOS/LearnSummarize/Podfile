@@ -1,0 +1,41 @@
+platform :ios,'8.0'
+
+project 'LearnSummarize/LearnSummarize.xcodeproj'
+
+target 'LearnSummarize' do
+# get post network
+pod 'AFNetworking', '~> 3.1.0'
+
+# show web image
+pod 'SDWebImage'
+
+pod 'Masonry','~> 1.0.0'
+
+# Conversion to each other between JSON and Model
+pod 'MJExtension'
+
+pod 'MJRefresh'
+pod 'MBProgressHUD'
+
+# Keyboard Manager
+pod 'IQKeyboardManager'
+
+# sqlite database operation
+pod 'FMDB'
+
+
+############################## third party ############################## 
+# mob
+pod 'MOBFoundation_IDFA'
+pod 'SMSSDK'
+
+# umeng
+pod 'UMengAnalytics'
+
+# gaode map
+pod 'AMapLocation'
+
+# baidu map
+pod 'BaiduMapKit'
+
+end
