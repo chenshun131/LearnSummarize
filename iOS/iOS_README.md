@@ -10,6 +10,11 @@
 
 ## 参考技术
 * [fmdb](https://github.com/ccgus/fmdb/)：数据库操作方法
+* [CocoaPods](https://cocoapods.org/)：iOS依赖管理的工具，可以参考这篇[文章](http://blog.csdn.net/chenshun123/article/details/53837288)
+* [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)：自动处理键盘事件
+
+
+## 第三方SDK
 
 
 ## 内置功能
