@@ -5,6 +5,8 @@ import android.content.res.Configuration;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.View;
 
 import com.alibaba.fastjson.JSON;
 import com.chenshun.learnsummarize.R;
@@ -17,6 +19,7 @@ import com.chenshun.learnsummarize.ui.view.MyProgressDialog;
 import com.chenshun.learnsummarize.util.AppUtils;
 import com.chenshun.learnsummarize.util.Logs;
 import com.chenshun.learnsummarize.util.PreferensesUtil;
+import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.request.BaseRequest;
 
@@ -88,7 +91,7 @@ public class InitActivity extends BaseActivity
             {
                 Logs.d(TAG, s);
                 BaseModel model = JSON.parseObject(s, BaseModel.class);
-                if(model.getCode() == 0)
+                if (model.getCode() == 0)
                 {
                     // 成功
                 }
@@ -116,5 +119,81 @@ public class InitActivity extends BaseActivity
     protected String setFragmentTag()
     {
         return "InitActivity";
+    }
+
+    public void http(View v)
+    {
+        OkGo.get("http://chenshun131.com:8080/LearnSummarize/getVersionInfo").execute(new StringCallback()
+        {
+            @Override
+            public void onSuccess(String s, Call call, Response response)
+            {
+                Log.e("http", "http");
+                System.out.print(s);
+            }
+        });
+    }
+
+    public void https(View v)
+    {
+        OkGo.get("https://chenshun131.com:8443/LearnSummarize/getVersionInfo").execute(new StringCallback()
+        {
+            @Override
+            public void onSuccess(String s, Call call, Response response)
+            {
+                Log.e("https", "https : " + s);
+            }
+        });
+    }
+
+    public void ip(View v)
+    {
+        OkGo.get("https://192.168.0.3:8443/LearnSummarize/getVersionInfo").execute(new StringCallback()
+        {
+            @Override
+            public void onSuccess(String s, Call call, Response response)
+            {
+                Log.e("ip", "ip");
+                System.out.print(s);
+            }
+        });
+    }
+
+    public void ipHttps(View v)
+    {
+        OkGo.get("https://192.168.0.3:8443/LearnSummarize/getVersionInfo").execute(new StringCallback()
+        {
+            @Override
+            public void onSuccess(String s, Call call, Response response)
+            {
+                Log.e("ipHttps", "ipHttps : " + s);
+            }
+        });
+    }
+
+    public void baidu(View v)
+    {
+        OkGo.get("http://www.baidu.com").execute(new StringCallback()
+        {
+            @Override
+            public void onSuccess(String s, Call call, Response response)
+            {
+                Log.e("ip", "ip");
+                System.out.print(s);
+            }
+        });
+    }
+
+    public void train12306(View v)
+    {
+        OkGo.get("https://kyfw.12306.cn/otn/").execute(new StringCallback()
+        {
+            @Override
+            public void onSuccess(String s, Call call, Response response)
+            {
+                Log.e("train12306", "train12306");
+                System.out.print(s);
+            }
+        });
     }
 }

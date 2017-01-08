@@ -3,8 +3,10 @@ package com.chenshun.learnsummarize.util;
 import android.content.Context;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
+import android.net.Network;
 import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
+import android.os.Build;
 import android.telephony.TelephonyManager;
 
 import java.io.UnsupportedEncodingException;
@@ -24,28 +26,46 @@ import java.util.regex.Pattern;
  */
 public final class NetUtil
 {
-
     /**
-     * if not connected Wifi and Mobile network,return true,otherwise return false
+     * if connected Wifi and Mobile network,return true,otherwise return false
      *
      * @param context
      * @return
      */
-    public static boolean hasNoNetwork(Context context)
+    public static boolean hasNetwork(Context context)
     {
-        ConnectivityManager connManager = (ConnectivityManager) context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo wifiNetInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        NetworkInfo mobNetInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-        boolean connected = false;
-        if (wifiNetInfo != null && wifiNetInfo.isConnected())
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
-            connected = true;
+            Network[] networks = connectivityManager.getAllNetworks();
+            NetworkInfo networkInfo;
+            for (Network mNetwork : networks)
+            {
+                networkInfo = connectivityManager.getNetworkInfo(mNetwork);
+                if (networkInfo.getState().equals(NetworkInfo.State.CONNECTED))
+                {
+                    return true;
+                }
+            }
         }
-        else if (mobNetInfo != null && mobNetInfo.isConnected())
+        else
         {
-            connected = true;
+            if (connectivityManager != null)
+            {
+                NetworkInfo[] info = connectivityManager.getAllNetworkInfo();
+                if (info != null)
+                {
+                    for (NetworkInfo anInfo : info)
+                    {
+                        if (anInfo.getState() == NetworkInfo.State.CONNECTED)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
         }
-        return !connected;
+        return false;
     }
 
     /**

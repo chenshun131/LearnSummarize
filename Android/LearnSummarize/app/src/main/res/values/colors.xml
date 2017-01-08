@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="windowBackground">#FAFAFA</color>
 
     <color name="themecolor1">#00796B</color><!-- dark primary color -->
     <color name="themecolor2">#BB009688</color><!-- primary color -->
@@ -12,4 +13,6 @@
 
     <color name="white">#FFFFFF</color> <!-- 白色 -->
     <color name="blue">#1D85D8</color>
+    <color name="pink">#BBFFC0CB</color> <!-- 粉红 -->
+    <color name="crimson">#DC143C</color> <!-- 深红/猩红 -->
 </resources>

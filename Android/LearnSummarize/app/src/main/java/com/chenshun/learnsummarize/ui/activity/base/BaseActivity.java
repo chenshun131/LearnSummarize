@@ -14,7 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 
+import com.chenshun.learnsummarize.App;
 import com.chenshun.learnsummarize.R;
+import com.chenshun.learnsummarize.constant.Constants;
 import com.chenshun.learnsummarize.ui.util.HandlerCache;
 import com.chenshun.learnsummarize.ui.util.HandlerInterface;
 import com.chenshun.learnsummarize.ui.util.MyHandler;
@@ -22,6 +24,7 @@ import com.chenshun.learnsummarize.util.Logs;
 import com.lzy.okgo.OkGo;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
+import com.squareup.leakcanary.RefWatcher;
 import com.umeng.analytics.MobclickAgent;
 
 /**
@@ -83,6 +86,7 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
     @Override
     protected void onResume()
     {
+        MobclickAgent.onPageStart(setFragmentTag());
         MobclickAgent.onResume(this);
         Logs.d(setTag(), this.getClass().getSimpleName() + " onResume() invoked!!");
         super.onResume();
@@ -91,6 +95,7 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
     @Override
     protected void onPause()
     {
+        MobclickAgent.onPageEnd(setFragmentTag());
         MobclickAgent.onPause(this);
         Logs.d(setTag(), this.getClass().getSimpleName() + " onPause() invoked!!");
         super.onPause();
@@ -109,6 +114,12 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
         Logs.d(setTag(), this.getClass().getSimpleName() + " onDestroy() invoked!!");
         OkGo.getInstance().cancelTag(this);// 根据 Tag 取消请求
         super.onDestroy();
+        // leakcanary
+        if (Constants.IS_DEBUG)
+        {
+            RefWatcher refWatcher = App.getRefWatcher(this);
+            refWatcher.watch(this);
+        }
     }
 
     @Override
@@ -139,6 +150,18 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
     protected abstract void initData();
 
     protected abstract void initView();
+
+    /**
+     * findViewById
+     *
+     * @param id
+     * @param <T>
+     * @return
+     */
+    protected <T extends View> T $(int id)
+    {
+        return (T) super.findViewById(id);
+    }
 
     /******************************** 【 Top Operator】 *******************************************/
     @Override
@@ -296,11 +319,11 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
     }
 
     /**
-     * 绑定点击监听器
+     * click listener bindings
      *
      * @param onTouch
      * @param views
-     *         要绑定OnTouchListener监听器的views数组
+     *         the views to bind click listener
      */
     protected void bindOnTouchLister(View.OnTouchListener onTouch, View... views)
     {
@@ -348,17 +371,17 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
 
     /******************************** 【 Activity start or finish 】 *******************************************/
     /**
-     * 调用此方法向左滑动
+     * use this finish function,the page will slid to the left
      */
     public void startActivityWithSlide(Intent intent)
     {
         startActivity(intent);
-        // 调用此 finish ，页面会向左滑动
+        // use this finish function,the page will slid to the left
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
     }
 
     /**
-     * 调用此方法向左滑动 并 设置请求码
+     * use this finish function,the page will slid to the left and set request code
      *
      * @param intent
      * @param requestCode
@@ -366,7 +389,7 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
     public void startActivityWithSlideForResult(Intent intent, int requestCode)
     {
         startActivityForResult(intent, requestCode);
-        // 调用此 finish ，页面会向左滑动
+        // use this finish function,the page will slid to the left
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
     }
 
@@ -374,12 +397,12 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
     public void finish()
     {
         defaultFinish();
-        // 调用此 finish ，页面会向右滑动
+        // use this finish function,the page will slid to the right
         overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
     }
 
     /**
-     * 调用此 finish ，页面不会滑动，特别注意：要是关闭以后不再使用的界面就调用该方法
+     * use this finish function,the page won't slid 特别注意：要是关闭以后不再使用的界面就调用该方法
      */
     public void defaultFinish()
     {

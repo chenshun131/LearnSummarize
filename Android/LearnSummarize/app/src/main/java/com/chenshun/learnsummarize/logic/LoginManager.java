@@ -1,9 +1,8 @@
 package com.chenshun.learnsummarize.logic;
 
+import android.app.Activity;
 import android.content.ContentValues;
-import android.content.Context;
 
-import com.chenshun.learnsummarize.constant.Constants;
 import com.chenshun.learnsummarize.service.CoreService;
 import com.chenshun.learnsummarize.service.CoreService.Transaction;
 import com.lzy.okgo.callback.BitmapCallback;
@@ -20,53 +19,56 @@ public class LoginManager
     /**
      * 获取 App 信息
      *
-     * @param context
+     * @param activity
      * @param callback
      */
-    public static void getVersionInfo(Context context, StringCallback callback)
+    public static void getVersionInfo(Activity activity, StringCallback callback)
     {
         Transaction transaction = new Transaction();
-        transaction.what = Transaction.EVENT_REQUEST_VERSIONINFO;
         ContentValues values = new ContentValues(3);
-        values.put(Constants.PLATFORM, "1");// 0:浏览器 1:安卓 2:iOS
+        values.put("platform", "1");// 0:浏览器 1:安卓 2:iOS
+        transaction.what = Transaction.EVENT_REQUEST_VERSIONINFO;
         transaction.values = values;
+        transaction.activity = activity;
         transaction.callback = callback;
-        CoreService.requestTransaction(context, transaction);
+        CoreService.requestTransaction(transaction);
     }
 
     /**
-     * @param context
+     * @param activity
      * @param callback
      */
-    public static void captcha(Context context, BitmapCallback callback)
+    public static void captcha(Activity activity, BitmapCallback callback)
     {
         Transaction transaction = new Transaction();
         transaction.what = Transaction.EVENT_REQUEST_CAPTCHA;
+        transaction.activity = activity;
         transaction.callback = callback;
-        CoreService.requestTransaction(context, transaction);
+        CoreService.requestTransaction(transaction);
     }
 
     /**
      * 登录
      *
-     * @param context
+     * @param activity
      * @param account
      * @param password
      * @param imgCode
      *         验证码
      * @param callback
      */
-    public static void login(Context context, String account, String password, String imgCode, StringCallback callback)
+    public static void login(Activity activity, String account, String password, String imgCode, StringCallback callback)
     {
         Transaction transaction = new Transaction();
-        transaction.what = Transaction.EVENT_REQUEST_LOGIN;
         ContentValues values = new ContentValues(3);
-        values.put(Constants.ACCOUNT, account);
-        values.put(Constants.PASSWORD, password);
-        values.put(Constants.IMGCODE, imgCode);
-        values.put(Constants.PLATFORM, "1");// 0:浏览器 1:安卓 2:iOS
+        values.put("account", account);
+        values.put("password", password);
+        values.put("imgCode", imgCode);
+        values.put("platform", "1");// 0:浏览器 1:安卓 2:iOS
+        transaction.what = Transaction.EVENT_REQUEST_LOGIN;
         transaction.values = values;
+        transaction.activity = activity;
         transaction.callback = callback;
-        CoreService.requestTransaction(context, transaction);
+        CoreService.requestTransaction(transaction);
     }
 }

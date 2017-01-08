@@ -30,7 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.chenshun.learnsummarize.ui.activity.InitActivity"
+            android:name="com.chenshun.learnsummarize.ui.activity.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreenAppTheme">
@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.chenshun.learnsummarize.ui.activity.MainActivity"
+            android:name="com.chenshun.learnsummarize.ui.activity.InitActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
@@ -64,6 +64,6 @@
             android:value="5802476067e58e6c4a0040c5"/>
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="LearnSummarize"/>
+            android:value="${UMENG_CHANNEL_VALUE}"/>
     </application>
 </manifest>

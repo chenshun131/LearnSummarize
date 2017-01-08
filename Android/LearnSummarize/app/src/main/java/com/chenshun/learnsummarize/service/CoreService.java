@@ -1,8 +1,8 @@
 package com.chenshun.learnsummarize.service;
 
+import android.app.Activity;
 import android.app.Service;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -90,23 +90,21 @@ public class CoreService extends Service
     /**
      * The method is exposed to XXManager,and all the request should call this method. if the service isn't running,we'll start service before doing the transaction.
      *
-     * @param context
      * @param transaction
      */
-    public static void requestTransaction(Context context, Transaction transaction)
+    public static void requestTransaction(Transaction transaction)
     {
         if (sCoreService == null)
         {
             synchronized (CoreService.class)
             {
-                Intent intent = new Intent(context, CoreService.class);
+                Intent intent = new Intent(transaction.activity, CoreService.class);
                 intent.putExtra("StartService", true);
-                context.startService(intent);
+                transaction.activity.startService(intent);
                 addPendingTransaction(transaction);
                 return;
             }
         }
-        transaction.context = context;
         Message msg = Message.obtain();
         msg.obj = transaction;
         sCoreService.mTransactionHandler.sendMessage(msg);
@@ -176,7 +174,7 @@ public class CoreService extends Service
         public ContentValues values;
         public AbsCallback callback;
         public String content;
-        public Context context;
+        public Activity activity;
 
         public Transaction()
         {
@@ -202,25 +200,29 @@ public class CoreService extends Service
      */
     private void doTransaction(final Transaction transaction)
     {
-        ContentValues values = transaction.values;
         BaseRequest baseRequest = null;
         switch (transaction.what)
         {
             case Transaction.EVENT_REQUEST_VERSIONINFO:// 获取 App 信息
-                baseRequest = OkGo.post(Constants.GET_VERSIONINFO).params(Constants.PLATFORM, values.getAsString(Constants.PLATFORM));
+                baseRequest = OkGo.post(Constants.GET_VERSIONINFO);
                 break;
             case Transaction.EVENT_REQUEST_CAPTCHA:// 获取验证码
                 baseRequest = OkGo.get(Constants.CAPTCHA);
                 break;
             case Transaction.EVENT_REQUEST_LOGIN:// 登录
-                baseRequest = OkGo.post(Constants.LOGIN).params(Constants.ACCOUNT, values.getAsString(Constants.ACCOUNT)).params(Constants.PASSWORD, values.getAsString(Constants.PASSWORD)).params(Constants.IMGCODE, values.getAsString(Constants.IMGCODE)).params(Constants.PLATFORM, values.getAsString(Constants.PLATFORM));
+                baseRequest = OkGo.post(Constants.LOGIN);
                 break;
             default:
                 break;
         }
+        ContentValues values = transaction.values;
+        for (String key : values.keySet())
+        {
+            baseRequest.params(key, values.getAsString(key));
+        }
         if (baseRequest != null)
         {
-            baseRequest.tag(transaction.context).execute(transaction.callback);
+            baseRequest.tag(transaction.activity).execute(transaction.callback);
         }
     }
 
@@ -265,7 +267,7 @@ public class CoreService extends Service
                     Logs.i(TAG, "continuePending -> LOGIN");
                     mLoginStatus = LoginStatus.ONLOGIN;
                 }
-                requestTransaction(this, sPendingTransactions.remove(0));
+                requestTransaction(sPendingTransactions.remove(0));
             }
         }
     }
