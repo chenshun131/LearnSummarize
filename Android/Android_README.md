@@ -19,17 +19,22 @@
 * [fastjson](https://github.com/alibaba/fastjson)：JSON处理工具包，还有 Android 自带的 org.json 和 gson，目前主要是这三类处理 JSON 处理工具类，推荐使用 fastjson，通过统计在数据量少的时候三者时间差不多，但是数据量大的时候 org.json 耗时极速上升， gson 上升速度也快，fastjson 速度比较平缓，因此推荐使用 fastjson JOSN解析库 参考这篇[文章](http://blog.csdn.net/zml_2015/article/details/52165317)
 * [FreeLine](https://github.com/alibaba/freeline)：freeline阿里旗下蚂蚁聚宝团队开发的一款增量编译工具，可以直接将AS的编译速度提升到秒级。可以查看我的这篇文章进行配置[FreeLine](http://blog.csdn.net/chenshun123/article/details/53453286)
 
+
 ## 第三方SDK
 > ### 统计
-> > 1.友盟
+> > 1.[友盟](http://www.umeng.com/)
+> > App 应用统计
 >
 > ### 地图
-> > 1.百度地图
+> > 1.[百度地图](http://lbsyun.baidu.com/)
 > > 
-> > 2.高德地图
+> > 2.[高德地图](http://lbs.amap.com/)
+> 
+> ### 短信验证
+> > 1.[Mob短信验证SDK](http://www.mob.com/)
 > 
 > ### 推送
-
+> 
 
 
 ## 内置功能
