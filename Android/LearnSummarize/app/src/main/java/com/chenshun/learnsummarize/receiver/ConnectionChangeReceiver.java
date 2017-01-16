@@ -18,13 +18,13 @@ public class ConnectionChangeReceiver extends BroadcastReceiver
     @Override
     public void onReceive(Context context, Intent intent)
     {
-        if (NetUtil.hasNoNetwork(context))
+        if (NetUtil.hasNetwork(context))
         {
-            Cache.getInstance().setNetWorkIsOk(false);
+            Cache.getInstance().setNetWorkIsOk(true);
         }
         else
         {
-            Cache.getInstance().setNetWorkIsOk(true);
+            Cache.getInstance().setNetWorkIsOk(false);
         }
     }
 }

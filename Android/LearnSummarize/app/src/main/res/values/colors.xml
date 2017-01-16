@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="windowBackground">#FAFAFA</color>
+    <color name="separateLine">#EFEFEF</color>
 
     <color name="themecolor1">#00796B</color><!-- dark primary color -->
     <color name="themecolor2">#BB009688</color><!-- primary color -->

@@ -451,7 +451,7 @@ public final class AppUtils
      */
     public static List<PackageInfo> getAllApps(Context context)
     {
-        List<PackageInfo> apps = new ArrayList<PackageInfo>();
+        List<PackageInfo> apps = new ArrayList<>();
         PackageManager pManager = context.getPackageManager();
         List<PackageInfo> paklist = pManager.getInstalledPackages(0);
         for (int i = 0; i < paklist.size(); i++)

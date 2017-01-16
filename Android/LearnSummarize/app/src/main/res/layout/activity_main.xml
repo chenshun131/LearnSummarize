@@ -42,11 +42,50 @@
                         app:titleTextColor="#ffffff"/>
                 </android.support.design.widget.AppBarLayout>
 
-                <FrameLayout
-                    android:id="@+id/frame_content"
+                <com.chenshun.learnsummarize.ui.view.NoScrollViewPager
+                    android:id="@+id/main_container_nsvp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/main_home_b"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimaryDark"
+                        android:text="主页"
+                        android:textColor="@color/white"/>
+
+                    <Button
+                        android:id="@+id/main_function_b"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:text="功能"
+                        android:textColor="@color/colorPrimaryDark"/>
+
+                    <Button
+                        android:id="@+id/main_setting_b"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:text="设置"
+                        android:textColor="@color/colorPrimaryDark"/>
+                </LinearLayout>
             </LinearLayout>
         </android.support.design.widget.CoordinatorLayout>
 

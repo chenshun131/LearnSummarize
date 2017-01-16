@@ -34,7 +34,6 @@
 		E24075A31E22326000E9692A /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075A21E22326000E9692A /* BaseModel.m */; };
 		E24075A61E22329A00E9692A /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075A51E22329A00E9692A /* LoginModel.m */; };
 		E24075A91E2232F600E9692A /* SaveArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075A81E2232F600E9692A /* SaveArray.m */; };
-		E24075AC1E2233F900E9692A /* NewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075AB1E2233F900E9692A /* NewFeatureViewController.m */; };
 		E24075AF1E22355500E9692A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075AE1E22355500E9692A /* UIView+Extensions.m */; };
 		E24075B31E223D9500E9692A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075B11E223D9500E9692A /* HomeViewController.m */; };
 		E24075B41E223D9500E9692A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24075B21E223D9500E9692A /* HomeViewController.xib */; };
@@ -123,8 +122,6 @@
 		E24075A51E22329A00E9692A /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		E24075A71E2232F600E9692A /* SaveArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveArray.h; sourceTree = "<group>"; };
 		E24075A81E2232F600E9692A /* SaveArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveArray.m; sourceTree = "<group>"; };
-		E24075AA1E2233F900E9692A /* NewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeatureViewController.h; sourceTree = "<group>"; };
-		E24075AB1E2233F900E9692A /* NewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeatureViewController.m; sourceTree = "<group>"; };
 		E24075AD1E22355500E9692A /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
 		E24075AE1E22355500E9692A /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
 		E24075B01E223D9500E9692A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -394,8 +391,6 @@
 				E24075981E222F6500E9692A /* LoginViewController.h */,
 				E24075991E222F6500E9692A /* LoginViewController.m */,
 				E240759A1E222F6500E9692A /* LoginViewController.xib */,
-				E24075AA1E2233F900E9692A /* NewFeatureViewController.h */,
-				E24075AB1E2233F900E9692A /* NewFeatureViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -642,7 +637,6 @@
 				E240759B1E222F6500E9692A /* LoginViewController.m in Sources */,
 				E24075591E21E5FD00E9692A /* SysUtil.m in Sources */,
 				E24075801E220CFE00E9692A /* ScanQrcodeViewController.m in Sources */,
-				E24075AC1E2233F900E9692A /* NewFeatureViewController.m in Sources */,
 				E240759F1E2231F500E9692A /* AccountTool.m in Sources */,
 				E24075161E21CEC100E9692A /* AppDelegate.m in Sources */,
 				E24075771E2208C700E9692A /* BaseNavigationViewController.m in Sources */,

@@ -25,6 +25,10 @@ import com.squareup.leakcanary.RefWatcher;
 import java.io.IOException;
 import java.util.concurrent.ThreadPoolExecutor;
 
+import io.realm.Realm;
+import io.realm.log.LogLevel;
+import io.realm.log.RealmLog;
+
 /**
  * User: chenshun <p />
  * Time: 16/10/13 15:56  <p />
@@ -40,12 +44,15 @@ public class App extends Application
     public void onCreate()
     {
         super.onCreate();
-        if (LeakCanary.isInAnalyzerProcess(this)) {
+        if (LeakCanary.isInAnalyzerProcess(this))
+        {
             // This process is dedicated to LeakCanary for heap analysis.You should not init your app in this process.
             return;
         }
         rw = LeakCanary.install(this);
         FreelineCore.init(this);
+        Realm.init(this);
+        RealmLog.setLevel(LogLevel.TRACE);
         instance = this;
         try
         {
