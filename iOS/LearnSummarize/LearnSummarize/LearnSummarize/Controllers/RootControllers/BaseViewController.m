@@ -13,6 +13,9 @@
 @end
 
 @implementation BaseViewController
+{
+    DropDownMenu *dropDownMenu;
+}
 
 - (void)viewDidLoad
 {
@@ -29,14 +32,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Menu
+- (void)showDropDownMenu:(NSArray *)titles andImages:(NSArray *)images andBlock:(SelectedAtIndex)block
+{
+    dropDownMenu = nil;
+    dropDownMenu = [[DropDownMenu alloc] initWithWidth:150.0f images:images titles:titles];
+    [dropDownMenu selectedAtIndex:block];
+    [dropDownMenu showMenu];
 }
-*/
+
+- (void)setRightImageMenu:(NSString *)image action:(nullable SEL)action
+{
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:image] style:UIBarButtonItemStylePlain target:self action:action];
+    self.navigationItem.rightBarButtonItem = rightItem;
+}
 
 @end

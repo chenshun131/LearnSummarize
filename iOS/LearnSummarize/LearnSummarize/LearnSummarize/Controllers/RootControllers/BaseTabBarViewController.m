@@ -9,6 +9,7 @@
 #import "BaseTabBarViewController.h"
 #import "BaseNavigationViewController.h"
 #import "HomeViewController.h"
+#import "LocalAuthenticationViewController.h"
 
 @interface BaseTabBarViewController ()
 
@@ -40,9 +41,8 @@
     HomeViewController *homeVC = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
     [self setUpOneChildViewController:homeVC image:nil selectedImage:nil title:@"电梯维保"];
     
-    // 电梯维修
-    HomeViewController *home2VC = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
-    [self setUpOneChildViewController:home2VC image:nil selectedImage:nil title:@"电梯维修"];
+    LocalAuthenticationViewController *localAuthenticationVC = [[LocalAuthenticationViewController alloc] initWithNibName:@"LocalAuthenticationViewController" bundle:nil];
+    [self setUpOneChildViewController:localAuthenticationVC image:nil selectedImage:nil title:@"电梯维修"];
     
     // 电梯天地
     HomeViewController *home3VC = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];

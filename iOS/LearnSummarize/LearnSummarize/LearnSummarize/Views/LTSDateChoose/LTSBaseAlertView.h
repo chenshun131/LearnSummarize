@@ -6,7 +6,6 @@
 //  Copyright © 2016年 HuikeSpace. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 @class LTSAlertAction;
 
 @interface LTSBaseAlertView : UIView
