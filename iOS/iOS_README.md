@@ -18,6 +18,7 @@
 * [MJRefresh](https://github.com/CoderMJLee/MJRefresh)：用于UITanleView 的下拉刷新、上推加载框架
 * [Masonry](https://github.com/SnapKit/Masonry)：一个轻量级的布局框架 拥有自己的描述语法 采用更优雅的链式语法封装自动布局 简洁明了 并具有高可读性 而且同时支持 iOS 和 Max OS X
 * [SDWebImage](https://github.com/rs/SDWebImage)：从网络中下载且缓存图片，并设置图片到对应的 UIImageView控件 或者 UIButton控件，在项目中使用 SDWebImage 来管理图片加载相关操作可以极大地提高开发效率
+* [FLAnimatedImage](https://github.com/Flipboard/FLAnimatedImage)：用于显示网络或本地 Gif
 
 
 ## 第三方SDK

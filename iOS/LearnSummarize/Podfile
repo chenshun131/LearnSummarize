@@ -23,6 +23,8 @@ pod 'IQKeyboardManager'
 # sqlite database operation
 pod 'FMDB'
 
+# show gift
+pod 'FLAnimatedImage', '~> 1.0'
 
 ############################## third party ############################## 
 # mob

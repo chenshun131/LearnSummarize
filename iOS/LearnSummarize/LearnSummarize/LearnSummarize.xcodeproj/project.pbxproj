@@ -47,6 +47,11 @@
 		E26D45E61E324BDA00F6935B /* LocalAuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E26D45E41E324BDA00F6935B /* LocalAuthenticationViewController.xib */; };
 		E26D45EA1E324E6800F6935B /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E26D45E91E324E6800F6935B /* DropDownMenu.m */; };
 		E26D45EF1E326AC900F6935B /* TouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = E26D45EE1E326AC900F6935B /* TouchID.m */; };
+		E27CCBAE1E339414009BBDAF /* gif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAB1E339414009BBDAF /* gif1.gif */; };
+		E27CCBAF1E339414009BBDAF /* gif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAC1E339414009BBDAF /* gif2.gif */; };
+		E27CCBB01E339414009BBDAF /* gif3.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAD1E339414009BBDAF /* gif3.gif */; };
+		E27CCBB51E3394EA009BBDAF /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27CCBB31E3394EA009BBDAF /* GifViewController.m */; };
+		E27CCBB61E3394EA009BBDAF /* GifViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBB41E3394EA009BBDAF /* GifViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +154,12 @@
 		E26D45E91E324E6800F6935B /* DropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownMenu.m; sourceTree = "<group>"; };
 		E26D45ED1E326AC900F6935B /* TouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchID.h; sourceTree = "<group>"; };
 		E26D45EE1E326AC900F6935B /* TouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchID.m; sourceTree = "<group>"; };
+		E27CCBAB1E339414009BBDAF /* gif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif1.gif; sourceTree = "<group>"; };
+		E27CCBAC1E339414009BBDAF /* gif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif2.gif; sourceTree = "<group>"; };
+		E27CCBAD1E339414009BBDAF /* gif3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif3.gif; sourceTree = "<group>"; };
+		E27CCBB21E3394EA009BBDAF /* GifViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifViewController.h; sourceTree = "<group>"; };
+		E27CCBB31E3394EA009BBDAF /* GifViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifViewController.m; sourceTree = "<group>"; };
+		E27CCBB41E3394EA009BBDAF /* GifViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +222,7 @@
 		E24075101E21CEC100E9692A /* LearnSummarize */ = {
 			isa = PBXGroup;
 			children = (
+				E27CCBAA1E339414009BBDAF /* Images */,
 				E240754B1E21D98400E9692A /* Constants */,
 				E240754C1E21D98400E9692A /* Controllers */,
 				E24075501E21D98400E9692A /* Models */,
@@ -274,6 +286,7 @@
 		E240754C1E21D98400E9692A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E27CCBB11E339469009BBDAF /* Img */,
 				E26D45E11E324BBD00F6935B /* Authentication */,
 				E24075C91E226B0A00E9692A /* Dialog */,
 				E24075971E222F1E00E9692A /* Login */,
@@ -474,6 +487,26 @@
 			path = TouchID;
 			sourceTree = "<group>";
 		};
+		E27CCBAA1E339414009BBDAF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E27CCBAB1E339414009BBDAF /* gif1.gif */,
+				E27CCBAC1E339414009BBDAF /* gif2.gif */,
+				E27CCBAD1E339414009BBDAF /* gif3.gif */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		E27CCBB11E339469009BBDAF /* Img */ = {
+			isa = PBXGroup;
+			children = (
+				E27CCBB21E3394EA009BBDAF /* GifViewController.h */,
+				E27CCBB31E3394EA009BBDAF /* GifViewController.m */,
+				E27CCBB41E3394EA009BBDAF /* GifViewController.xib */,
+			);
+			path = Img;
+			sourceTree = "<group>";
+		};
 		F955FAA087FC3165B736DDAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,11 +626,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26D45E61E324BDA00F6935B /* LocalAuthenticationViewController.xib in Resources */,
+				E27CCBAE1E339414009BBDAF /* gif1.gif in Resources */,
 				E240759C1E222F6500E9692A /* LoginViewController.xib in Resources */,
 				E24075B41E223D9500E9692A /* HomeViewController.xib in Resources */,
+				E27CCBAF1E339414009BBDAF /* gif2.gif in Resources */,
 				E24075CE1E226B4F00E9692A /* DateChooseViewController.xib in Resources */,
 				E24075491E21D33700E9692A /* LaunchScreen.storyboard in Resources */,
+				E27CCBB01E339414009BBDAF /* gif3.gif in Resources */,
 				E240751E1E21CEC100E9692A /* Assets.xcassets in Resources */,
+				E27CCBB61E3394EA009BBDAF /* GifViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +710,7 @@
 				E24075961E2225A400E9692A /* JScrollView+PageControl+AutoScroll.m in Sources */,
 				E24075861E2211B100E9692A /* UIBarButtonItem+Item.m in Sources */,
 				E24075A61E22329A00E9692A /* LoginModel.m in Sources */,
+				E27CCBB51E3394EA009BBDAF /* GifViewController.m in Sources */,
 				E26D45E51E324BDA00F6935B /* LocalAuthenticationViewController.m in Sources */,
 				E24075A91E2232F600E9692A /* SaveArray.m in Sources */,
 				E24075C81E22674500E9692A /* LTSDateChoose.m in Sources */,

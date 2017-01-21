@@ -10,6 +10,7 @@
 #import "BaseNavigationViewController.h"
 #import "HomeViewController.h"
 #import "LocalAuthenticationViewController.h"
+#import "GifViewController.h"
 
 @interface BaseTabBarViewController ()
 
@@ -37,16 +38,14 @@
 #pragma mark - 添加所有的子控制器
 - (void)setUpAllChildViewController
 {
-    // 电梯维保
     HomeViewController *homeVC = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
     [self setUpOneChildViewController:homeVC image:nil selectedImage:nil title:@"电梯维保"];
     
     LocalAuthenticationViewController *localAuthenticationVC = [[LocalAuthenticationViewController alloc] initWithNibName:@"LocalAuthenticationViewController" bundle:nil];
     [self setUpOneChildViewController:localAuthenticationVC image:nil selectedImage:nil title:@"电梯维修"];
     
-    // 电梯天地
-    HomeViewController *home3VC = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
-    [self setUpOneChildViewController:home3VC image:nil selectedImage:nil title:@"电梯天地"];
+    GifViewController *gifVC = [[GifViewController alloc] initWithNibName:@"GifViewController" bundle:nil];
+    [self setUpOneChildViewController:gifVC image:nil selectedImage:nil title:@"电梯天地"];
 }
 
 #pragma mark - 添加一个子控制器
