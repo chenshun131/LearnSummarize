@@ -24,7 +24,7 @@ pod 'IQKeyboardManager'
 pod 'FMDB'
 
 # show gift
-pod 'FLAnimatedImage', '~> 1.0'
+pod 'FLAnimatedImage'
 
 ############################## third party ############################## 
 # mob

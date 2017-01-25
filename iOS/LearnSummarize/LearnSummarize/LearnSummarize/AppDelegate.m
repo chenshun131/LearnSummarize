@@ -10,6 +10,8 @@
 #import "BaseNavigationViewController.h"
 #import "BaseTabBarViewController.h"
 #import "LoginViewController.h"
+#import <UMMobClick/MobClick.h>
+#import <SMS_SDK/SMSSDK.h>
 
 @interface AppDelegate ()
 
@@ -22,12 +24,11 @@
 {
     // Override point for customization after application launch.
     
-    // init IQKeyboardManager
-    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
-    manager.enable = YES;
-    manager.shouldResignOnTouchOutside = YES;
-    manager.shouldToolbarUsesTextFieldTintColor = YES;
-    manager.enableAutoToolbar = NO;
+    // init
+    [self initIQKeyboardManager];
+    [self initUMeng];
+    [self initMob];
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucc) name:@"loginSuccess" object:nil];
     
@@ -72,6 +73,34 @@
 - (void)loginSucc
 {
     self.window.rootViewController  =  [[BaseTabBarViewController alloc] init];
+}
+
+#pragma mark - init
+- (void)initIQKeyboardManager
+{
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = NO;
+}
+
+- (void)initUMeng
+{
+    UMConfigInstance.appKey = @"58889d7af29d9856c800175a";
+    UMConfigInstance.secret = @"LearnSummarize";
+#ifdef DEBUG
+    [MobClick setLogEnabled:YES];
+    UMConfigInstance.channelId = @"Develop";
+#else
+    UMConfigInstance.channelId = @"App Store";
+#endif
+    [MobClick startWithConfigure:UMConfigInstance];
+}
+
+- (void)initMob
+{
+    [SMSSDK registerApp:@"18dc1b3241f7c" withSecret:@"df159163b9cb52178d6dab55d9aaa796"];
 }
 
 @end

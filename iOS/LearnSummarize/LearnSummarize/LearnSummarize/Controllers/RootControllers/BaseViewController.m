@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import <UMMobClick/MobClick.h>
 
 @interface BaseViewController ()
 
@@ -24,6 +25,24 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets=NO;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:NSStringFromClass([self class])];
+#ifdef DEBUG
+    Log(@"viewWillAppear => %@", NSStringFromClass([self class]));
+#endif
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:NSStringFromClass([self class])];
+#ifdef DEBUG
+    Log(@"viewWillDisappear => %@", NSStringFromClass([self class]));
+#endif
 }
 
 - (void)didReceiveMemoryWarning
