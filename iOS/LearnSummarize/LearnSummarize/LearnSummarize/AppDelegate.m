@@ -17,8 +17,10 @@
 
 @end
 
+/*!
+ * AppDelegate use singleton pattern
+ */
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -68,6 +70,29 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL) application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;// whether allow save state when exit Application
+}
+
+- (BOOL) application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;// whether restore the last state when Application start
+}
+
+- (void) application:(UIApplication *)application willEncodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    // this method save UI state or data when save
+    [coder encodeFloat:1.0 forKey:@"Version"];
+}
+
+- (void) application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    // restore UI state or data
+    float lastVer = [coder decodeFloatForKey:@"Version"];
+    NSLog(@"lastVer = %f", lastVer);
 }
 
 - (void)loginSucc

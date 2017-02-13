@@ -15,4 +15,15 @@
 
 - (void)setRightImageMenu:(NSString *__nonnull)image action:(nullable SEL)action;
 
+/*!
+ * set View Round Border
+ * @param borderColor border Color
+ */
+- (void)setBorderStyleWithView:(CGColorRef _Nonnull)borderColor withViews:(UIView * _Nonnull)view, ...;
+
+/*!
+ * limit word count of UITextField
+ */
+- (void)wordCountLimit:(UITextField * _Nonnull)tf withWordCount:(NSUInteger)count;
+
 @end

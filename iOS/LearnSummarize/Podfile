@@ -26,6 +26,9 @@ pod 'FMDB'
 # show gift
 pod 'FLAnimatedImage'
 
+# shou chinese in console
+pod 'HYBUnicodeReadable', '~> 1.1'
+
 ############################## third party ############################## 
 # mob
 pod 'MOBFoundation_IDFA'

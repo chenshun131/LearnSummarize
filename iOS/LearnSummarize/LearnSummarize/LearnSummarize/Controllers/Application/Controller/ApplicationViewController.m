@@ -1,29 +1,26 @@
 //
-//  LoginViewController.m
+//  ApplicationViewController.m
 //  LearnSummarize
 //
-//  Created by chenshun131 on 17/1/8.
+//  Created by chenshun131 on 17/2/13.
 //  Copyright © 2017年 chenshun131. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "ApplicationViewController.h"
 
-@interface LoginViewController ()
-
-- (IBAction)loginAction:(id)sender;
-
+@interface ApplicationViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation ApplicationViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.navigationController.navigationBar.hidden = YES;
     
+    // http://blog.csdn.net/perfect_promise/article/details/7793735
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,10 +38,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)loginAction:(id)sender
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
-}
 
 @end

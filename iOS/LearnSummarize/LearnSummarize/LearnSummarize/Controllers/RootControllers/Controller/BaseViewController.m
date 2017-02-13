@@ -66,4 +66,52 @@
     self.navigationItem.rightBarButtonItem = rightItem;
 }
 
+/*!
+ * set View Round Border
+ * @param borderColor border Color
+ */
+- (void)setBorderStyleWithView:(CGColorRef)borderColor withViews:(UIView *)view, ...
+{
+    view.layer.borderColor = borderColor;
+    view.layer.borderWidth = 1.0;
+    view.layer.cornerRadius = 5;
+    
+    va_list list;
+    va_start(list, view);
+    UIView* param;
+    while ((param = va_arg(list, UIView *)))
+    {
+        if(param)
+        {
+            param.layer.borderColor = borderColor;
+            param.layer.borderWidth = 1.0;
+            param.layer.cornerRadius = 5;
+        }
+    }
+    va_end(list);
+}
+
+/*!
+ * limit word count of UITextField
+ */
+- (void)wordCountLimit:(UITextField *)tf withWordCount:(NSUInteger)count
+{
+    tf.tag = count;
+    [tf addTarget:self action:@selector(textChangeAction:) forControlEvents:UIControlEventEditingChanged];
+}
+
+- (void) textChangeAction:(UITextField *) sender
+{
+    if (sender.text.length > sender.tag)
+    {
+        UITextRange *markedRange = [sender markedTextRange];
+        if (markedRange)
+        {
+            return;
+        }
+        NSRange range = [sender.text rangeOfComposedCharacterSequenceAtIndex:sender.tag];
+        sender.text = [sender.text substringToIndex:range.location];
+    }
+}
+
 @end

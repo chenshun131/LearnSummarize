@@ -31,7 +31,13 @@
 
 // 全局颜色
 #define Color_Theme RGB(114, 230, 200) // 标题栏背景色
-
+#define LightGrey @"0xD3D3D3"
+#define TextGray @"0xECEEEE"
+#define TextBlack @"0x333333"
+#define TextLightBlack @"0x555555"
+#define LightBlue @"0x53C5E7"
+#define SeperatGray @"0xEFEFEF"
+#define CheckRed @"0xFE352A"
 
 // 日志控制
 #ifdef DEBUG

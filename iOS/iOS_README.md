@@ -19,6 +19,7 @@
 * [Masonry](https://github.com/SnapKit/Masonry)：一个轻量级的布局框架 拥有自己的描述语法 采用更优雅的链式语法封装自动布局 简洁明了 并具有高可读性 而且同时支持 iOS 和 Max OS X
 * [SDWebImage](https://github.com/rs/SDWebImage)：从网络中下载且缓存图片，并设置图片到对应的 UIImageView控件 或者 UIButton控件，在项目中使用 SDWebImage 来管理图片加载相关操作可以极大地提高开发效率
 * [FLAnimatedImage](https://github.com/Flipboard/FLAnimatedImage)：用于显示网络或本地 Gif
+* [HYBUnicodeReadable](https://github.com/524429264/HYBUnicodeReadable)：解决打印日志对于Unicode编码不能正常显示中文的问题，只需要将文件导入工程，不需要引用，就能达到打印日志显示Unicode编码中文数据
 
 
 ## 第三方SDK

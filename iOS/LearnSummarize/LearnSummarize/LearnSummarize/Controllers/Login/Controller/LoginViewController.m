@@ -1,26 +1,30 @@
 //
-//  HomeViewController.m
+//  LoginViewController.m
 //  LearnSummarize
 //
 //  Created by chenshun131 on 17/1/8.
 //  Copyright © 2017年 chenshun131. All rights reserved.
 //
 
-#import "HomeViewController.h"
-#import "DateChooseViewController.h"
+#import "LoginViewController.h"
 
-@interface HomeViewController ()
+@interface LoginViewController ()
 
-- (IBAction)dialogAction:(id)sender;
+- (IBAction)loginAction:(id)sender;
+
 
 @end
 
-@implementation HomeViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationController.navigationBar.hidden = YES;
+    
+    [UIApplication sharedApplication];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,11 +43,9 @@
 }
 */
 
-- (IBAction)dialogAction:(id)sender
+- (IBAction)loginAction:(id)sender
 {
-    DateChooseViewController *dateChooseVC = [[DateChooseViewController alloc] initWithNibName:@"DateChooseViewController" bundle:nil];
-    dateChooseVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:dateChooseVC animated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
 }
 
 @end
