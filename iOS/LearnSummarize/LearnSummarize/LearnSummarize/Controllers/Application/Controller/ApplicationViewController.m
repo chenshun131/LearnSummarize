@@ -7,8 +7,15 @@
 //
 
 #import "ApplicationViewController.h"
+#import "CommonTextTableViewCell.h"
+#import "MailViewController.h"
 
-@interface ApplicationViewController ()
+@interface ApplicationViewController ()<UITableViewDataSource, UITableViewDelegate>
+{
+    NSMutableArray *listData;
+    
+    UIView *emptyDataV;
+}
 
 @end
 
@@ -19,14 +26,69 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.title = @"AppDelegate中常用方法";
     
-    // http://blog.csdn.net/perfect_promise/article/details/7793735
+    emptyDataV = [[UIView alloc] initWithFrame:CGRectMake(kScreenWidth / 2 - 50, kScreenHeight / 2 - 50, 100, 100)];
+    UIImageView *emptyIV = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, 60, 65)];
+    emptyIV.image = [UIImage imageNamed:@"empty_data.png"];
+    [emptyDataV addSubview:emptyIV];
+    UILabel *emptyL = [[UILabel alloc] initWithFrame:CGRectMake(0, 70, 100, 30)];
+    emptyL.textAlignment = NSTextAlignmentCenter;
+    emptyL.text = @"暂无记录";
+    [emptyDataV addSubview:emptyL];
+    emptyDataV.hidden = YES;
+    [self.view addSubview:emptyDataV];
+    
+    listData = [NSMutableArray array];
+    [listData addObject:@"Open Web : Baidu"];
+    [listData addObject:@"Email"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return listData.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"identifier";
+    CommonTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if(cell == nil)
+    {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"CommonTextTableViewCell" owner:nil options:nil] firstObject];
+    }
+    [cell showContent:[listData objectAtIndex:indexPath.row]];
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch(indexPath.row)
+    {
+        case 0:
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+            break;
+        case 1:
+        {
+            MailViewController *mailVC = [[MailViewController alloc] initWithNibName:@"MailViewController" bundle:nil];
+            mailVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:mailVC animated:YES];
+        }
+            break;
+    }
 }
 
 /*

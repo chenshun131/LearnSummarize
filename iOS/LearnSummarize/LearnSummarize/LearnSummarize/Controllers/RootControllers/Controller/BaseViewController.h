@@ -16,6 +16,11 @@
 - (void)setRightImageMenu:(NSString *__nonnull)image action:(nullable SEL)action;
 
 /*!
+ * set right text
+ */
+- (void)setRightTextBtn:(NSString * _Nonnull)text action:(nullable SEL)action;
+
+/*!
  * set View Round Border
  * @param borderColor border Color
  */

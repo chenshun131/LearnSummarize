@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C72A5BA0D049F84F224BB5B1 /* libPods-LearnSummarize.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B679F058D7266339C72B235 /* libPods-LearnSummarize.a */; };
+		E2384ED61E531FF900E84671 /* CommonTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2384ED41E531FF900E84671 /* CommonTextTableViewCell.m */; };
+		E2384ED71E531FF900E84671 /* CommonTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2384ED51E531FF900E84671 /* CommonTextTableViewCell.xib */; };
+		E2384ED91E53244F00E84671 /* ApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2384ED81E53244F00E84671 /* ApplicationViewController.xib */; };
+		E2384EDD1E5329DA00E84671 /* MailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2384EDB1E5329DA00E84671 /* MailViewController.m */; };
+		E2384EDE1E5329DA00E84671 /* MailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2384EDC1E5329DA00E84671 /* MailViewController.xib */; };
 		E24075131E21CEC100E9692A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075121E21CEC100E9692A /* main.m */; };
 		E24075161E21CEC100E9692A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075151E21CEC100E9692A /* AppDelegate.m */; };
 		E240751E1E21CEC100E9692A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E240751D1E21CEC100E9692A /* Assets.xcassets */; };
@@ -33,8 +38,11 @@
 		E24075BD1E2241F600E9692A /* UIImageView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075BC1E2241F600E9692A /* UIImageView+Common.m */; };
 		E24075C71E22674500E9692A /* LTSBaseAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075C41E22674500E9692A /* LTSBaseAlertView.m */; };
 		E24075C81E22674500E9692A /* LTSDateChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075C61E22674500E9692A /* LTSDateChoose.m */; };
+		E247F7A71E5B0258004D866F /* ShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E247F7A51E5B0258004D866F /* ShellViewController.m */; };
+		E247F7A81E5B0258004D866F /* ShellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E247F7A61E5B0258004D866F /* ShellViewController.xib */; };
 		E26D45EA1E324E6800F6935B /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E26D45E91E324E6800F6935B /* DropDownMenu.m */; };
 		E26D45EF1E326AC900F6935B /* TouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = E26D45EE1E326AC900F6935B /* TouchID.m */; };
+		E279B3801E533B9F00699A5B /* test.vcf in Resources */ = {isa = PBXBuildFile; fileRef = E279B37F1E533B9F00699A5B /* test.vcf */; };
 		E27CCBAE1E339414009BBDAF /* gif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAB1E339414009BBDAF /* gif1.gif */; };
 		E27CCBAF1E339414009BBDAF /* gif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAC1E339414009BBDAF /* gif2.gif */; };
 		E27CCBB01E339414009BBDAF /* gif3.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAD1E339414009BBDAF /* gif3.gif */; };
@@ -60,10 +68,7 @@
 		E2DDA26B1E50BF1100460BE5 /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2651E50BF1100460BE5 /* BaseNavigationViewController.m */; };
 		E2DDA26C1E50BF1100460BE5 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2671E50BF1100460BE5 /* BaseTabBarViewController.m */; };
 		E2DDA26D1E50BF1100460BE5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2691E50BF1100460BE5 /* BaseViewController.m */; };
-		E2DDA2711E50BF8200460BE5 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA26F1E50BF8200460BE5 /* HomeTableViewCell.m */; };
-		E2DDA2721E50BF8200460BE5 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2DDA2701E50BF8200460BE5 /* HomeTableViewCell.xib */; };
 		E2DDA2791E50C2C500460BE5 /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2771E50C2C500460BE5 /* ApplicationViewController.m */; };
-		E2DDA27A1E50C2C500460BE5 /* ApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2DDA2781E50C2C500460BE5 /* ApplicationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +92,13 @@
 		0F03D717558220CD15DD8D3A /* Pods-LearnSummarize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSummarize.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LearnSummarize/Pods-LearnSummarize.release.xcconfig"; sourceTree = "<group>"; };
 		7B679F058D7266339C72B235 /* libPods-LearnSummarize.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearnSummarize.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAF3859DF87CE9EEAE50F4B /* Pods-LearnSummarize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSummarize.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LearnSummarize/Pods-LearnSummarize.debug.xcconfig"; sourceTree = "<group>"; };
+		E2384ED31E531FF900E84671 /* CommonTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTextTableViewCell.h; sourceTree = "<group>"; };
+		E2384ED41E531FF900E84671 /* CommonTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTextTableViewCell.m; sourceTree = "<group>"; };
+		E2384ED51E531FF900E84671 /* CommonTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonTextTableViewCell.xib; sourceTree = "<group>"; };
+		E2384ED81E53244F00E84671 /* ApplicationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicationViewController.xib; sourceTree = "<group>"; };
+		E2384EDA1E5329DA00E84671 /* MailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailViewController.h; sourceTree = "<group>"; };
+		E2384EDB1E5329DA00E84671 /* MailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailViewController.m; sourceTree = "<group>"; };
+		E2384EDC1E5329DA00E84671 /* MailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailViewController.xib; sourceTree = "<group>"; };
 		E240750E1E21CEC100E9692A /* LearnSummarize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSummarize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24075121E21CEC100E9692A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E24075141E21CEC100E9692A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,10 +154,14 @@
 		E24075C41E22674500E9692A /* LTSBaseAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSBaseAlertView.m; sourceTree = "<group>"; };
 		E24075C51E22674500E9692A /* LTSDateChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSDateChoose.h; sourceTree = "<group>"; };
 		E24075C61E22674500E9692A /* LTSDateChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSDateChoose.m; sourceTree = "<group>"; };
+		E247F7A41E5B0258004D866F /* ShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShellViewController.h; sourceTree = "<group>"; };
+		E247F7A51E5B0258004D866F /* ShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShellViewController.m; sourceTree = "<group>"; };
+		E247F7A61E5B0258004D866F /* ShellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShellViewController.xib; sourceTree = "<group>"; };
 		E26D45E81E324E6800F6935B /* DropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenu.h; sourceTree = "<group>"; };
 		E26D45E91E324E6800F6935B /* DropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownMenu.m; sourceTree = "<group>"; };
 		E26D45ED1E326AC900F6935B /* TouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchID.h; sourceTree = "<group>"; };
 		E26D45EE1E326AC900F6935B /* TouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchID.m; sourceTree = "<group>"; };
+		E279B37F1E533B9F00699A5B /* test.vcf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.vcf; sourceTree = "<group>"; };
 		E27CCBAB1E339414009BBDAF /* gif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif1.gif; sourceTree = "<group>"; };
 		E27CCBAC1E339414009BBDAF /* gif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif2.gif; sourceTree = "<group>"; };
 		E27CCBAD1E339414009BBDAF /* gif3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif3.gif; sourceTree = "<group>"; };
@@ -187,12 +203,8 @@
 		E2DDA2671E50BF1100460BE5 /* BaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarViewController.m; sourceTree = "<group>"; };
 		E2DDA2681E50BF1100460BE5 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		E2DDA2691E50BF1100460BE5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		E2DDA26E1E50BF8200460BE5 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
-		E2DDA26F1E50BF8200460BE5 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
-		E2DDA2701E50BF8200460BE5 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		E2DDA2761E50C2C500460BE5 /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
 		E2DDA2771E50C2C500460BE5 /* ApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationViewController.m; sourceTree = "<group>"; };
-		E2DDA2781E50C2C500460BE5 /* ApplicationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +267,7 @@
 		E24075101E21CEC100E9692A /* LearnSummarize */ = {
 			isa = PBXGroup;
 			children = (
+				E279B37E1E533B9400699A5B /* Other */,
 				E27CCBAA1E339414009BBDAF /* Images */,
 				E240754B1E21D98400E9692A /* Constants */,
 				E240754C1E21D98400E9692A /* Controllers */,
@@ -516,6 +529,14 @@
 			path = TouchID;
 			sourceTree = "<group>";
 		};
+		E279B37E1E533B9400699A5B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E279B37F1E533B9F00699A5B /* test.vcf */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		E27CCBAA1E339414009BBDAF /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,9 +673,9 @@
 		E2DDA25B1E50BE8000460BE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E2DDA26E1E50BF8200460BE5 /* HomeTableViewCell.h */,
-				E2DDA26F1E50BF8200460BE5 /* HomeTableViewCell.m */,
-				E2DDA2701E50BF8200460BE5 /* HomeTableViewCell.xib */,
+				E2384ED31E531FF900E84671 /* CommonTextTableViewCell.h */,
+				E2384ED41E531FF900E84671 /* CommonTextTableViewCell.m */,
+				E2384ED51E531FF900E84671 /* CommonTextTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -664,6 +685,12 @@
 			children = (
 				E2DDA25F1E50BEB900460BE5 /* ScanQrcodeViewController.h */,
 				E2DDA2601E50BEB900460BE5 /* ScanQrcodeViewController.m */,
+				E2384EDA1E5329DA00E84671 /* MailViewController.h */,
+				E2384EDB1E5329DA00E84671 /* MailViewController.m */,
+				E2384EDC1E5329DA00E84671 /* MailViewController.xib */,
+				E247F7A41E5B0258004D866F /* ShellViewController.h */,
+				E247F7A51E5B0258004D866F /* ShellViewController.m */,
+				E247F7A61E5B0258004D866F /* ShellViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -709,7 +736,7 @@
 			children = (
 				E2DDA2761E50C2C500460BE5 /* ApplicationViewController.h */,
 				E2DDA2771E50C2C500460BE5 /* ApplicationViewController.m */,
-				E2DDA2781E50C2C500460BE5 /* ApplicationViewController.xib */,
+				E2384ED81E53244F00E84671 /* ApplicationViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -841,18 +868,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				E27CCBAE1E339414009BBDAF /* gif1.gif in Resources */,
+				E2384EDE1E5329DA00E84671 /* MailViewController.xib in Resources */,
 				E27CCBAF1E339414009BBDAF /* gif2.gif in Resources */,
 				E24075491E21D33700E9692A /* LaunchScreen.storyboard in Resources */,
 				E27CCBB01E339414009BBDAF /* gif3.gif in Resources */,
+				E2384ED71E531FF900E84671 /* CommonTextTableViewCell.xib in Resources */,
 				E2DDA2431E50BDD100460BE5 /* LocalAuthenticationViewController.xib in Resources */,
 				E240751E1E21CEC100E9692A /* Assets.xcassets in Resources */,
 				E2DDA2511E50BE2000460BE5 /* LoginViewController.xib in Resources */,
+				E2384ED91E53244F00E84671 /* ApplicationViewController.xib in Resources */,
 				E2DDA2561E50BE6A00460BE5 /* GifViewController.xib in Resources */,
-				E2DDA27A1E50C2C500460BE5 /* ApplicationViewController.xib in Resources */,
 				E2DDA24A1E50BE0B00460BE5 /* DateChooseViewController.xib in Resources */,
 				E2DDA23B1E50BDA300460BE5 /* ConsoleToChineseViewController.xib in Resources */,
-				E2DDA2721E50BF8200460BE5 /* HomeTableViewCell.xib in Resources */,
+				E279B3801E533B9F00699A5B /* test.vcf in Resources */,
 				E2DDA25D1E50BE8000460BE5 /* HomeViewController.xib in Resources */,
+				E247F7A81E5B0258004D866F /* ShellViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,10 +957,10 @@
 			files = (
 				E24075961E2225A400E9692A /* JScrollView+PageControl+AutoScroll.m in Sources */,
 				E24075861E2211B100E9692A /* UIBarButtonItem+Item.m in Sources */,
-				E2DDA2711E50BF8200460BE5 /* HomeTableViewCell.m in Sources */,
 				E2DDA2491E50BE0B00460BE5 /* DateChooseViewController.m in Sources */,
 				E24075A61E22329A00E9692A /* LoginModel.m in Sources */,
 				E24075A91E2232F600E9692A /* SaveArray.m in Sources */,
+				E2384EDD1E5329DA00E84671 /* MailViewController.m in Sources */,
 				E24075C81E22674500E9692A /* LTSDateChoose.m in Sources */,
 				E24075A31E22326000E9692A /* BaseModel.m in Sources */,
 				E24075BD1E2241F600E9692A /* UIImageView+Common.m in Sources */,
@@ -961,11 +991,13 @@
 				E26D45EA1E324E6800F6935B /* DropDownMenu.m in Sources */,
 				E240755F1E21E78600E9692A /* NSString+Common.m in Sources */,
 				E2DDA26C1E50BF1100460BE5 /* BaseTabBarViewController.m in Sources */,
+				E2384ED61E531FF900E84671 /* CommonTextTableViewCell.m in Sources */,
 				E2DDA2341E50B65A00460BE5 /* UIColor+expanded.m in Sources */,
 				E27CCBC61E33BAAE009BBDAF /* RSPlayPauseButton.m in Sources */,
 				E24075621E21E9D900E9692A /* NSDate+Common.m in Sources */,
 				E27CCBC21E33BAAE009BBDAF /* DebugView.m in Sources */,
 				E24075C71E22674500E9692A /* LTSBaseAlertView.m in Sources */,
+				E247F7A71E5B0258004D866F /* ShellViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

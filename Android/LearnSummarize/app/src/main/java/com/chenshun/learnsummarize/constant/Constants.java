@@ -1,5 +1,7 @@
 package com.chenshun.learnsummarize.constant;
 
+import com.chenshun.learnsummarize.BuildConfig;
+
 /**
  * User: chenshun <p />
  * Time: 16/10/13 16:06  <p />
@@ -9,7 +11,7 @@ package com.chenshun.learnsummarize.constant;
 public class Constants
 {
     /** whether in debug model */
-    public static final boolean IS_DEBUG = true;
+    public static final boolean IS_DEBUG = BuildConfig.IS_DEBUG;
     public static final String CACHE_IMAGELOADER_PATH = "LearnSummarize/imageLoaderCache";
     public static final int BACK_TIME = 2000;// exit App if click back button twice in 2 second
 

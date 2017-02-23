@@ -8,7 +8,7 @@
 
 #import "HomeViewController.h"
 #import "DateChooseViewController.h"
-#import "HomeTableViewCell.h"
+#import "CommonTextTableViewCell.h"
 #import "ApplicationViewController.h"
 
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -17,8 +17,6 @@
     
     UIView *emptyDataV;
 }
-
-@property (weak, nonatomic) IBOutlet UITableView *tableViewList;
 
 @end
 
@@ -42,6 +40,7 @@
     
     listData = [NSMutableArray array];
     [listData addObject:@"一款简单实用的日期选择控件"];
+    [listData addObject:@"AppDelegate中常用方法"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,10 +58,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"identifier";
-    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    CommonTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if(cell == nil)
     {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"HomeTableViewCell" owner:nil options:nil] firstObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"CommonTextTableViewCell" owner:nil options:nil] firstObject];
     }
     [cell showContent:[listData objectAtIndex:indexPath.row]];
     return cell;

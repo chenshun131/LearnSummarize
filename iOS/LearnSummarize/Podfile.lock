@@ -32,6 +32,7 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - skpsmtpmessage (0.0.1)
   - SMSSDK (2.1.4):
     - MOBFoundation_IDFA
   - UMengAnalytics (4.2.4)
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - MJRefresh
   - MOBFoundation_IDFA
   - SDWebImage
+  - skpsmtpmessage
   - SMSSDK
   - UMengAnalytics
 
@@ -68,9 +70,10 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MOBFoundation_IDFA: 13a97a3a8dff584e745f71ca58d7c172797981e3
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  skpsmtpmessage: f6e913380c784dd8d4a9f83c8790a302445a5e05
   SMSSDK: 4b5c95fc74522969187123df61b2c9567f48435e
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
 
-PODFILE CHECKSUM: 37e235179fac98af7903652252620d53cbb82edc
+PODFILE CHECKSUM: 61043d4e948a5a0c6336f75bc8dfa4e73128a8f6
 
 COCOAPODS: 1.1.1

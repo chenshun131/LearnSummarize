@@ -12,12 +12,13 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0.1"
+        buildConfigField "String", "GIT_VERSION_DETAIL", "\"${getGitVersion()}\""
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         debug {
-            // 显示Log
-            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "boolean", "LOG_DEBUG", "true" // show Log
+            buildConfigField "boolean", "IS_DEBUG", "true"  // is in debug model
 
             versionNameSuffix "-debug"
             minifyEnabled false
@@ -26,13 +27,12 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
-            // 不显示Log
-            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "LOG_DEBUG", "false" // not show Log
+            buildConfigField "boolean", "IS_DEBUG", "false"  // is in debug model
 
             minifyEnabled true
             zipAlignEnabled true
-            // 移除无用的resource文件
-            shrinkResources true
+            shrinkResources true // 移除无用的resource文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -46,16 +46,16 @@ android {
     useLibrary 'org.apache.http.legacy'
     productFlavors {
         xiaomi {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE : "xiaomi"]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
         }
         _360 {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE : "_360"]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "_360"]
         }
         baidu {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE : "baidu"]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
         }
         wandoujia {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE : "wandoujia"]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
         }
     }
 }
@@ -96,4 +96,20 @@ dependencies {
     testCompile 'com.antfortune.freeline:runtime-no-op:0.8.2'
     // database
     compile 'io.realm:android-adapters:1.4.0'
+}
+
+/**
+ * Git 采用的是 SHA散列码 作为版本号，因此它没有顺序的版本号
+ * @return
+ */
+def getGitVersion() {
+    return 'git rev-parse HEAD'.execute().text.trim();
+}
+
+/**
+ * get svn version info
+ * @return
+ */
+def getSVNVersion() {
+    return 'svn info'.execute().text.trim().replace("\r", "").split("\n")[6];
 }

@@ -1,20 +1,20 @@
 //
-//  HomeTableViewCell.m
+//  CommonTextTableViewCell.m
 //  LearnSummarize
 //
-//  Created by chenshun131 on 17/2/13.
+//  Created by chenshun131 on 17/2/14.
 //  Copyright © 2017年 chenshun131. All rights reserved.
 //
 
-#import "HomeTableViewCell.h"
+#import "CommonTextTableViewCell.h"
 
-@interface HomeTableViewCell ()
+@interface CommonTextTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *contentL;
 
 @end
 
-@implementation HomeTableViewCell
+@implementation CommonTextTableViewCell
 
 - (void)awakeFromNib
 {
@@ -25,7 +25,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 

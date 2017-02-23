@@ -1,12 +1,12 @@
 //
-//  HomeTableViewCell.h
+//  CommonTextTableViewCell.h
 //  LearnSummarize
 //
-//  Created by chenshun131 on 17/2/13.
+//  Created by chenshun131 on 17/2/14.
 //  Copyright © 2017年 chenshun131. All rights reserved.
 //
 
-@interface HomeTableViewCell : UITableViewCell
+@interface CommonTextTableViewCell : UITableViewCell
 
 - (void)showContent:(NSString *)content;
 

@@ -29,6 +29,9 @@ pod 'FLAnimatedImage'
 # shou chinese in console
 pod 'HYBUnicodeReadable', '~> 1.1'
 
+# send Email
+pod 'skpsmtpmessage'
+
 ############################## third party ############################## 
 # mob
 pod 'MOBFoundation_IDFA'

@@ -67,6 +67,15 @@
 }
 
 /*!
+ * set right text
+ */
+- (void)setRightTextBtn:(NSString *)text action:(nullable SEL)action
+{
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:text style:UIBarButtonItemStylePlain target:self action:action];
+    self.navigationItem.rightBarButtonItem = rightBarItem;
+}
+
+/*!
  * set View Round Border
  * @param borderColor border Color
  */

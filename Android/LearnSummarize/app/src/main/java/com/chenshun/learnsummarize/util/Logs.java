@@ -2,7 +2,7 @@ package com.chenshun.learnsummarize.util;
 
 import android.util.Log;
 
-import com.chenshun.learnsummarize.constant.Constants;
+import com.chenshun.learnsummarize.BuildConfig;
 
 /**
  * User: chenshun <p />
@@ -13,7 +13,7 @@ import com.chenshun.learnsummarize.constant.Constants;
 public final class Logs
 {
     public static final String LOGTAG = Logs.class.getSimpleName();
-    public static final boolean IS_DEBUG = Constants.IS_DEBUG;
+    public static final boolean IS_DEBUG = BuildConfig.LOG_DEBUG;
 
     /** 'System.out' switch.When it is true, you can see the 'System.out' log. Otherwise, you cannot. */
     public static final boolean DEBUG_SYSOUT = false;
