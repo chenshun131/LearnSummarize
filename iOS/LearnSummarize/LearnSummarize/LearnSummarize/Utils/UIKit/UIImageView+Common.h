@@ -20,4 +20,21 @@
  */
 - (void)setImageWithUrl:(NSString *)url placeHolder:(NSString *)placeHolder;
 
+/**
+ * 压图片质量
+ *
+ * @param image image
+ * @return Data
+ */
++ (NSData *)zipImageWithImage:(UIImage *)image;
+
+/**
+ * 等比缩放本图片大小
+ *
+ * @param newImageWidth 缩放后图片宽度，像素为单位
+ *
+ * @return self-->(image)
+ */
++ (UIImage *)compressImage:(UIImage *)image newWidth:(CGFloat)newImageWidth;
+
 @end

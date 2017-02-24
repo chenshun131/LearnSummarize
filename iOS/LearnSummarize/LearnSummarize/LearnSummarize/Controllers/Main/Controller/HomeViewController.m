@@ -10,6 +10,7 @@
 #import "DateChooseViewController.h"
 #import "CommonTextTableViewCell.h"
 #import "ApplicationViewController.h"
+#import "EmotionViewController.h"
 
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -41,6 +42,7 @@
     listData = [NSMutableArray array];
     [listData addObject:@"一款简单实用的日期选择控件"];
     [listData addObject:@"AppDelegate中常用方法"];
+    [listData addObject:@"UILabel 显示额外的表情"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,6 +91,13 @@
             ApplicationViewController *applicationVC = [[ApplicationViewController alloc] initWithNibName:@"ApplicationViewController" bundle:nil];
             applicationVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:applicationVC animated:YES];
+        }
+            break;
+        case 2:
+        {
+            EmotionViewController *emotionVC = [[EmotionViewController alloc] initWithNibName:@"EmotionViewController" bundle:nil];
+            emotionVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:emotionVC animated:YES];
         }
             break;
     }

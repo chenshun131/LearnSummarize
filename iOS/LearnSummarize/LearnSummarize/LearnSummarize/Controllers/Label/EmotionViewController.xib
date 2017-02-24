@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmotionViewController">
+            <connections>
+                <outlet property="testLabel" destination="zFe-Ei-zeR" id="wsq-PJ-MC1"/>
+                <outlet property="testLabel_1" destination="pqM-2Q-Edf" id="T9w-Vk-dvs"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFe-Ei-zeR">
+                    <rect key="frame" x="18" y="122" width="341" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="fhk-h4-fcj"/>
+                    </constraints>
+                    <attributedString key="attributedText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqM-2Q-Edf">
+                    <rect key="frame" x="18" y="320" width="341" height="0.0"/>
+                    <attributedString key="attributedText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zFe-Ei-zeR" secondAttribute="trailing" constant="16" id="EO8-kY-PbU"/>
+                <constraint firstItem="zFe-Ei-zeR" firstAttribute="trailing" secondItem="pqM-2Q-Edf" secondAttribute="trailing" id="MV0-s2-zfL"/>
+                <constraint firstItem="zFe-Ei-zeR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="122" id="Roy-4R-Zte"/>
+                <constraint firstItem="zFe-Ei-zeR" firstAttribute="leading" secondItem="pqM-2Q-Edf" secondAttribute="leading" id="SU1-VC-ap4"/>
+                <constraint firstItem="pqM-2Q-Edf" firstAttribute="top" secondItem="zFe-Ei-zeR" secondAttribute="bottom" constant="38" id="TAn-Nh-SQc"/>
+                <constraint firstItem="zFe-Ei-zeR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="dh5-4b-8at"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

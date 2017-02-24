@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C72A5BA0D049F84F224BB5B1 /* libPods-LearnSummarize.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B679F058D7266339C72B235 /* libPods-LearnSummarize.a */; };
+		E21B215E1E6060C50076D2A6 /* UILabel+AttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = E21B215D1E6060C50076D2A6 /* UILabel+AttributedString.m */; };
+		E21B21631E6061650076D2A6 /* EmotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E21B21611E6061650076D2A6 /* EmotionViewController.m */; };
+		E21B21641E6061650076D2A6 /* EmotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21B21621E6061650076D2A6 /* EmotionViewController.xib */; };
 		E2384ED61E531FF900E84671 /* CommonTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2384ED41E531FF900E84671 /* CommonTextTableViewCell.m */; };
 		E2384ED71E531FF900E84671 /* CommonTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2384ED51E531FF900E84671 /* CommonTextTableViewCell.xib */; };
 		E2384ED91E53244F00E84671 /* ApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2384ED81E53244F00E84671 /* ApplicationViewController.xib */; };
@@ -92,6 +95,11 @@
 		0F03D717558220CD15DD8D3A /* Pods-LearnSummarize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSummarize.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LearnSummarize/Pods-LearnSummarize.release.xcconfig"; sourceTree = "<group>"; };
 		7B679F058D7266339C72B235 /* libPods-LearnSummarize.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearnSummarize.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAF3859DF87CE9EEAE50F4B /* Pods-LearnSummarize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSummarize.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LearnSummarize/Pods-LearnSummarize.debug.xcconfig"; sourceTree = "<group>"; };
+		E21B215C1E6060C50076D2A6 /* UILabel+AttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AttributedString.h"; sourceTree = "<group>"; };
+		E21B215D1E6060C50076D2A6 /* UILabel+AttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AttributedString.m"; sourceTree = "<group>"; };
+		E21B21601E6061650076D2A6 /* EmotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionViewController.h; sourceTree = "<group>"; };
+		E21B21611E6061650076D2A6 /* EmotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionViewController.m; sourceTree = "<group>"; };
+		E21B21621E6061650076D2A6 /* EmotionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmotionViewController.xib; sourceTree = "<group>"; };
 		E2384ED31E531FF900E84671 /* CommonTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTextTableViewCell.h; sourceTree = "<group>"; };
 		E2384ED41E531FF900E84671 /* CommonTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTextTableViewCell.m; sourceTree = "<group>"; };
 		E2384ED51E531FF900E84671 /* CommonTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonTextTableViewCell.xib; sourceTree = "<group>"; };
@@ -242,6 +250,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E21B215F1E6061270076D2A6 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				E21B21601E6061650076D2A6 /* EmotionViewController.h */,
+				E21B21611E6061650076D2A6 /* EmotionViewController.m */,
+				E21B21621E6061650076D2A6 /* EmotionViewController.xib */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
 		E24075051E21CEC100E9692A = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +350,7 @@
 		E240754C1E21D98400E9692A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E21B215F1E6061270076D2A6 /* Label */,
 				E2DDA2731E50C27C00460BE5 /* Application */,
 				E2DDA22C1E50B0DF00460BE5 /* ConsoleToChinese */,
 				E27CCBB11E339469009BBDAF /* Img */,
@@ -428,6 +447,8 @@
 		E240756E1E22031000E9692A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				E21B215C1E6060C50076D2A6 /* UILabel+AttributedString.h */,
+				E21B215D1E6060C50076D2A6 /* UILabel+AttributedString.m */,
 				E2DDA2321E50B65A00460BE5 /* UIColor+expanded.h */,
 				E2DDA2331E50B65A00460BE5 /* UIColor+expanded.m */,
 				E240756F1E22031000E9692A /* MessageUtil.h */,
@@ -871,6 +892,7 @@
 				E2384EDE1E5329DA00E84671 /* MailViewController.xib in Resources */,
 				E27CCBAF1E339414009BBDAF /* gif2.gif in Resources */,
 				E24075491E21D33700E9692A /* LaunchScreen.storyboard in Resources */,
+				E21B21641E6061650076D2A6 /* EmotionViewController.xib in Resources */,
 				E27CCBB01E339414009BBDAF /* gif3.gif in Resources */,
 				E2384ED71E531FF900E84671 /* CommonTextTableViewCell.xib in Resources */,
 				E2DDA2431E50BDD100460BE5 /* LocalAuthenticationViewController.xib in Resources */,
@@ -956,6 +978,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E24075961E2225A400E9692A /* JScrollView+PageControl+AutoScroll.m in Sources */,
+				E21B215E1E6060C50076D2A6 /* UILabel+AttributedString.m in Sources */,
 				E24075861E2211B100E9692A /* UIBarButtonItem+Item.m in Sources */,
 				E2DDA2491E50BE0B00460BE5 /* DateChooseViewController.m in Sources */,
 				E24075A61E22329A00E9692A /* LoginModel.m in Sources */,
@@ -976,6 +999,7 @@
 				E24075161E21CEC100E9692A /* AppDelegate.m in Sources */,
 				E2DDA26D1E50BF1100460BE5 /* BaseViewController.m in Sources */,
 				E24075891E2213DA00E9692A /* MainUtil.m in Sources */,
+				E21B21631E6061650076D2A6 /* EmotionViewController.m in Sources */,
 				E27CCBC51E33BAAE009BBDAF /* PlayheadView.m in Sources */,
 				E2DDA2421E50BDD100460BE5 /* LocalAuthenticationViewController.m in Sources */,
 				E24075831E220F9A00E9692A /* UIView+SDExtension.m in Sources */,
