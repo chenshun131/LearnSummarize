@@ -21,9 +21,10 @@
 - (void)setImageWithUrl:(NSString *)url placeHolder:(NSString *)placeHolder;
 
 /**
- * 显示网络图片，并对网络图片进行压缩
+ * 显示网络图片，并对网络图片进行压缩，图片如果数量过多会影响运行流畅度
+ * @param newImageWidth 若在于等于0则不修改图片尺寸
  */
-+ (void)showWebImage:(UIImageView *)imageView withURL:(NSString *)imgURL;
++ (void)showWebImage:(UIImageView *)imageView withURL:(NSString *)imgURL newWidth:(CGFloat)newImageWidth;
 
 /**
  * 压图片质量

@@ -1224,8 +1224,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingorient.elevatorMaintain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3e4a1cce-fae4-4189-a220-4ed59f851880";
-				PROVISIONING_PROFILE_SPECIFIER = elevatorMaintain_development;
+				PROVISIONING_PROFILE = "476e3fd3-aa57-4136-b899-f2186a2a4c9d";
+				PROVISIONING_PROFILE_SPECIFIER = 2017_02_;
 			};
 			name = Debug;
 		};
@@ -1243,8 +1243,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingorient.elevatorMaintain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3e4a1cce-fae4-4189-a220-4ed59f851880";
-				PROVISIONING_PROFILE_SPECIFIER = elevatorMaintain_development;
+				PROVISIONING_PROFILE = "476e3fd3-aa57-4136-b899-f2186a2a4c9d";
+				PROVISIONING_PROFILE_SPECIFIER = 2017_02_;
 			};
 			name = Release;
 		};

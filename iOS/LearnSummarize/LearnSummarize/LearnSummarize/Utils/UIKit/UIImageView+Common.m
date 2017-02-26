@@ -29,14 +29,19 @@
 }
 
 /**
- * 显示网络图片，并对网络图片进行压缩
+ * 显示网络图片，并对网络图片进行压缩，图片如果数量过多会影响运行流畅度
+ * @param newImageWidth 若在于等于0则不修改图片尺寸
  */
-+ (void)showWebImage:(UIImageView *)imageView withURL:(NSString *)imgURL
++ (void)showWebImage:(UIImageView *)imageView withURL:(NSString *)imgURL newWidth:(CGFloat)newImageWidth
 {
     __weak __typeof(&*imageView) weakImageView = imageView;
     [imageView sd_setImageWithURL:[NSURL URLWithString:imgURL] placeholderImage:[UIImage imageNamed:@"icon_load_fail"] options:SDWebImageRetryFailed|SDWebImageLowPriority|SDWebImageAvoidAutoSetImage  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL)
      {
          // 此处根据需要裁剪图片
+         if(newImageWidth > 0)
+         {
+             image = [self compressImage:image newWidth:newImageWidth];
+         }
          image = [UIImage imageWithData:[self zipImageWithImage:image]];
          
          dispatch_async(dispatch_get_main_queue(), ^{
