@@ -21,6 +21,11 @@
 - (void)setImageWithUrl:(NSString *)url placeHolder:(NSString *)placeHolder;
 
 /**
+ * 显示网络图片，并对网络图片进行压缩
+ */
++ (void)showWebImage:(UIImageView *)imageView withURL:(NSString *)imgURL;
+
+/**
  * 压图片质量
  *
  * @param image image

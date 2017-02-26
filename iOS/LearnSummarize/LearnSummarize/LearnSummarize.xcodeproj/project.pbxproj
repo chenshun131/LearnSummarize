@@ -43,17 +43,24 @@
 		E24075C81E22674500E9692A /* LTSDateChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = E24075C61E22674500E9692A /* LTSDateChoose.m */; };
 		E247F7A71E5B0258004D866F /* ShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E247F7A51E5B0258004D866F /* ShellViewController.m */; };
 		E247F7A81E5B0258004D866F /* ShellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E247F7A61E5B0258004D866F /* ShellViewController.xib */; };
+		E2588F881E61721500B55ADC /* SDWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588F861E61721500B55ADC /* SDWebImageViewController.m */; };
+		E2588F8D1E61746900B55ADC /* ParticleEmitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588F8B1E61746900B55ADC /* ParticleEmitterViewController.m */; };
+		E2588F8E1E61746900B55ADC /* ParticleEmitterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2588F8C1E61746900B55ADC /* ParticleEmitterViewController.xib */; };
+		E2588F921E6174A200B55ADC /* DWParticleEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588F911E6174A200B55ADC /* DWParticleEmitter.m */; };
+		E2588F941E61753900B55ADC /* yuandanr.png in Resources */ = {isa = PBXBuildFile; fileRef = E2588F931E61753900B55ADC /* yuandanr.png */; };
+		E2588F971E617F7C00B55ADC /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588F961E617F7C00B55ADC /* ImageModel.m */; };
+		E2588FA31E6185F000B55ADC /* DebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588F9A1E6185F000B55ADC /* DebugView.m */; };
+		E2588FA41E6185F000B55ADC /* FrameCacheView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588F9C1E6185F000B55ADC /* FrameCacheView.m */; };
+		E2588FA51E6185F000B55ADC /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588F9E1E6185F000B55ADC /* GraphView.m */; };
+		E2588FA61E6185F000B55ADC /* PlayheadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588FA01E6185F000B55ADC /* PlayheadView.m */; };
+		E2588FA71E6185F000B55ADC /* RSPlayPauseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588FA21E6185F000B55ADC /* RSPlayPauseButton.m */; };
+		E2588FAB1E61862300B55ADC /* SDWebImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588FA91E61862300B55ADC /* SDWebImageCollectionViewCell.m */; };
 		E26D45EA1E324E6800F6935B /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E26D45E91E324E6800F6935B /* DropDownMenu.m */; };
 		E26D45EF1E326AC900F6935B /* TouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = E26D45EE1E326AC900F6935B /* TouchID.m */; };
 		E279B3801E533B9F00699A5B /* test.vcf in Resources */ = {isa = PBXBuildFile; fileRef = E279B37F1E533B9F00699A5B /* test.vcf */; };
 		E27CCBAE1E339414009BBDAF /* gif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAB1E339414009BBDAF /* gif1.gif */; };
 		E27CCBAF1E339414009BBDAF /* gif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAC1E339414009BBDAF /* gif2.gif */; };
 		E27CCBB01E339414009BBDAF /* gif3.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAD1E339414009BBDAF /* gif3.gif */; };
-		E27CCBC21E33BAAE009BBDAF /* DebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27CCBB91E33BAAE009BBDAF /* DebugView.m */; };
-		E27CCBC31E33BAAE009BBDAF /* FrameCacheView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27CCBBB1E33BAAE009BBDAF /* FrameCacheView.m */; };
-		E27CCBC41E33BAAE009BBDAF /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27CCBBD1E33BAAE009BBDAF /* GraphView.m */; };
-		E27CCBC51E33BAAE009BBDAF /* PlayheadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27CCBBF1E33BAAE009BBDAF /* PlayheadView.m */; };
-		E27CCBC61E33BAAE009BBDAF /* RSPlayPauseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E27CCBC11E33BAAE009BBDAF /* RSPlayPauseButton.m */; };
 		E2DDA2341E50B65A00460BE5 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2331E50B65A00460BE5 /* UIColor+expanded.m */; };
 		E2DDA23A1E50BDA300460BE5 /* ConsoleToChineseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2371E50BDA300460BE5 /* ConsoleToChineseViewController.m */; };
 		E2DDA23B1E50BDA300460BE5 /* ConsoleToChineseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2DDA2381E50BDA300460BE5 /* ConsoleToChineseViewController.xib */; };
@@ -165,6 +172,28 @@
 		E247F7A41E5B0258004D866F /* ShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShellViewController.h; sourceTree = "<group>"; };
 		E247F7A51E5B0258004D866F /* ShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShellViewController.m; sourceTree = "<group>"; };
 		E247F7A61E5B0258004D866F /* ShellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShellViewController.xib; sourceTree = "<group>"; };
+		E2588F851E61721500B55ADC /* SDWebImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageViewController.h; sourceTree = "<group>"; };
+		E2588F861E61721500B55ADC /* SDWebImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageViewController.m; sourceTree = "<group>"; };
+		E2588F8A1E61746900B55ADC /* ParticleEmitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleEmitterViewController.h; sourceTree = "<group>"; };
+		E2588F8B1E61746900B55ADC /* ParticleEmitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleEmitterViewController.m; sourceTree = "<group>"; };
+		E2588F8C1E61746900B55ADC /* ParticleEmitterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticleEmitterViewController.xib; sourceTree = "<group>"; };
+		E2588F901E6174A200B55ADC /* DWParticleEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWParticleEmitter.h; sourceTree = "<group>"; };
+		E2588F911E6174A200B55ADC /* DWParticleEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWParticleEmitter.m; sourceTree = "<group>"; };
+		E2588F931E61753900B55ADC /* yuandanr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuandanr.png; sourceTree = "<group>"; };
+		E2588F951E617F7C00B55ADC /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
+		E2588F961E617F7C00B55ADC /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
+		E2588F991E6185F000B55ADC /* DebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugView.h; sourceTree = "<group>"; };
+		E2588F9A1E6185F000B55ADC /* DebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugView.m; sourceTree = "<group>"; };
+		E2588F9B1E6185F000B55ADC /* FrameCacheView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameCacheView.h; sourceTree = "<group>"; };
+		E2588F9C1E6185F000B55ADC /* FrameCacheView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameCacheView.m; sourceTree = "<group>"; };
+		E2588F9D1E6185F000B55ADC /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		E2588F9E1E6185F000B55ADC /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		E2588F9F1E6185F000B55ADC /* PlayheadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayheadView.h; sourceTree = "<group>"; };
+		E2588FA01E6185F000B55ADC /* PlayheadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayheadView.m; sourceTree = "<group>"; };
+		E2588FA11E6185F000B55ADC /* RSPlayPauseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPlayPauseButton.h; sourceTree = "<group>"; };
+		E2588FA21E6185F000B55ADC /* RSPlayPauseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSPlayPauseButton.m; sourceTree = "<group>"; };
+		E2588FA81E61862300B55ADC /* SDWebImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCollectionViewCell.h; sourceTree = "<group>"; };
+		E2588FA91E61862300B55ADC /* SDWebImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCollectionViewCell.m; sourceTree = "<group>"; };
 		E26D45E81E324E6800F6935B /* DropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenu.h; sourceTree = "<group>"; };
 		E26D45E91E324E6800F6935B /* DropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownMenu.m; sourceTree = "<group>"; };
 		E26D45ED1E326AC900F6935B /* TouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchID.h; sourceTree = "<group>"; };
@@ -173,16 +202,6 @@
 		E27CCBAB1E339414009BBDAF /* gif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif1.gif; sourceTree = "<group>"; };
 		E27CCBAC1E339414009BBDAF /* gif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif2.gif; sourceTree = "<group>"; };
 		E27CCBAD1E339414009BBDAF /* gif3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif3.gif; sourceTree = "<group>"; };
-		E27CCBB81E33BAAE009BBDAF /* DebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugView.h; sourceTree = "<group>"; };
-		E27CCBB91E33BAAE009BBDAF /* DebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugView.m; sourceTree = "<group>"; };
-		E27CCBBA1E33BAAE009BBDAF /* FrameCacheView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameCacheView.h; sourceTree = "<group>"; };
-		E27CCBBB1E33BAAE009BBDAF /* FrameCacheView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameCacheView.m; sourceTree = "<group>"; };
-		E27CCBBC1E33BAAE009BBDAF /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
-		E27CCBBD1E33BAAE009BBDAF /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
-		E27CCBBE1E33BAAE009BBDAF /* PlayheadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayheadView.h; sourceTree = "<group>"; };
-		E27CCBBF1E33BAAE009BBDAF /* PlayheadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayheadView.m; sourceTree = "<group>"; };
-		E27CCBC01E33BAAE009BBDAF /* RSPlayPauseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPlayPauseButton.h; sourceTree = "<group>"; };
-		E27CCBC11E33BAAE009BBDAF /* RSPlayPauseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSPlayPauseButton.m; sourceTree = "<group>"; };
 		E2DDA2321E50B65A00460BE5 /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
 		E2DDA2331E50B65A00460BE5 /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
 		E2DDA2361E50BDA300460BE5 /* ConsoleToChineseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleToChineseViewController.h; sourceTree = "<group>"; };
@@ -399,6 +418,8 @@
 				E240756C1E21FC7E00E9692A /* PageModel.m */,
 				E24075A41E22329A00E9692A /* LoginModel.h */,
 				E24075A51E22329A00E9692A /* LoginModel.m */,
+				E2588F951E617F7C00B55ADC /* ImageModel.h */,
+				E2588F961E617F7C00B55ADC /* ImageModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -523,6 +544,33 @@
 			path = Dialog;
 			sourceTree = "<group>";
 		};
+		E2588F8F1E6174A200B55ADC /* DWParticleEmitter */ = {
+			isa = PBXGroup;
+			children = (
+				E2588F931E61753900B55ADC /* yuandanr.png */,
+				E2588F901E6174A200B55ADC /* DWParticleEmitter.h */,
+				E2588F911E6174A200B55ADC /* DWParticleEmitter.m */,
+			);
+			path = DWParticleEmitter;
+			sourceTree = "<group>";
+		};
+		E2588F981E6185F000B55ADC /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				E2588F991E6185F000B55ADC /* DebugView.h */,
+				E2588F9A1E6185F000B55ADC /* DebugView.m */,
+				E2588F9B1E6185F000B55ADC /* FrameCacheView.h */,
+				E2588F9C1E6185F000B55ADC /* FrameCacheView.m */,
+				E2588F9D1E6185F000B55ADC /* GraphView.h */,
+				E2588F9E1E6185F000B55ADC /* GraphView.m */,
+				E2588F9F1E6185F000B55ADC /* PlayheadView.h */,
+				E2588FA01E6185F000B55ADC /* PlayheadView.m */,
+				E2588FA11E6185F000B55ADC /* RSPlayPauseButton.h */,
+				E2588FA21E6185F000B55ADC /* RSPlayPauseButton.m */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
 		E26D45E11E324BBD00F6935B /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,16 +628,10 @@
 		E27CCBB71E33BA66009BBDAF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E27CCBB81E33BAAE009BBDAF /* DebugView.h */,
-				E27CCBB91E33BAAE009BBDAF /* DebugView.m */,
-				E27CCBBA1E33BAAE009BBDAF /* FrameCacheView.h */,
-				E27CCBBB1E33BAAE009BBDAF /* FrameCacheView.m */,
-				E27CCBBC1E33BAAE009BBDAF /* GraphView.h */,
-				E27CCBBD1E33BAAE009BBDAF /* GraphView.m */,
-				E27CCBBE1E33BAAE009BBDAF /* PlayheadView.h */,
-				E27CCBBF1E33BAAE009BBDAF /* PlayheadView.m */,
-				E27CCBC01E33BAAE009BBDAF /* RSPlayPauseButton.h */,
-				E27CCBC11E33BAAE009BBDAF /* RSPlayPauseButton.m */,
+				E2588F981E6185F000B55ADC /* Gif */,
+				E2588F8F1E6174A200B55ADC /* DWParticleEmitter */,
+				E2588FA81E61862300B55ADC /* SDWebImageCollectionViewCell.h */,
+				E2588FA91E61862300B55ADC /* SDWebImageCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -626,6 +668,11 @@
 				E2DDA2521E50BE6A00460BE5 /* GifViewController.h */,
 				E2DDA2531E50BE6A00460BE5 /* GifViewController.m */,
 				E2DDA2541E50BE6A00460BE5 /* GifViewController.xib */,
+				E2588F851E61721500B55ADC /* SDWebImageViewController.h */,
+				E2588F861E61721500B55ADC /* SDWebImageViewController.m */,
+				E2588F8A1E61746900B55ADC /* ParticleEmitterViewController.h */,
+				E2588F8B1E61746900B55ADC /* ParticleEmitterViewController.m */,
+				E2588F8C1E61746900B55ADC /* ParticleEmitterViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -892,10 +939,12 @@
 				E2384EDE1E5329DA00E84671 /* MailViewController.xib in Resources */,
 				E27CCBAF1E339414009BBDAF /* gif2.gif in Resources */,
 				E24075491E21D33700E9692A /* LaunchScreen.storyboard in Resources */,
+				E2588F8E1E61746900B55ADC /* ParticleEmitterViewController.xib in Resources */,
 				E21B21641E6061650076D2A6 /* EmotionViewController.xib in Resources */,
 				E27CCBB01E339414009BBDAF /* gif3.gif in Resources */,
 				E2384ED71E531FF900E84671 /* CommonTextTableViewCell.xib in Resources */,
 				E2DDA2431E50BDD100460BE5 /* LocalAuthenticationViewController.xib in Resources */,
+				E2588F941E61753900B55ADC /* yuandanr.png in Resources */,
 				E240751E1E21CEC100E9692A /* Assets.xcassets in Resources */,
 				E2DDA2511E50BE2000460BE5 /* LoginViewController.xib in Resources */,
 				E2384ED91E53244F00E84671 /* ApplicationViewController.xib in Resources */,
@@ -987,26 +1036,30 @@
 				E24075C81E22674500E9692A /* LTSDateChoose.m in Sources */,
 				E24075A31E22326000E9692A /* BaseModel.m in Sources */,
 				E24075BD1E2241F600E9692A /* UIImageView+Common.m in Sources */,
-				E27CCBC41E33BAAE009BBDAF /* GraphView.m in Sources */,
 				E2DDA2791E50C2C500460BE5 /* ApplicationViewController.m in Sources */,
 				E24075591E21E5FD00E9692A /* SysUtil.m in Sources */,
 				E2DDA26B1E50BF1100460BE5 /* BaseNavigationViewController.m in Sources */,
 				E240759F1E2231F500E9692A /* AccountTool.m in Sources */,
 				E2DDA23A1E50BDA300460BE5 /* ConsoleToChineseViewController.m in Sources */,
+				E2588FA41E6185F000B55ADC /* FrameCacheView.m in Sources */,
+				E2588F971E617F7C00B55ADC /* ImageModel.m in Sources */,
 				E26D45EF1E326AC900F6935B /* TouchID.m in Sources */,
+				E2588F8D1E61746900B55ADC /* ParticleEmitterViewController.m in Sources */,
 				E2DDA2551E50BE6A00460BE5 /* GifViewController.m in Sources */,
-				E27CCBC31E33BAAE009BBDAF /* FrameCacheView.m in Sources */,
 				E24075161E21CEC100E9692A /* AppDelegate.m in Sources */,
 				E2DDA26D1E50BF1100460BE5 /* BaseViewController.m in Sources */,
 				E24075891E2213DA00E9692A /* MainUtil.m in Sources */,
 				E21B21631E6061650076D2A6 /* EmotionViewController.m in Sources */,
-				E27CCBC51E33BAAE009BBDAF /* PlayheadView.m in Sources */,
 				E2DDA2421E50BDD100460BE5 /* LocalAuthenticationViewController.m in Sources */,
 				E24075831E220F9A00E9692A /* UIView+SDExtension.m in Sources */,
 				E2DDA2621E50BEB900460BE5 /* ScanQrcodeViewController.m in Sources */,
 				E2DDA25C1E50BE8000460BE5 /* HomeViewController.m in Sources */,
+				E2588FAB1E61862300B55ADC /* SDWebImageCollectionViewCell.m in Sources */,
 				E2DDA2501E50BE2000460BE5 /* LoginViewController.m in Sources */,
+				E2588FA31E6185F000B55ADC /* DebugView.m in Sources */,
 				E24075AF1E22355500E9692A /* UIView+Extensions.m in Sources */,
+				E2588FA51E6185F000B55ADC /* GraphView.m in Sources */,
+				E2588FA71E6185F000B55ADC /* RSPlayPauseButton.m in Sources */,
 				E240756D1E21FC7E00E9692A /* PageModel.m in Sources */,
 				E24075131E21CEC100E9692A /* main.m in Sources */,
 				E24075741E22033400E9692A /* UIImage+Common.m in Sources */,
@@ -1015,11 +1068,12 @@
 				E26D45EA1E324E6800F6935B /* DropDownMenu.m in Sources */,
 				E240755F1E21E78600E9692A /* NSString+Common.m in Sources */,
 				E2DDA26C1E50BF1100460BE5 /* BaseTabBarViewController.m in Sources */,
+				E2588F921E6174A200B55ADC /* DWParticleEmitter.m in Sources */,
 				E2384ED61E531FF900E84671 /* CommonTextTableViewCell.m in Sources */,
 				E2DDA2341E50B65A00460BE5 /* UIColor+expanded.m in Sources */,
-				E27CCBC61E33BAAE009BBDAF /* RSPlayPauseButton.m in Sources */,
+				E2588F881E61721500B55ADC /* SDWebImageViewController.m in Sources */,
+				E2588FA61E6185F000B55ADC /* PlayheadView.m in Sources */,
 				E24075621E21E9D900E9692A /* NSDate+Common.m in Sources */,
-				E27CCBC21E33BAAE009BBDAF /* DebugView.m in Sources */,
 				E24075C71E22674500E9692A /* LTSBaseAlertView.m in Sources */,
 				E247F7A71E5B0258004D866F /* ShellViewController.m in Sources */,
 			);

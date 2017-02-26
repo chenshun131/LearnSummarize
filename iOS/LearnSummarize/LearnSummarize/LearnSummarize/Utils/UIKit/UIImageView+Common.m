@@ -29,6 +29,28 @@
 }
 
 /**
+ * 显示网络图片，并对网络图片进行压缩
+ */
++ (void)showWebImage:(UIImageView *)imageView withURL:(NSString *)imgURL
+{
+    __weak __typeof(&*imageView) weakImageView = imageView;
+    [imageView sd_setImageWithURL:[NSURL URLWithString:imgURL] placeholderImage:[UIImage imageNamed:@"icon_load_fail"] options:SDWebImageRetryFailed|SDWebImageLowPriority|SDWebImageAvoidAutoSetImage  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL)
+     {
+         // 此处根据需要裁剪图片
+         image = [UIImage imageWithData:[self zipImageWithImage:image]];
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+             __typeof(&*weakImageView) strongImageView = weakImageView;
+             if (strongImageView)
+             {
+                 strongImageView.image = image;
+                 [strongImageView setNeedsLayout];
+             }
+         });
+     }];
+}
+
+/**
  * 压图片质量
  *
  * @param image image
@@ -40,7 +62,7 @@
     {
         return nil;
     }
-    CGFloat maxFileSize = 32*1024;
+    CGFloat maxFileSize = 32 * 1024;
     CGFloat compression = 0.9f;
     NSData *compressedData = UIImageJPEGRepresentation(image, compression);
     while ([compressedData length] > maxFileSize)

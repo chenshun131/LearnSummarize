@@ -95,6 +95,15 @@
     NSLog(@"lastVer = %f", lastVer);
 }
 
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    // 当 App 接收到内存警告时调用
+    
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager cancelAll];// 1.取消正在下载的操作
+    [manager.imageCache clearMemory];// 2.清除内存缓存
+}
+
 - (void)loginSucc
 {
     self.window.rootViewController  =  [[BaseTabBarViewController alloc] init];

@@ -11,6 +11,8 @@
 #import "CommonTextTableViewCell.h"
 #import "ApplicationViewController.h"
 #import "EmotionViewController.h"
+#import "ParticleEmitterViewController.h"
+#import "SDWebImageViewController.h"
 
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -43,6 +45,8 @@
     [listData addObject:@"一款简单实用的日期选择控件"];
     [listData addObject:@"AppDelegate中常用方法"];
     [listData addObject:@"UILabel 显示额外的表情"];
+    [listData addObject:@"离子效果背景添加到 UIView"];
+    [listData addObject:@"SDWebImage网络图片展示"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,6 +102,20 @@
             EmotionViewController *emotionVC = [[EmotionViewController alloc] initWithNibName:@"EmotionViewController" bundle:nil];
             emotionVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:emotionVC animated:YES];
+        }
+            break;
+        case 3:
+        {
+            ParticleEmitterViewController *particleEmitterVC = [[ParticleEmitterViewController alloc] initWithNibName:@"ParticleEmitterViewController" bundle:nil];
+            particleEmitterVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:particleEmitterVC animated:YES];
+        }
+            break;
+        case 4:
+        {
+            SDWebImageViewController *SDWebImageVC = [[SDWebImageViewController alloc] init];
+            SDWebImageVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:SDWebImageVC animated:YES];
         }
             break;
     }
