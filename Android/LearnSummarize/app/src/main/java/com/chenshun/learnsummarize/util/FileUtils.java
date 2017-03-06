@@ -22,6 +22,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.RandomAccessFile;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,6 +54,7 @@ import java.util.List;
  * <li>{@link #getFileName(String)}</li>
  * <li>{@link #getFileNameWithoutExtension(String)}</li>
  * <li>{@link #getFileSize(String)}</li>
+ * <li>{@link #getFileMd5(File)}</li>
  * <li>{@link #deleteFile(String)}</li>
  * <li>{@link #isFileExist(String)}</li>
  * <li>{@link #isFolderExist(String)}</li>
@@ -1098,6 +1103,71 @@ public final class FileUtils
         }
         File file = new File(path);
         return (file.exists() && file.isFile() ? file.length() : -1);
+    }
+
+    /**
+     * MD5消息摘要算法 是一种被广泛使用的密码散列函数，可以产生出一个128位（16字节）的散列值（hash value），用于确保信息传输完整一致，该方法使用 RandomAccessFile 方式获取大文件 MD5
+     *
+     * @param file
+     * @return
+     */
+    public static String getFileMd5(File file)
+    {
+        MessageDigest messageDigest;
+        RandomAccessFile randomAccessFile = null;
+        try
+        {
+            messageDigest = MessageDigest.getInstance("MD5"); // MessageDigest一定要为局部变量，为了保证线程安全，写成全局变量在多线程情况下，md5值计算将出现问题
+            if (file == null)
+            {
+                return "";
+            }
+            if (!file.exists())
+            {
+                return "";
+            }
+            randomAccessFile = new RandomAccessFile(file, "r");
+            byte[] bytes = new byte[1024 * 1024 * 10];
+            int len = 0;
+            while ((len = randomAccessFile.read(bytes)) != -1)
+            {
+                messageDigest.update(bytes, 0, len);
+            }
+            BigInteger bigInt = new BigInteger(1, messageDigest.digest());
+            String md5 = bigInt.toString(16);
+            while (md5.length() < 32)
+            {
+                md5 = "0" + md5;
+            }
+            return md5;
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            try
+            {
+                if (randomAccessFile != null)
+                {
+                    randomAccessFile.close();
+                }
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return "";
     }
 
     /**
