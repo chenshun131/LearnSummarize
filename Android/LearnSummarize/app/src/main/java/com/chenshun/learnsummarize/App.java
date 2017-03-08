@@ -25,6 +25,7 @@ import com.squareup.leakcanary.RefWatcher;
 import java.io.IOException;
 import java.util.concurrent.ThreadPoolExecutor;
 
+import cat.ereza.customactivityoncrash.CustomActivityOnCrash;
 import io.realm.Realm;
 import io.realm.log.LogLevel;
 import io.realm.log.RealmLog;
@@ -63,6 +64,7 @@ public class App extends Application
             e.printStackTrace();
         }
         initImageLoader(this);
+        initCustomActivityOnCrash();
     }
 
     @Override
@@ -135,5 +137,14 @@ public class App extends Application
                 .build();
         // Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(config);
+    }
+
+    private void initCustomActivityOnCrash()
+    {
+        // Install CustomActivityOnCrash
+        CustomActivityOnCrash.install(this);
+        CustomActivityOnCrash.setShowErrorDetails(true);
+        // CustomActivityOnCrash.setDefaultErrorActivityDrawable(int);// default is R.drawable.customactivityoncrash_error_image
+        CustomActivityOnCrash.setEnableAppRestart(true);
     }
 }

@@ -20,9 +20,11 @@
 # okhttp
 -dontwarn okhttp3.**
 -keep class okhttp3.**{*;}
+
 # okio
 -dontwarn okio.**
 -keep class okio.**{*;}
+
 # okgo
 -dontwarn com.lzy.okgo.**
 -keep class com.lzy.okgo.**{*;}
@@ -35,3 +37,5 @@
 -dontwarn com.lzy.okserver.**
 -keep class com.lzy.okserver.**{*;}
 
+# BaseRecyclerViewAdapterHelper
+-keep class com.chad.library.adapter.** {*;}

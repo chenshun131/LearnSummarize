@@ -15,7 +15,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/icon_head"
+        android:src="@mipmap/icon_head"
         app:border_color="@color/white"
         app:border_width="2dp"/>
 

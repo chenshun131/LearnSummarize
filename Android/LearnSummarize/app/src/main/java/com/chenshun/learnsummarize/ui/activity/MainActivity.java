@@ -102,7 +102,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         mDrawerToggle = new ActionBarDrawerToggle(this, mContainerDl, mTitleT, R.string.drawer_open, R.string.drawer_close);
         mDrawerToggle.syncState();
         mContainerDl.addDrawerListener(mDrawerToggle);
-        mTitleT.setNavigationIcon(R.drawable.hamburg_home);
+        mTitleT.setNavigationIcon(R.mipmap.hamburg_home);
 
         bindOnClickLister(this, mHomeB, mFunctionB, mSettingB);
         MobclickAgent.onProfileSignIn(Cache.getInstance().getUserName());

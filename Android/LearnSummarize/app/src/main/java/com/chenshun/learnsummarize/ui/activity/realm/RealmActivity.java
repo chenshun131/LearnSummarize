@@ -67,6 +67,7 @@ public class RealmActivity extends BaseActivity implements View.OnClickListener
     protected void initView()
     {
         setContentView(R.layout.activity_realm);
+        setTitle("Realm for Android");
 
         mContentInfoTv = (TextView) findViewById(R.id.realm_content_info_tv);
         mIdEt = (EditText) findViewById(R.id.realm_id_et);
@@ -77,11 +78,11 @@ public class RealmActivity extends BaseActivity implements View.OnClickListener
         mUpdateB = (Button) findViewById(R.id.realm_update_b);
         mSearchB = (Button) findViewById(R.id.realm_search_b);
 
-        create();
-        transactionCopy();
-        update();
-        find();
-        delete();
+//        create();
+//        transactionCopy();
+//        update();
+//        find();
+//        delete();
 
         bindOnClickLister(this, mAddB, mDeleteB, mUpdateB, mSearchB);
     }

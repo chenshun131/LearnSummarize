@@ -35,24 +35,21 @@ public class UriActivity extends BaseActivity
     @Override
     protected void initData()
     {
-
     }
 
     @Override
     protected void initView()
     {
-
     }
 
     @Override
     protected void setUI(Configuration newConfig, DisplayMetrics dm)
     {
-
     }
 
     @Override
     protected String setFragmentTag()
     {
-        return null;
+        return "UriActivity";
     }
 }

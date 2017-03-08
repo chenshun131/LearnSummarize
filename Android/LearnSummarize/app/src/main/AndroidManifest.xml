@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.chenshun.learnsummarize"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.chenshun.learnsummarize">
 
     <!-- Normal Permissions -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -54,6 +54,50 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.RecycleViewHomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.AnimationUseActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.DataBindingUseActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.EmptyViewUseActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.ExpandableUseActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.HeaderAndFooterUseActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.ItemClickActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.ItemDragAndSwipeUseActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.MultipleItemUseActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.PullToRefreshUseActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.SectionUseActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
 
         <receiver android:name="com.chenshun.learnsummarize.receiver.ConnectionChangeReceiver">
             <intent-filter>

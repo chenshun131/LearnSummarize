@@ -38,7 +38,6 @@ public class SettingFragment extends BaseFragment
     @Override
     protected void initData(Bundle bundle)
     {
-
     }
 
     @Override

@@ -13,6 +13,8 @@ import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.chenshun.learnsummarize.App;
 import com.chenshun.learnsummarize.R;
@@ -67,6 +69,7 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
         initHandlerCache();
         initData();
         initView();
+        initBack();// 设置标题栏返回按钮点击时间
     }
 
     @Override
@@ -151,6 +154,22 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
 
     protected abstract void initView();
 
+    protected void initBack()
+    {
+        ImageView backIv = (ImageView) findViewById(R.id.actionbar_back_iv);
+        if (backIv != null)
+        {
+            backIv.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    finish();
+                }
+            });
+        }
+    }
+
     /**
      * findViewById
      *
@@ -164,6 +183,20 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
     }
 
     /******************************** 【 Top Operator】 *******************************************/
+    @Override
+    public void setTitle(CharSequence title)
+    {
+        TextView titleTv = (TextView) findViewById(R.id.actionbar_title_tv);
+        if (titleTv == null)
+        {
+            super.setTitle(title);
+        }
+        else
+        {
+            titleTv.setText(title);
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -301,19 +334,14 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
      */
     protected void bindOnClickLister(View.OnClickListener onClick, View... views)
     {
-        if (onClick == null)
+        if (onClick != null && views != null)
         {
-            return;
-        }
-        if (views == null)
-        {
-            return;
-        }
-        for (View view : views)
-        {
-            if (view != null)
+            for (View view : views)
             {
-                view.setOnClickListener(onClick);
+                if (view != null)
+                {
+                    view.setOnClickListener(onClick);
+                }
             }
         }
     }
@@ -327,19 +355,14 @@ public abstract class BaseActivity extends AppCompatActivity implements HandlerI
      */
     protected void bindOnTouchLister(View.OnTouchListener onTouch, View... views)
     {
-        if (onTouch == null)
+        if (onTouch != null && views != null)
         {
-            return;
-        }
-        if (views == null)
-        {
-            return;
-        }
-        for (View view : views)
-        {
-            if (view != null)
+            for (View view : views)
             {
-                view.setOnTouchListener(onTouch);
+                if (view != null)
+                {
+                    view.setOnTouchListener(onTouch);
+                }
             }
         }
     }

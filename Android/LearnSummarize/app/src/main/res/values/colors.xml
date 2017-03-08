@@ -4,16 +4,24 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="windowBackground">#FAFAFA</color>
+
+    <color name="bg">#F0F0F0</color>
     <color name="separateLine">#EFEFEF</color>
+    <color name="textBlack">#333333</color>
+    <color name="textLightBlack">#555555</color>
+    <color name="shadow">#44000000</color>
+    <color name="spinner_bg">#333244</color>
+    <color name="clickspan_color">#00DDB6</color>
 
     <color name="themecolor1">#00796B</color><!-- dark primary color -->
     <color name="themecolor2">#BB009688</color><!-- primary color -->
     <color name="themecolor3">#4CAF50</color><!-- accent color -->
     <color name="themecolor4">#AA009688</color>
-    <color name="themecolor5">#005c51</color>
+    <color name="themecolor5">#005C51</color>
 
     <color name="white">#FFFFFF</color> <!-- 白色 -->
     <color name="blue">#1D85D8</color>
     <color name="pink">#BBFFC0CB</color> <!-- 粉红 -->
     <color name="crimson">#DC143C</color> <!-- 深红/猩红 -->
+    <color name="gray">#4B4B58</color>
 </resources>

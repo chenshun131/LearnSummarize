@@ -16,4 +16,8 @@
     <string name="topics_skin">主题换肤</string>
     <string name="username">用户名</string>
     <string name="welfare">福利</string>
+    <string name="network_err">访问网络错误</string>
+    <string name="empty_no_data">没有数据，点击重试！</string>
+    <string name="empty_network_error">网络错误，点击重试！</string>
+
 </resources>

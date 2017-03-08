@@ -304,19 +304,14 @@ public abstract class BaseFragment extends Fragment implements HandlerInterface
      */
     protected void bindOnClickLister(View.OnClickListener onClick, View... views)
     {
-        if (onClick == null)
+        if (onClick != null && views != null)
         {
-            return;
-        }
-        if (views == null)
-        {
-            return;
-        }
-        for (View view : views)
-        {
-            if (view != null)
+            for (View view : views)
             {
-                view.setOnClickListener(onClick);
+                if (view != null)
+                {
+                    view.setOnClickListener(onClick);
+                }
             }
         }
     }
@@ -330,19 +325,14 @@ public abstract class BaseFragment extends Fragment implements HandlerInterface
      */
     protected void bindOnTouchLister(View.OnTouchListener onTouch, View... views)
     {
-        if (onTouch == null)
+        if (onTouch != null && views != null)
         {
-            return;
-        }
-        if (views == null)
-        {
-            return;
-        }
-        for (View view : views)
-        {
-            if (view != null)
+            for (View view : views)
             {
-                view.setOnTouchListener(onTouch);
+                if (view != null)
+                {
+                    view.setOnTouchListener(onTouch);
+                }
             }
         }
     }

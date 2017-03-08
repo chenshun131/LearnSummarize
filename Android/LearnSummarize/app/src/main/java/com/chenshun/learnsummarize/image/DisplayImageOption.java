@@ -184,9 +184,9 @@ public final class DisplayImageOption
         decodingOptions.inPurgeable = true;
         decodingOptions.inInputShareable = true;
         return new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.drawable.icon_loading)
-                .showImageForEmptyUri(R.drawable.icon_load_fail)
-                .showImageOnFail(R.drawable.icon_load_fail)
+                .showImageOnLoading(R.mipmap.icon_loading)
+                .showImageForEmptyUri(R.mipmap.icon_load_fail)
+                .showImageOnFail(R.mipmap.icon_load_fail)
                 .cacheInMemory(false)// 设置下载的图片是否缓存在内存中
                 .cacheOnDisk(true)// 设置下载的图片是否缓存在SD卡中
                 .resetViewBeforeLoading(true)// 设置图片在下载前是否重置，复位

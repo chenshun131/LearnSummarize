@@ -36,6 +36,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding { // 设置支持数据绑定框架
+        enabled = true
+    }
     freeline {
         hack true
     }
@@ -44,7 +47,7 @@ android {
         ignoreWarnings true
     }
     useLibrary 'org.apache.http.legacy'
-    productFlavors {
+    productFlavors { // 多渠道打包
         xiaomi {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
         }
@@ -96,6 +99,12 @@ dependencies {
     testCompile 'com.antfortune.freeline:runtime-no-op:0.8.2'
     // database
     compile 'io.realm:android-adapters:1.4.0'
+    // when app crash
+    compile 'cat.ereza:customactivityoncrash:1.5.0'
+    // recyclerview adapter
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.4'
+    compile 'com.jaredrummler:material-spinner:1.1.0'
+    compile 'com.kyleduo.switchbutton:library:1.4.5'
 }
 
 /**

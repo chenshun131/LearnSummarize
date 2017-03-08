@@ -9,11 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.chenshun.learnsummarize.R;
 import com.chenshun.learnsummarize.ui.activity.realm.RealmActivity;
+import com.chenshun.learnsummarize.ui.activity.recyclerview.RecycleViewHomeActivity;
 import com.chenshun.learnsummarize.ui.adapter.HomeAdapter;
-import com.chenshun.learnsummarize.ui.adapter.recyclerview.AlphaAnimatorAdapter;
 import com.chenshun.learnsummarize.ui.fragment.base.BaseFragment;
+import com.chenshun.learnsummarize.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,10 +29,6 @@ import java.util.List;
  */
 public class HomeFragment extends BaseFragment
 {
-    private RecyclerView mContentRv;
-
-    private HomeAdapter mHomeAdapter;
-
     private List<String> mList;
 
     @Override
@@ -55,6 +54,7 @@ public class HomeFragment extends BaseFragment
     {
         mList = new ArrayList<>();
         mList.add("Realm for Android");
+        mList.add("BaseRecyclerViewAdapterHelper");
     }
 
     @Override
@@ -62,29 +62,32 @@ public class HomeFragment extends BaseFragment
     {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        mContentRv = (RecyclerView) root.findViewById(R.id.home_content_rv);
+        RecyclerView contentRv = (RecyclerView) root.findViewById(R.id.home_content_rv);
 
-        mContentRv.setLayoutManager(new LinearLayoutManager(activity));
-        mHomeAdapter = new HomeAdapter(activity, mList, new HomeAdapter.OnItemClickLitener()
+        contentRv.setHasFixedSize(true);
+        contentRv.setLayoutManager(new LinearLayoutManager(activity));
+        HomeAdapter homeAdapter = new HomeAdapter(R.layout.item_home_list, mList);
+        homeAdapter.openLoadAnimation();
+        contentRv.setAdapter(homeAdapter);
+        contentRv.addOnItemTouchListener(new OnItemClickListener()
         {
             @Override
-            public void onItemClick(View view, int position)
+            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position)
             {
                 switch (position)
                 {
-                    case 0:
+                    case 0:// Realm for Android
                         startActivity(new Intent(activity, RealmActivity.class));
+                        break;
+                    case 1:// BaseRecyclerViewAdapterHelper
+                        startActivity(new Intent(activity, RecycleViewHomeActivity.class));
+                        break;
+                    default:
+                        ToastUtil.showShortToast(activity, "HomeFragment 无效列表点击事件");
                         break;
                 }
             }
-
-            @Override
-            public void onItemLongClick(View view, int position)
-            {
-            }
         });
-        mContentRv.setAdapter(new AlphaAnimatorAdapter(mHomeAdapter, mContentRv));
-
         return root;
     }
 
