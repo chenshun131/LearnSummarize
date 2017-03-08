@@ -13,6 +13,9 @@
 #import "EmotionViewController.h"
 #import "ParticleEmitterViewController.h"
 #import "SDWebImageViewController.h"
+#import "SoftKeyViewController.h"
+#import "ScrollViewViewController.h"
+#import "MasonryTableViewController.h"
 
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -42,11 +45,14 @@
     [self.view addSubview:emptyDataV];
     
     listData = [NSMutableArray array];
-    [listData addObject:@"一款简单实用的日期选择控件"];
-    [listData addObject:@"AppDelegate中常用方法"];
-    [listData addObject:@"UILabel 显示额外的表情"];
-    [listData addObject:@"离子效果背景添加到 UIView"];
-    [listData addObject:@"SDWebImage网络图片展示"];
+    [listData addObject:@"0> 一款简单实用的日期选择控件"];
+    [listData addObject:@"1> AppDelegate中常用方法"];
+    [listData addObject:@"2> UILabel 显示额外的表情"];
+    [listData addObject:@"3> 离子效果背景添加到 UIView"];
+    [listData addObject:@"4> SDWebImage网络图片展示"];
+    [listData addObject:@"5> 软键盘"];
+    [listData addObject:@"6> ScrollView"];
+    [listData addObject:@"7> Masonry"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,39 +89,60 @@
 {
     switch(indexPath.row)
     {
-        case 0:
+        case 0:// 0> 一款简单实用的日期选择控件
         {
             DateChooseViewController *dateChooseVC = [[DateChooseViewController alloc] initWithNibName:@"DateChooseViewController" bundle:nil];
             dateChooseVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:dateChooseVC animated:YES];
         }
             break;
-        case 1:
+        case 1:// 1> AppDelegate中常用方法
         {
             ApplicationViewController *applicationVC = [[ApplicationViewController alloc] initWithNibName:@"ApplicationViewController" bundle:nil];
             applicationVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:applicationVC animated:YES];
         }
             break;
-        case 2:
+        case 2:// 2> UILabel 显示额外的表情
         {
             EmotionViewController *emotionVC = [[EmotionViewController alloc] initWithNibName:@"EmotionViewController" bundle:nil];
             emotionVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:emotionVC animated:YES];
         }
             break;
-        case 3:
+        case 3:// 3> 离子效果背景添加到 UIView
         {
             ParticleEmitterViewController *particleEmitterVC = [[ParticleEmitterViewController alloc] initWithNibName:@"ParticleEmitterViewController" bundle:nil];
             particleEmitterVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:particleEmitterVC animated:YES];
         }
             break;
-        case 4:
+        case 4:// 4> SDWebImage网络图片展示
         {
             SDWebImageViewController *SDWebImageVC = [[SDWebImageViewController alloc] init];
             SDWebImageVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:SDWebImageVC animated:YES];
+        }
+            break;
+        case 5:// 5> 软键盘
+        {
+            SoftKeyViewController *softKeyVC = [[SoftKeyViewController alloc] initWithNibName:@"SoftKeyViewController" bundle:nil];
+            softKeyVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:softKeyVC animated:YES];
+        }
+            break;
+        case 6:// 6> ScrollView
+        {
+            ScrollViewViewController *scrollViewVC = [[ScrollViewViewController alloc] initWithNibName:@"ScrollViewViewController" bundle:nil];
+            scrollViewVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:scrollViewVC animated:YES];
+        }
+            break;
+        case 7:// 7> Masonry
+        {
+            MasonryTableViewController *masonryTableVC = [[MasonryTableViewController alloc] init];
+            masonryTableVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:masonryTableVC animated:YES];
         }
             break;
     }

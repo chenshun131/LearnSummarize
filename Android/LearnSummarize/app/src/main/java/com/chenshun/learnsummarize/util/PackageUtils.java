@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 import android.text.TextUtils;
-import android.util.Log;
 
 import java.io.File;
 import java.util.List;
@@ -162,8 +161,7 @@ public final class PackageUtils
         }
         /**
          * if context is system app, don't need root permission, but should add
-         * <uses-permission android:name="android.permission.INSTALL_PACKAGES"
-         * /> in mainfest
+         * <uses-permission android:name="android.permission.INSTALL_PACKAGES" /> in mainfest
          **/
         StringBuilder command = new StringBuilder().append("LD_LIBRARY_PATH=/vendor/lib:/system/lib pm install ").append(pmParams == null ? "" : pmParams).append(" ").append(filePath.replace(" ", "\\ "));
         ShellUtils.CommandResult commandResult = ShellUtils.execCommand(command.toString(), !isSystemApplication(context), true);
@@ -429,7 +427,7 @@ public final class PackageUtils
         return DELETE_FAILED_INTERNAL_ERROR;
     }
 
-    /**
+    /**－
      * whether context is system application
      *
      * @param context
@@ -640,6 +638,7 @@ public final class PackageUtils
      * install success.
      */
     public static final int INSTALL_SUCCEEDED = 1;
+
     /**
      * Installation return code<br/>
      * the package is already installed.
@@ -864,6 +863,7 @@ public final class PackageUtils
      * if the system failed to install the package because of system issues.
      */
     public static final int INSTALL_FAILED_INTERNAL_ERROR = -110;
+
     /**
      * Installation return code<br/>
      * other reason

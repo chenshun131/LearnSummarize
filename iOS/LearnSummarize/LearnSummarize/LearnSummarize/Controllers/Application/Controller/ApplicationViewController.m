@@ -41,7 +41,10 @@
     
     listData = [NSMutableArray array];
     [listData addObject:@"Open Web : Baidu"];
-    [listData addObject:@"Email"];
+    [listData addObject:@"第三方Email"];
+    [listData addObject:@"拨打电话"];
+    [listData addObject:@"发送短信"];
+    [listData addObject:@"调用系统E-mail"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,15 +81,24 @@
 {
     switch(indexPath.row)
     {
-        case 0:
+        case 0: // Open Web : Baidu
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.baidu.com"]];
             break;
-        case 1:
+        case 1: // Email
         {
             MailViewController *mailVC = [[MailViewController alloc] initWithNibName:@"MailViewController" bundle:nil];
             mailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:mailVC animated:YES];
         }
+            break;
+        case 2: // 拨打电话
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://10086"]];
+            break;
+        case 3: // 发送短信
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"sms:10086"]];
+            break;
+        case 4: // 调用系统E-mail
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto://chenshun131@163.com"]];
             break;
     }
 }

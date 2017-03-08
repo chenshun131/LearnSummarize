@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C72A5BA0D049F84F224BB5B1 /* libPods-LearnSummarize.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B679F058D7266339C72B235 /* libPods-LearnSummarize.a */; };
+		E2080BF11E68646000C23BF3 /* EmotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2080BEE1E68646000C23BF3 /* EmotionViewController.m */; };
+		E2080BF21E68646000C23BF3 /* EmotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2080BEF1E68646000C23BF3 /* EmotionViewController.xib */; };
+		E2080BF81E6864D500C23BF3 /* SoftKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2080BF61E6864D500C23BF3 /* SoftKeyViewController.m */; };
+		E2080BF91E6864D500C23BF3 /* SoftKeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2080BF71E6864D500C23BF3 /* SoftKeyViewController.xib */; };
+		E2080C001E68703C00C23BF3 /* ScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2080BFE1E68703C00C23BF3 /* ScrollViewViewController.m */; };
+		E2080C011E68703C00C23BF3 /* ScrollViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2080BFF1E68703C00C23BF3 /* ScrollViewViewController.xib */; };
 		E21B215E1E6060C50076D2A6 /* UILabel+AttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = E21B215D1E6060C50076D2A6 /* UILabel+AttributedString.m */; };
-		E21B21631E6061650076D2A6 /* EmotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E21B21611E6061650076D2A6 /* EmotionViewController.m */; };
-		E21B21641E6061650076D2A6 /* EmotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21B21621E6061650076D2A6 /* EmotionViewController.xib */; };
 		E2384ED61E531FF900E84671 /* CommonTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2384ED41E531FF900E84671 /* CommonTextTableViewCell.m */; };
 		E2384ED71E531FF900E84671 /* CommonTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2384ED51E531FF900E84671 /* CommonTextTableViewCell.xib */; };
 		E2384ED91E53244F00E84671 /* ApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2384ED81E53244F00E84671 /* ApplicationViewController.xib */; };
@@ -61,6 +65,14 @@
 		E27CCBAE1E339414009BBDAF /* gif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAB1E339414009BBDAF /* gif1.gif */; };
 		E27CCBAF1E339414009BBDAF /* gif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAC1E339414009BBDAF /* gif2.gif */; };
 		E27CCBB01E339414009BBDAF /* gif3.gif in Resources */ = {isa = PBXBuildFile; fileRef = E27CCBAD1E339414009BBDAF /* gif3.gif */; };
+		E2C84B211E6A8596009B110F /* MasonryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C84B201E6A8596009B110F /* MasonryTableViewController.m */; };
+		E2C84B241E6A8C1D009B110F /* UpdateConstraintView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C84B231E6A8C1D009B110F /* UpdateConstraintView.m */; };
+		E2C84B271E6A9353009B110F /* SubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C84B261E6A9353009B110F /* SubViewController.m */; };
+		E2C84B2A1E6A9512009B110F /* RemakeConstraintView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C84B291E6A9512009B110F /* RemakeConstraintView.m */; };
+		E2C84B2D1E6AAC5B009B110F /* UseConstantsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C84B2C1E6AAC5B009B110F /* UseConstantsView.m */; };
+		E2C84B301E6AAF03009B110F /* UseEdgesInsetView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C84B2F1E6AAF03009B110F /* UseEdgesInsetView.m */; };
+		E2C84B331E6AB120009B110F /* AspectFitWithRatioView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C84B321E6AB120009B110F /* AspectFitWithRatioView.m */; };
+		E2C84B361E6AB2B8009B110F /* BasicAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C84B351E6AB2B8009B110F /* BasicAnimatedView.m */; };
 		E2DDA2341E50B65A00460BE5 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2331E50B65A00460BE5 /* UIColor+expanded.m */; };
 		E2DDA23A1E50BDA300460BE5 /* ConsoleToChineseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2371E50BDA300460BE5 /* ConsoleToChineseViewController.m */; };
 		E2DDA23B1E50BDA300460BE5 /* ConsoleToChineseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2DDA2381E50BDA300460BE5 /* ConsoleToChineseViewController.xib */; };
@@ -79,6 +91,8 @@
 		E2DDA26C1E50BF1100460BE5 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2671E50BF1100460BE5 /* BaseTabBarViewController.m */; };
 		E2DDA26D1E50BF1100460BE5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2691E50BF1100460BE5 /* BaseViewController.m */; };
 		E2DDA2791E50C2C500460BE5 /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DDA2771E50C2C500460BE5 /* ApplicationViewController.m */; };
+		E2EF65FB1E6AB5FF007F5089 /* UserMarginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF65FA1E6AB5FF007F5089 /* UserMarginView.m */; };
+		E2EF65FE1E6AB67B007F5089 /* UpdateArrayViews.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF65FD1E6AB67B007F5089 /* UpdateArrayViews.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,11 +116,17 @@
 		0F03D717558220CD15DD8D3A /* Pods-LearnSummarize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSummarize.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LearnSummarize/Pods-LearnSummarize.release.xcconfig"; sourceTree = "<group>"; };
 		7B679F058D7266339C72B235 /* libPods-LearnSummarize.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearnSummarize.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAF3859DF87CE9EEAE50F4B /* Pods-LearnSummarize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSummarize.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LearnSummarize/Pods-LearnSummarize.debug.xcconfig"; sourceTree = "<group>"; };
+		E2080BED1E68646000C23BF3 /* EmotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionViewController.h; sourceTree = "<group>"; };
+		E2080BEE1E68646000C23BF3 /* EmotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionViewController.m; sourceTree = "<group>"; };
+		E2080BEF1E68646000C23BF3 /* EmotionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmotionViewController.xib; sourceTree = "<group>"; };
+		E2080BF51E6864D500C23BF3 /* SoftKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoftKeyViewController.h; sourceTree = "<group>"; };
+		E2080BF61E6864D500C23BF3 /* SoftKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoftKeyViewController.m; sourceTree = "<group>"; };
+		E2080BF71E6864D500C23BF3 /* SoftKeyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoftKeyViewController.xib; sourceTree = "<group>"; };
+		E2080BFD1E68703C00C23BF3 /* ScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewViewController.h; sourceTree = "<group>"; };
+		E2080BFE1E68703C00C23BF3 /* ScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewViewController.m; sourceTree = "<group>"; };
+		E2080BFF1E68703C00C23BF3 /* ScrollViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewViewController.xib; sourceTree = "<group>"; };
 		E21B215C1E6060C50076D2A6 /* UILabel+AttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AttributedString.h"; sourceTree = "<group>"; };
 		E21B215D1E6060C50076D2A6 /* UILabel+AttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AttributedString.m"; sourceTree = "<group>"; };
-		E21B21601E6061650076D2A6 /* EmotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionViewController.h; sourceTree = "<group>"; };
-		E21B21611E6061650076D2A6 /* EmotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionViewController.m; sourceTree = "<group>"; };
-		E21B21621E6061650076D2A6 /* EmotionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmotionViewController.xib; sourceTree = "<group>"; };
 		E2384ED31E531FF900E84671 /* CommonTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTextTableViewCell.h; sourceTree = "<group>"; };
 		E2384ED41E531FF900E84671 /* CommonTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTextTableViewCell.m; sourceTree = "<group>"; };
 		E2384ED51E531FF900E84671 /* CommonTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonTextTableViewCell.xib; sourceTree = "<group>"; };
@@ -202,6 +222,22 @@
 		E27CCBAB1E339414009BBDAF /* gif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif1.gif; sourceTree = "<group>"; };
 		E27CCBAC1E339414009BBDAF /* gif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif2.gif; sourceTree = "<group>"; };
 		E27CCBAD1E339414009BBDAF /* gif3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif3.gif; sourceTree = "<group>"; };
+		E2C84B1F1E6A8596009B110F /* MasonryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasonryTableViewController.h; sourceTree = "<group>"; };
+		E2C84B201E6A8596009B110F /* MasonryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasonryTableViewController.m; sourceTree = "<group>"; };
+		E2C84B221E6A8C1D009B110F /* UpdateConstraintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateConstraintView.h; sourceTree = "<group>"; };
+		E2C84B231E6A8C1D009B110F /* UpdateConstraintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateConstraintView.m; sourceTree = "<group>"; };
+		E2C84B251E6A9353009B110F /* SubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubViewController.h; sourceTree = "<group>"; };
+		E2C84B261E6A9353009B110F /* SubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubViewController.m; sourceTree = "<group>"; };
+		E2C84B281E6A9512009B110F /* RemakeConstraintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemakeConstraintView.h; sourceTree = "<group>"; };
+		E2C84B291E6A9512009B110F /* RemakeConstraintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemakeConstraintView.m; sourceTree = "<group>"; };
+		E2C84B2B1E6AAC5B009B110F /* UseConstantsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseConstantsView.h; sourceTree = "<group>"; };
+		E2C84B2C1E6AAC5B009B110F /* UseConstantsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseConstantsView.m; sourceTree = "<group>"; };
+		E2C84B2E1E6AAF03009B110F /* UseEdgesInsetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseEdgesInsetView.h; sourceTree = "<group>"; };
+		E2C84B2F1E6AAF03009B110F /* UseEdgesInsetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseEdgesInsetView.m; sourceTree = "<group>"; };
+		E2C84B311E6AB120009B110F /* AspectFitWithRatioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AspectFitWithRatioView.h; sourceTree = "<group>"; };
+		E2C84B321E6AB120009B110F /* AspectFitWithRatioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AspectFitWithRatioView.m; sourceTree = "<group>"; };
+		E2C84B341E6AB2B8009B110F /* BasicAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAnimatedView.h; sourceTree = "<group>"; };
+		E2C84B351E6AB2B8009B110F /* BasicAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAnimatedView.m; sourceTree = "<group>"; };
 		E2DDA2321E50B65A00460BE5 /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
 		E2DDA2331E50B65A00460BE5 /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
 		E2DDA2361E50BDA300460BE5 /* ConsoleToChineseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleToChineseViewController.h; sourceTree = "<group>"; };
@@ -232,6 +268,10 @@
 		E2DDA2691E50BF1100460BE5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		E2DDA2761E50C2C500460BE5 /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
 		E2DDA2771E50C2C500460BE5 /* ApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationViewController.m; sourceTree = "<group>"; };
+		E2EF65F91E6AB5FF007F5089 /* UserMarginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMarginView.h; sourceTree = "<group>"; };
+		E2EF65FA1E6AB5FF007F5089 /* UserMarginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMarginView.m; sourceTree = "<group>"; };
+		E2EF65FC1E6AB67B007F5089 /* UpdateArrayViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateArrayViews.h; sourceTree = "<group>"; };
+		E2EF65FD1E6AB67B007F5089 /* UpdateArrayViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateArrayViews.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,12 +309,80 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E2080BEB1E68642000C23BF3 /* SoftKey */ = {
+			isa = PBXGroup;
+			children = (
+				E2080BF31E68649C00C23BF3 /* Controller */,
+				E2080BF41E68649C00C23BF3 /* View */,
+			);
+			path = SoftKey;
+			sourceTree = "<group>";
+		};
+		E2080BEC1E68646000C23BF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E2080BED1E68646000C23BF3 /* EmotionViewController.h */,
+				E2080BEE1E68646000C23BF3 /* EmotionViewController.m */,
+				E2080BEF1E68646000C23BF3 /* EmotionViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E2080BF01E68646000C23BF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2080BF31E68649C00C23BF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E2080BF51E6864D500C23BF3 /* SoftKeyViewController.h */,
+				E2080BF61E6864D500C23BF3 /* SoftKeyViewController.m */,
+				E2080BF71E6864D500C23BF3 /* SoftKeyViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E2080BF41E68649C00C23BF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2080BFA1E686FFF00C23BF3 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E2080BFB1E686FFF00C23BF3 /* Controller */,
+				E2080BFC1E686FFF00C23BF3 /* View */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		E2080BFB1E686FFF00C23BF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E2080BFD1E68703C00C23BF3 /* ScrollViewViewController.h */,
+				E2080BFE1E68703C00C23BF3 /* ScrollViewViewController.m */,
+				E2080BFF1E68703C00C23BF3 /* ScrollViewViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E2080BFC1E686FFF00C23BF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E21B215F1E6061270076D2A6 /* Label */ = {
 			isa = PBXGroup;
 			children = (
-				E21B21601E6061650076D2A6 /* EmotionViewController.h */,
-				E21B21611E6061650076D2A6 /* EmotionViewController.m */,
-				E21B21621E6061650076D2A6 /* EmotionViewController.xib */,
+				E2080BEC1E68646000C23BF3 /* Controller */,
+				E2080BF01E68646000C23BF3 /* View */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -369,6 +477,9 @@
 		E240754C1E21D98400E9692A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E2C84B1C1E6A8541009B110F /* Masonry */,
+				E2080BFA1E686FFF00C23BF3 /* ScrollView */,
+				E2080BEB1E68642000C23BF3 /* SoftKey */,
 				E21B215F1E6061270076D2A6 /* Label */,
 				E2DDA2731E50C27C00460BE5 /* Application */,
 				E2DDA22C1E50B0DF00460BE5 /* ConsoleToChinese */,
@@ -632,6 +743,49 @@
 				E2588F8F1E6174A200B55ADC /* DWParticleEmitter */,
 				E2588FA81E61862300B55ADC /* SDWebImageCollectionViewCell.h */,
 				E2588FA91E61862300B55ADC /* SDWebImageCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2C84B1C1E6A8541009B110F /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				E2C84B1D1E6A8541009B110F /* Controller */,
+				E2C84B1E1E6A8541009B110F /* View */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		E2C84B1D1E6A8541009B110F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E2C84B1F1E6A8596009B110F /* MasonryTableViewController.h */,
+				E2C84B201E6A8596009B110F /* MasonryTableViewController.m */,
+				E2C84B251E6A9353009B110F /* SubViewController.h */,
+				E2C84B261E6A9353009B110F /* SubViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E2C84B1E1E6A8541009B110F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2C84B221E6A8C1D009B110F /* UpdateConstraintView.h */,
+				E2C84B231E6A8C1D009B110F /* UpdateConstraintView.m */,
+				E2C84B281E6A9512009B110F /* RemakeConstraintView.h */,
+				E2C84B291E6A9512009B110F /* RemakeConstraintView.m */,
+				E2C84B2B1E6AAC5B009B110F /* UseConstantsView.h */,
+				E2C84B2C1E6AAC5B009B110F /* UseConstantsView.m */,
+				E2C84B2E1E6AAF03009B110F /* UseEdgesInsetView.h */,
+				E2C84B2F1E6AAF03009B110F /* UseEdgesInsetView.m */,
+				E2C84B311E6AB120009B110F /* AspectFitWithRatioView.h */,
+				E2C84B321E6AB120009B110F /* AspectFitWithRatioView.m */,
+				E2C84B341E6AB2B8009B110F /* BasicAnimatedView.h */,
+				E2C84B351E6AB2B8009B110F /* BasicAnimatedView.m */,
+				E2EF65F91E6AB5FF007F5089 /* UserMarginView.h */,
+				E2EF65FA1E6AB5FF007F5089 /* UserMarginView.m */,
+				E2EF65FC1E6AB67B007F5089 /* UpdateArrayViews.h */,
+				E2EF65FD1E6AB67B007F5089 /* UpdateArrayViews.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -935,16 +1089,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2080C011E68703C00C23BF3 /* ScrollViewViewController.xib in Resources */,
 				E27CCBAE1E339414009BBDAF /* gif1.gif in Resources */,
 				E2384EDE1E5329DA00E84671 /* MailViewController.xib in Resources */,
+				E2080BF91E6864D500C23BF3 /* SoftKeyViewController.xib in Resources */,
 				E27CCBAF1E339414009BBDAF /* gif2.gif in Resources */,
 				E24075491E21D33700E9692A /* LaunchScreen.storyboard in Resources */,
 				E2588F8E1E61746900B55ADC /* ParticleEmitterViewController.xib in Resources */,
-				E21B21641E6061650076D2A6 /* EmotionViewController.xib in Resources */,
 				E27CCBB01E339414009BBDAF /* gif3.gif in Resources */,
 				E2384ED71E531FF900E84671 /* CommonTextTableViewCell.xib in Resources */,
 				E2DDA2431E50BDD100460BE5 /* LocalAuthenticationViewController.xib in Resources */,
 				E2588F941E61753900B55ADC /* yuandanr.png in Resources */,
+				E2080BF21E68646000C23BF3 /* EmotionViewController.xib in Resources */,
 				E240751E1E21CEC100E9692A /* Assets.xcassets in Resources */,
 				E2DDA2511E50BE2000460BE5 /* LoginViewController.xib in Resources */,
 				E2384ED91E53244F00E84671 /* ApplicationViewController.xib in Resources */,
@@ -1032,7 +1188,10 @@
 				E2DDA2491E50BE0B00460BE5 /* DateChooseViewController.m in Sources */,
 				E24075A61E22329A00E9692A /* LoginModel.m in Sources */,
 				E24075A91E2232F600E9692A /* SaveArray.m in Sources */,
+				E2C84B241E6A8C1D009B110F /* UpdateConstraintView.m in Sources */,
+				E2080C001E68703C00C23BF3 /* ScrollViewViewController.m in Sources */,
 				E2384EDD1E5329DA00E84671 /* MailViewController.m in Sources */,
+				E2C84B301E6AAF03009B110F /* UseEdgesInsetView.m in Sources */,
 				E24075C81E22674500E9692A /* LTSDateChoose.m in Sources */,
 				E24075A31E22326000E9692A /* BaseModel.m in Sources */,
 				E24075BD1E2241F600E9692A /* UIImageView+Common.m in Sources */,
@@ -1045,11 +1204,11 @@
 				E2588F971E617F7C00B55ADC /* ImageModel.m in Sources */,
 				E26D45EF1E326AC900F6935B /* TouchID.m in Sources */,
 				E2588F8D1E61746900B55ADC /* ParticleEmitterViewController.m in Sources */,
+				E2C84B2D1E6AAC5B009B110F /* UseConstantsView.m in Sources */,
 				E2DDA2551E50BE6A00460BE5 /* GifViewController.m in Sources */,
 				E24075161E21CEC100E9692A /* AppDelegate.m in Sources */,
 				E2DDA26D1E50BF1100460BE5 /* BaseViewController.m in Sources */,
 				E24075891E2213DA00E9692A /* MainUtil.m in Sources */,
-				E21B21631E6061650076D2A6 /* EmotionViewController.m in Sources */,
 				E2DDA2421E50BDD100460BE5 /* LocalAuthenticationViewController.m in Sources */,
 				E24075831E220F9A00E9692A /* UIView+SDExtension.m in Sources */,
 				E2DDA2621E50BEB900460BE5 /* ScanQrcodeViewController.m in Sources */,
@@ -1057,20 +1216,29 @@
 				E2588FAB1E61862300B55ADC /* SDWebImageCollectionViewCell.m in Sources */,
 				E2DDA2501E50BE2000460BE5 /* LoginViewController.m in Sources */,
 				E2588FA31E6185F000B55ADC /* DebugView.m in Sources */,
+				E2EF65FB1E6AB5FF007F5089 /* UserMarginView.m in Sources */,
 				E24075AF1E22355500E9692A /* UIView+Extensions.m in Sources */,
+				E2C84B211E6A8596009B110F /* MasonryTableViewController.m in Sources */,
 				E2588FA51E6185F000B55ADC /* GraphView.m in Sources */,
+				E2C84B271E6A9353009B110F /* SubViewController.m in Sources */,
 				E2588FA71E6185F000B55ADC /* RSPlayPauseButton.m in Sources */,
+				E2C84B331E6AB120009B110F /* AspectFitWithRatioView.m in Sources */,
 				E240756D1E21FC7E00E9692A /* PageModel.m in Sources */,
+				E2C84B2A1E6A9512009B110F /* RemakeConstraintView.m in Sources */,
 				E24075131E21CEC100E9692A /* main.m in Sources */,
 				E24075741E22033400E9692A /* UIImage+Common.m in Sources */,
+				E2EF65FE1E6AB67B007F5089 /* UpdateArrayViews.m in Sources */,
 				E24075711E22031000E9692A /* MessageUtil.m in Sources */,
 				E24075B71E223EC400E9692A /* ScrollAdView.m in Sources */,
 				E26D45EA1E324E6800F6935B /* DropDownMenu.m in Sources */,
 				E240755F1E21E78600E9692A /* NSString+Common.m in Sources */,
 				E2DDA26C1E50BF1100460BE5 /* BaseTabBarViewController.m in Sources */,
 				E2588F921E6174A200B55ADC /* DWParticleEmitter.m in Sources */,
+				E2C84B361E6AB2B8009B110F /* BasicAnimatedView.m in Sources */,
+				E2080BF11E68646000C23BF3 /* EmotionViewController.m in Sources */,
 				E2384ED61E531FF900E84671 /* CommonTextTableViewCell.m in Sources */,
 				E2DDA2341E50B65A00460BE5 /* UIColor+expanded.m in Sources */,
+				E2080BF81E6864D500C23BF3 /* SoftKeyViewController.m in Sources */,
 				E2588F881E61721500B55ADC /* SDWebImageViewController.m in Sources */,
 				E2588FA61E6185F000B55ADC /* PlayheadView.m in Sources */,
 				E24075621E21E9D900E9692A /* NSDate+Common.m in Sources */,
@@ -1224,7 +1392,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingorient.elevatorMaintain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "476e3fd3-aa57-4136-b899-f2186a2a4c9d";
+				PROVISIONING_PROFILE = "0ec3dbe4-ee3b-4776-81c5-3c33e585ee6d";
 				PROVISIONING_PROFILE_SPECIFIER = 2017_02_;
 			};
 			name = Debug;
