@@ -1,4 +1,4 @@
-package com.chenshun.learnsummarize.ui.activity.realm;
+package com.chenshun.learnsummarize.ui.activity.database.realm;
 
 import android.content.res.Configuration;
 import android.os.Message;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.chenshun.learnsummarize.R;
 import com.chenshun.learnsummarize.ui.activity.base.BaseActivity;
-import com.chenshun.learnsummarize.ui.activity.realm.bean.CountryBean;
+import com.chenshun.learnsummarize.ui.activity.database.bean.CountryBean;
 import com.chenshun.learnsummarize.util.Logs;
 
 import java.util.UUID;

@@ -1,5 +1,6 @@
-package com.chenshun.learnsummarize.ui.activity.textview;
+package com.chenshun.learnsummarize.ui.activity.database;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,24 +11,25 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.chenshun.learnsummarize.R;
-import com.chenshun.learnsummarize.model.LayoutMultipleItemModel;
 import com.chenshun.learnsummarize.ui.activity.base.BaseActivity;
-import com.chenshun.learnsummarize.ui.adapter.BaseMultipleAdapter;
+import com.chenshun.learnsummarize.ui.activity.database.greendao.GreenDaoActivity;
+import com.chenshun.learnsummarize.ui.activity.database.realm.RealmActivity;
+import com.chenshun.learnsummarize.ui.adapter.BaseTextViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * User: chenshun <p />
- * Time: 17/3/10 8:32 <p />
+ * Time: 17/3/10 11:27 <p />
  * Version V1.0  <p />
  * Description: <p />
  */
-public class TextViewHomeActivity extends BaseActivity
+public class DatabaseHomeActivity extends BaseActivity
 {
     private RecyclerView mListRv;
 
-    private List<LayoutMultipleItemModel> mDataList;
+    private List<String> mDataList;
 
     @Override
     public boolean handleNotifyMessage(Message msg)
@@ -51,19 +53,19 @@ public class TextViewHomeActivity extends BaseActivity
     protected void initData()
     {
         mDataList = new ArrayList<>();
-        mDataList.add(new LayoutMultipleItemModel(LayoutMultipleItemModel.FadingTextView, "FadingTextView"));
+        mDataList.add("Realm");
+        mDataList.add("GreenDao");
     }
 
     @Override
     protected void initView()
     {
         setContentView(R.layout.base_recycleview);
-        setTitle("TextView");
+        setTitle("Database");
 
         mListRv = $(R.id.base_list_rv);
-
         mListRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        mListRv.setAdapter(new BaseMultipleAdapter(mDataList));
+        mListRv.setAdapter(new BaseTextViewAdapter(mDataList));
         mListRv.addOnItemTouchListener(new OnItemClickListener()
         {
             @Override
@@ -71,7 +73,13 @@ public class TextViewHomeActivity extends BaseActivity
             {
                 switch (position)
                 {
-                    case 0:// FadingTextView
+                    case 0:// Realm
+                        startActivity(new Intent(DatabaseHomeActivity.this, RealmActivity.class));
+                        break;
+                    case 1:// GreenDao
+                        startActivity(new Intent(DatabaseHomeActivity.this, GreenDaoActivity.class));
+                        break;
+                    default:
                         break;
                 }
             }
@@ -86,6 +94,6 @@ public class TextViewHomeActivity extends BaseActivity
     @Override
     protected String setFragmentTag()
     {
-        return "TextViewHomeActivity";
+        return "DatabaseHomeActivity";
     }
 }

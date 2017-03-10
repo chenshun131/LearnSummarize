@@ -1,4 +1,4 @@
-package com.chenshun.learnsummarize.ui.activity.realm.bean;
+package com.chenshun.learnsummarize.ui.activity.database.bean;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;

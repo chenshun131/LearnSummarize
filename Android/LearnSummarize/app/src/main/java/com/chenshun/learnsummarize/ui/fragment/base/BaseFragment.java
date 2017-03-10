@@ -87,7 +87,8 @@ public abstract class BaseFragment extends Fragment implements HandlerInterface
         Logs.d(setTag(), this.getClass().getSimpleName() + " onCreateView() invoked!!");
         if (rootView == null)
         {
-            rootView = initView(inflater, container, bundle);
+            rootView = inflater.inflate(setLayout(), container, false);
+            initView(rootView, bundle);
         }
         if (null != rootView)
         {
@@ -170,6 +171,13 @@ public abstract class BaseFragment extends Fragment implements HandlerInterface
     protected abstract void initData(Bundle bundle);
 
     /**
+     * set Layout Id
+     *
+     * @return
+     */
+    protected abstract int setLayout();
+
+    /**
      * initView after initData(Bundle bundle)
      *
      * @param inflater
@@ -177,7 +185,23 @@ public abstract class BaseFragment extends Fragment implements HandlerInterface
      * @param bundle
      * @return
      */
-    protected abstract View initView(LayoutInflater inflater, ViewGroup container, Bundle bundle);
+    protected abstract void initView(View rootView, Bundle bundle);
+
+    /**
+     * findViewById
+     *
+     * @param id
+     * @param <T>
+     * @return
+     */
+    protected <T extends View> T $(int id)
+    {
+        if (rootView != null)
+        {
+            return (T) rootView.findViewById(id);
+        }
+        return null;
+    }
 
     /******************************** 【 Dialog Operation 】 *******************************************/
     /**

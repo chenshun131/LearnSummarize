@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.chenshun.learnsummarize.R;
-import com.chenshun.learnsummarize.ui.activity.realm.RealmActivity;
+import com.chenshun.learnsummarize.ui.activity.database.DatabaseHomeActivity;
 import com.chenshun.learnsummarize.ui.activity.recyclerview.RecycleViewHomeActivity;
 import com.chenshun.learnsummarize.ui.activity.textview.TextViewHomeActivity;
 import com.chenshun.learnsummarize.ui.adapter.HomeAdapter;
@@ -54,17 +52,21 @@ public class HomeFragment extends BaseFragment
     protected void initData(Bundle bundle)
     {
         mList = new ArrayList<>();
-        mList.add("Realm for Android");
+        mList.add("Database");
         mList.add("BaseRecyclerViewAdapterHelper");
         mList.add("TextView");
     }
 
     @Override
-    protected View initView(LayoutInflater inflater, ViewGroup container, Bundle bundle)
+    protected int setLayout()
     {
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        return R.layout.fragment_home;
+    }
 
-        RecyclerView contentRv = (RecyclerView) root.findViewById(R.id.home_content_rv);
+    @Override
+    protected void initView(View rootView, Bundle bundle)
+    {
+        RecyclerView contentRv = $(R.id.home_content_rv);
 
         contentRv.setHasFixedSize(true);
         contentRv.setLayoutManager(new LinearLayoutManager(activity));
@@ -78,8 +80,8 @@ public class HomeFragment extends BaseFragment
             {
                 switch (position)
                 {
-                    case 0:// Realm for Android
-                        startActivity(new Intent(activity, RealmActivity.class));
+                    case 0:// Database
+                        startActivity(new Intent(activity, DatabaseHomeActivity.class));
                         break;
                     case 1:// BaseRecyclerViewAdapterHelper
                         startActivity(new Intent(activity, RecycleViewHomeActivity.class));
@@ -93,7 +95,6 @@ public class HomeFragment extends BaseFragment
                 }
             }
         });
-        return root;
     }
 
     @Override

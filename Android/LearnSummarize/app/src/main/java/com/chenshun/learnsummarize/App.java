@@ -2,6 +2,7 @@ package com.chenshun.learnsummarize;
 
 import android.app.Application;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.multidex.MultiDex;
 
 import com.antfortune.freeline.FreelineCore;
@@ -9,6 +10,8 @@ import com.chenshun.learnsummarize.constant.Constants;
 import com.chenshun.learnsummarize.image.DisplayImageOption;
 import com.chenshun.learnsummarize.io.DefaultThreadFactory;
 import com.chenshun.learnsummarize.io.DiscCache;
+import com.chenshun.learnsummarize.ui.activity.database.greendao.gen.DaoMaster;
+import com.chenshun.learnsummarize.ui.activity.database.greendao.gen.DaoSession;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -22,6 +25,7 @@ import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -29,6 +33,7 @@ import cat.ereza.customactivityoncrash.CustomActivityOnCrash;
 import io.realm.Realm;
 import io.realm.log.LogLevel;
 import io.realm.log.RealmLog;
+import okhttp3.Cache;
 
 /**
  * User: chenshun <p />
@@ -41,30 +46,24 @@ public class App extends Application
     private static App instance;
     private RefWatcher rw;
 
+    // GreenDao
+    private DaoMaster.DevOpenHelper mHelper;
+    private SQLiteDatabase db;
+    private DaoMaster mDaoMaster;
+    private DaoSession mDaoSession;
+
     @Override
     public void onCreate()
     {
         super.onCreate();
-        if (LeakCanary.isInAnalyzerProcess(this))
-        {
-            // This process is dedicated to LeakCanary for heap analysis.You should not init your app in this process.
-            return;
-        }
-        rw = LeakCanary.install(this);
-        FreelineCore.init(this);
-        Realm.init(this);
-        RealmLog.setLevel(LogLevel.TRACE);
         instance = this;
-        try
-        {
-            initNetwork();
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        initLeakCanary();
+        initFreeline();
+        initRealm();
+        initNetwork();
         initImageLoader(this);
         initCustomActivityOnCrash();
+        initGreenDao();
     }
 
     @Override
@@ -74,7 +73,7 @@ public class App extends Application
         MultiDex.install(this);
     }
 
-    private void initNetwork() throws IOException
+    private void initNetwork()
     {
         OkGo.init(this);
         OkGo okGo = OkGo.getInstance();
@@ -83,15 +82,26 @@ public class App extends Application
             okGo.debug("OkGo");
         }
         okGo.setConnectTimeout(OkGo.DEFAULT_MILLISECONDS);
-        okGo.setReadTimeOut(OkGo.DEFAULT_MILLISECONDS);
-        okGo.setWriteTimeOut(OkGo.DEFAULT_MILLISECONDS);
-        okGo.setCacheMode(CacheMode.NO_CACHE);
+        okGo.setReadTimeOut(OkGo.DEFAULT_MILLISECONDS);// 读取超时
+        okGo.setWriteTimeOut(OkGo.DEFAULT_MILLISECONDS);// 写入超时
+        okGo.setCacheMode(CacheMode.DEFAULT);
         okGo.setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE);
         okGo.setCookieStore(new MemoryCookieStore());// cookie使用内存缓存（app退出后，cookie消失）
+        okGo.getOkHttpClientBuilder().cache(new Cache(new File("xx/xxx/"), 20 * 1024));
+
+
+        // init cer
         // okGo.setCertificates(new Buffer().writeUtf8(Constants.CER).inputStream()); // Buffer use okio packeg and okhttp denpend on okio
 //        okGo.setCertificates(getAssets().open("kyfw.12306.cn.cer")); // 测试连接 12306网站
 //        okGo.setCertificates(getAssets().open("mobile_client.cer")); //
-        okGo.setCertificates(getAssets().open("client.bks"), "123456", getAssets().open("client.cer"));
+        try
+        {
+            okGo.setCertificates(getAssets().open("client.bks"), "123456", getAssets().open("client.cer"));
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
 
         // 可以设置https的证书,以下几种方案根据需要自己设置,不需要不用设置
         // .setCertificates()                                                                     //方法一：信任所有证书
@@ -113,6 +123,27 @@ public class App extends Application
     {
         App application = (App) context.getApplicationContext();
         return application.rw;
+    }
+
+    private void initLeakCanary()
+    {
+        if (LeakCanary.isInAnalyzerProcess(this))
+        {
+            // This process is dedicated to LeakCanary for heap analysis.You should not init your app in this process.
+            return;
+        }
+        rw = LeakCanary.install(this);
+    }
+
+    private void initFreeline()
+    {
+        FreelineCore.init(this);
+    }
+
+    private void initRealm()
+    {
+        Realm.init(this);
+        RealmLog.setLevel(LogLevel.TRACE);
     }
 
     private void initImageLoader(Context context)
@@ -146,5 +177,26 @@ public class App extends Application
         CustomActivityOnCrash.setShowErrorDetails(true);
         // CustomActivityOnCrash.setDefaultErrorActivityDrawable(int);// default is R.drawable.customactivityoncrash_error_image
         CustomActivityOnCrash.setEnableAppRestart(true);
+    }
+
+    private void initGreenDao()
+    {
+        // 通过 DaoMaster 的内部类 DevOpenHelper，你可以得到一个便利的 SQLiteOpenHelper 对象。可能你已经注意到了，你并不需要去编写「CREATE TABLE」这样的 SQL 语句，因为 greenDAO 已经帮你做了
+        // 注意：默认的 DaoMaster.DevOpenHelper 会在数据库升级时，删除所有的表，意味着这将导致数据的丢失。所以，在正式的项目中，你还应该做一层封装，来实现数据库的安全升级
+        mHelper = new DaoMaster.DevOpenHelper(this, "notes-db", null);
+        db = mHelper.getWritableDatabase();
+        // 注意：该数据库连接属于 DaoMaster，所以多个 Session 指的是相同的数据库连接
+        mDaoMaster = new DaoMaster(db);
+        mDaoSession = mDaoMaster.newSession();
+    }
+
+    public DaoSession getDaoSession()
+    {
+        return mDaoSession;
+    }
+
+    public SQLiteDatabase getDb()
+    {
+        return db;
     }
 }

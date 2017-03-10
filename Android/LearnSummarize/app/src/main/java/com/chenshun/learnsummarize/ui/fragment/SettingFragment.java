@@ -2,9 +2,7 @@ package com.chenshun.learnsummarize.ui.fragment;
 
 import android.os.Bundle;
 import android.os.Message;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.chenshun.learnsummarize.R;
 import com.chenshun.learnsummarize.ui.fragment.base.BaseFragment;
@@ -41,10 +39,14 @@ public class SettingFragment extends BaseFragment
     }
 
     @Override
-    protected View initView(LayoutInflater inflater, ViewGroup container, Bundle bundle)
+    protected int setLayout()
     {
-        View root = inflater.inflate(R.layout.fragment_setting, container, false);
-        return root;
+        return R.layout.fragment_setting;
+    }
+
+    @Override
+    protected void initView(View rootView, Bundle bundle)
+    {
     }
 
     @Override
