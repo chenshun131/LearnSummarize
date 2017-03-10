@@ -103,8 +103,12 @@ dependencies {
     compile 'cat.ereza:customactivityoncrash:1.5.0'
     // recyclerview adapter
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.4'
+    // spinner
     compile 'com.jaredrummler:material-spinner:1.1.0'
+    // button
     compile 'com.kyleduo.switchbutton:library:1.4.5'
+    // textview
+    compile 'com.tomer:fadingtextview:1.6'
 }
 
 /**

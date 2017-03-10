@@ -22,6 +22,10 @@
 * [BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper)：一个非常好用的RecyclerView万能适配器
 
 
+### TextView
+* [FadingTextView](https://github.com/rosenpin/FadingTextView)：定时改变文字信息
+
+
 ## 第三方SDK
 > ### 统计
 > > 1.[友盟](http://www.umeng.com/)

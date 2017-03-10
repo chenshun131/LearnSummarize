@@ -98,6 +98,10 @@
             android:name="com.chenshun.learnsummarize.ui.activity.recyclerview.SectionUseActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.chenshun.learnsummarize.ui.activity.textview.TextViewHomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
 
         <receiver android:name="com.chenshun.learnsummarize.receiver.ConnectionChangeReceiver">
             <intent-filter>

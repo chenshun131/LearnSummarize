@@ -14,6 +14,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.chenshun.learnsummarize.R;
 import com.chenshun.learnsummarize.ui.activity.realm.RealmActivity;
 import com.chenshun.learnsummarize.ui.activity.recyclerview.RecycleViewHomeActivity;
+import com.chenshun.learnsummarize.ui.activity.textview.TextViewHomeActivity;
 import com.chenshun.learnsummarize.ui.adapter.HomeAdapter;
 import com.chenshun.learnsummarize.ui.fragment.base.BaseFragment;
 import com.chenshun.learnsummarize.util.ToastUtil;
@@ -55,6 +56,7 @@ public class HomeFragment extends BaseFragment
         mList = new ArrayList<>();
         mList.add("Realm for Android");
         mList.add("BaseRecyclerViewAdapterHelper");
+        mList.add("TextView");
     }
 
     @Override
@@ -81,6 +83,9 @@ public class HomeFragment extends BaseFragment
                         break;
                     case 1:// BaseRecyclerViewAdapterHelper
                         startActivity(new Intent(activity, RecycleViewHomeActivity.class));
+                        break;
+                    case 2:// TextView
+                        startActivity(new Intent(activity, TextViewHomeActivity.class));
                         break;
                     default:
                         ToastUtil.showShortToast(activity, "HomeFragment 无效列表点击事件");
