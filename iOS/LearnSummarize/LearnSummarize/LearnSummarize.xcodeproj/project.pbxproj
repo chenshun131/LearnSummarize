@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		674EB7FD1E7BD00000C9F7B5 /* WifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 674EB7FB1E7BD00000C9F7B5 /* WifiViewController.m */; };
+		674EB8001E7BD0C200C9F7B5 /* DMDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 674EB7FE1E7BD0C200C9F7B5 /* DMDropDownMenu.m */; };
 		C72A5BA0D049F84F224BB5B1 /* libPods-LearnSummarize.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B679F058D7266339C72B235 /* libPods-LearnSummarize.a */; };
 		E2080BF11E68646000C23BF3 /* EmotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2080BEE1E68646000C23BF3 /* EmotionViewController.m */; };
 		E2080BF21E68646000C23BF3 /* EmotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2080BEF1E68646000C23BF3 /* EmotionViewController.xib */; };
@@ -114,6 +116,10 @@
 
 /* Begin PBXFileReference section */
 		0F03D717558220CD15DD8D3A /* Pods-LearnSummarize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSummarize.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LearnSummarize/Pods-LearnSummarize.release.xcconfig"; sourceTree = "<group>"; };
+		674EB7FA1E7BD00000C9F7B5 /* WifiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiViewController.h; sourceTree = "<group>"; };
+		674EB7FB1E7BD00000C9F7B5 /* WifiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiViewController.m; sourceTree = "<group>"; };
+		674EB7FE1E7BD0C200C9F7B5 /* DMDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDropDownMenu.m; sourceTree = "<group>"; };
+		674EB7FF1E7BD0C200C9F7B5 /* DMDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDropDownMenu.h; sourceTree = "<group>"; };
 		7B679F058D7266339C72B235 /* libPods-LearnSummarize.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearnSummarize.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAF3859DF87CE9EEAE50F4B /* Pods-LearnSummarize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSummarize.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LearnSummarize/Pods-LearnSummarize.debug.xcconfig"; sourceTree = "<group>"; };
 		E2080BED1E68646000C23BF3 /* EmotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionViewController.h; sourceTree = "<group>"; };
@@ -309,6 +315,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		674EB7F81E7BD00000C9F7B5 /* Wifi */ = {
+			isa = PBXGroup;
+			children = (
+				674EB7F91E7BD00000C9F7B5 /* Controller */,
+				674EB7FC1E7BD00000C9F7B5 /* View */,
+			);
+			path = Wifi;
+			sourceTree = "<group>";
+		};
+		674EB7F91E7BD00000C9F7B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				674EB7FA1E7BD00000C9F7B5 /* WifiViewController.h */,
+				674EB7FB1E7BD00000C9F7B5 /* WifiViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		674EB7FC1E7BD00000C9F7B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E2080BEB1E68642000C23BF3 /* SoftKey */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +508,7 @@
 		E240754C1E21D98400E9692A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				674EB7F81E7BD00000C9F7B5 /* Wifi */,
 				E2C84B1C1E6A8541009B110F /* Masonry */,
 				E2080BFA1E686FFF00C23BF3 /* ScrollView */,
 				E2080BEB1E68642000C23BF3 /* SoftKey */,
@@ -694,6 +726,8 @@
 		E26D45E71E324E4700F6935B /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				674EB7FE1E7BD0C200C9F7B5 /* DMDropDownMenu.m */,
+				674EB7FF1E7BD0C200C9F7B5 /* DMDropDownMenu.h */,
 				E26D45E81E324E6800F6935B /* DropDownMenu.h */,
 				E26D45E91E324E6800F6935B /* DropDownMenu.m */,
 			);
@@ -1193,6 +1227,7 @@
 				E2384EDD1E5329DA00E84671 /* MailViewController.m in Sources */,
 				E2C84B301E6AAF03009B110F /* UseEdgesInsetView.m in Sources */,
 				E24075C81E22674500E9692A /* LTSDateChoose.m in Sources */,
+				674EB7FD1E7BD00000C9F7B5 /* WifiViewController.m in Sources */,
 				E24075A31E22326000E9692A /* BaseModel.m in Sources */,
 				E24075BD1E2241F600E9692A /* UIImageView+Common.m in Sources */,
 				E2DDA2791E50C2C500460BE5 /* ApplicationViewController.m in Sources */,
@@ -1243,6 +1278,7 @@
 				E2588FA61E6185F000B55ADC /* PlayheadView.m in Sources */,
 				E24075621E21E9D900E9692A /* NSDate+Common.m in Sources */,
 				E24075C71E22674500E9692A /* LTSBaseAlertView.m in Sources */,
+				674EB8001E7BD0C200C9F7B5 /* DMDropDownMenu.m in Sources */,
 				E247F7A71E5B0258004D866F /* ShellViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

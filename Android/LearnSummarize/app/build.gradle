@@ -4,13 +4,13 @@ apply plugin: 'realm-android'
 apply plugin: 'org.greenrobot.greendao'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         applicationId "com.chenshun.learnsummarize"
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0.1"
         buildConfigField "String", "GIT_VERSION_DETAIL", "\"${getGitVersion()}\""
@@ -47,6 +47,10 @@ android {
         abortOnError false
         ignoreWarnings true
     }
+    dexOptions {
+        preDexLibraries = false
+        javaMaxHeapSize "8g"
+    }
     useLibrary 'org.apache.http.legacy'
     productFlavors { // 多渠道打包
         xiaomi {
@@ -71,7 +75,7 @@ greendao {
 }
 
 ext {
-    supportLibVersion = "24.2.1"
+    supportLibVersion = "25.2.0"
 }
 
 dependencies {
